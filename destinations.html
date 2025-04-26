@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations - Khur Travel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Additional styles specific to this page */
+        .destinations-header {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/destinations-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .destinations-header h1 {
+            font-size: 48px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .destination-section {
+            padding: 60px 0;
+        }
+        
+        .destination-section:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+        
+        .destination-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .destination-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .destination-text h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #1a2b3c;
+            position: relative;
+        }
+        
+        .destination-text h2:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background-color: #c93;
+            bottom: -10px;
+            left: 0;
+        }
+        
+        .destination-text p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        
+        .destination-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .destination-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .highlight-card {
+            flex: 1;
+            min-width: 250px;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .highlight-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .highlight-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .highlight-card-content {
+            padding: 20px;
+        }
+        
+        .highlight-card-content h3 {
+            margin-bottom: 10px;
+            color: #1a2b3c;
+        }
+        
+        .highlight-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header section -->
+    <header>
+        <div class="top-bar">
+            <div class="container">
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <div class="contact-info">
+                    <a href="tel:+97699775008"><i class="fas fa-phone"></i> 976-99775008</a>
+                </div>
+                <div class="top-nav">
+                    <a href="about-us.html">ABOUT US</a>
+                    <a href="contact-us.html">CONTACT US</a>
+                    <a href="enquire.html" class="enquire-btn">ENQUIRE NOW</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-header">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/khurlogo.png" alt="Khur Travel Mongolia Logo">
+                    </a>
+                </div>
+                <div class="search-bar">
+                    <form action="#" method="get">
+                        <input type="text" placeholder="Search tours">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="main-nav">
+            <div class="container">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="destinations.html" class="active">DESTINATIONS</a></li>
+                    <li><a href="tours.html">TOURS</a></li>
+                    <li><a href="about-mongolia.html">ABOUT MONGOLIA</a></li>
+                    <li><a href="blog.html">TRAVEL GUIDES</a></li>
+                    <li><a href="about-us.html">ABOUT US</a></li>
+                    <li><a href="contact-us.html">CONTACT</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Destinations Header -->
+    <div class="destinations-header">
+        <div class="container">
+            <h1>Mongolia Destinations</h1>
+        </div>
+    </div>
+
+    <!-- Mongolia Regions Overview -->
+    <section class="destination-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>DESTINATIONS/АЯЛАЛЫН ЧИГЛЭЛҮҮД</h2>
+                <p>Where to go in Mongolia?</p>
+            </div>
+            
+            <div class="region-overview">
+                <p>Mongolia is divided into different regions including Khangai, Gobi and Steppe, each with
+                unique landscapes, including forests, mountainous areas, vast steppes, and the Gobi Desert,
+                all rich in natural beauty.</p>
+                
+                <div class="region-grid" style="display: flex; flex-wrap: wrap; gap: 20px; margin-top: 30px;">
+                    <div class="region-card" style="flex: 1; min-width: 300px; padding: 20px; background: #f5f5f5; border-radius: 8px;">
+                        <h3>Khangai</h3>
+                        <p>A forested taiga and mountainous region that spans the central, northern,
+                        and western parts of Mongolia.</p>
+                    </div>
+                    
+                    <div class="region-card" style="flex: 1; min-width: 300px; padding: 20px; background: #f5f5f5; border-radius: 8px;">
+                        <h3>Steppe</h3>
+                        <p>An expansive, endless prairie that stretches across the eastern part of the
+                        country.</p>
+                    </div>
+                    
+                    <div class="region-card" style="flex: 1; min-width: 300px; padding: 20px; background: #f5f5f5; border-radius: 8px;">
+                        <h3>Gobi</h3>
+                        <p>A desert zone covering much of the southeastern part of Mongolia, and it is the
+                        second largest desert after the Sahara.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Western Mongolia Section -->
+    <section id="western" class="destination-section">
+        <div class="container">
+            <div class="destination-container">
+                <div class="destination-text">
+                    <h2>Western Mongolia</h2>
+                    <p>Known for its breathtaking scenery and unique cultural experiences, Western Mongolia is an
+                    adventurer's paradise. With snow-capped peaks, crystal-clear lakes, and a blend of diverse
+                    ethnic groups, this region is a blend of natural beauty and ancient traditions. The provinces of
+                    Bayan-Ulgii, Khovd, Uvs, and Zavkhan make up this remarkable area.</p>
+                    <p>Western Mongolia is home to the dramatic Altai Mountains, deep valleys, and pristine alpine lakes. This remote region offers some of the most spectacular natural scenery in Mongolia and is home to diverse ethnic groups including Kazakhs, Tuvans, and Khotons.</p>
+                    <a href="western-tours.html" class="btn">View Western Mongolia Tours</a>
+                </div>
+                <div class="destination-image">
+                    <img src="images/hero-1.jpg" alt="Western Mongolia Landscape">
+                </div>
+            </div>
+            
+            <h3>Western Mongolia Highlights</h3>
+            <div class="highlight-grid">
+                <div class="highlight-card">
+                    <img src="images/tour-1.jpg" alt="Mountain Treks">
+                    <div class="highlight-card-content">
+                        <h3>Mountain Treks</h3>
+                        <p>Hike through the snow-covered Altai Tavan Bogd, Tsambagarav, and Kharkhiraa-Turgen mountain ranges, renowned for their stunning landscapes.</p>
+                    </div>
+                </div>
+                
+                <div class="highlight-card">
+                    <img src="images/tour-2.jpg" alt="Golden Eagle Hunting">
+                    <div class="highlight-card-content">
+                        <h3>Golden Eagle Hunting</h3>
+                        <p>Discover the fascinating art of eagle hunting practiced by the Kazakh people, a centuries-old tradition.</p>
+                    </div>
+                </div>
+                
+                <div class="highlight-card">
+                    <img src="images/tour-3.jpg" alt="Scenic Lakes">
+                    <div class="highlight-card-content">
+                        <h3>Scenic Lakes</h3>
+                        <p>Take in the beauty of pristine lakes such as Uvs, Khoton-Khurgan, and Uureg, perfect for peaceful walks and relaxation.</p>
+                    </div>
+                </div>
+                
+                <div class="highlight-card">
+                    <img src="images/tour-4.jpg" alt="Cultural Encounters">
+                    <div class="highlight-card-content">
+                        <h3>Cultural Encounters</h3>
+                        <p>Meet the diverse ethnic groups of the region, including Kazakhs and other nomadic communities.</p>
+                    </div>
+                </div>
+                
+                <div class="highlight-card">
+                    <img src="images/hero-1.jpg" alt="Ancient Rock Art">
+                    <div class="highlight-card-content">
+                        <h3>Ancient Rock Art</h3>
+                        <p>Explore the ancient petroglyphs in Shiveet Uul and Baga Oigor, where traces of early human life are etched into the landscape.</p>
+                    </div>
+                </div>
+                
+                <div class="highlight-card">
+                    <img src="images/rec-tour-1.jpg" alt="Khuumii Singing">
+                    <div class="highlight-card-content">
+                        <h3>Khuumii Singing</h3>
+                        <p>Experience the mesmerizing sound of Khuumii (throat singing), an iconic form of music native to Mongolia's highlands.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Central Mongolia Section -->
+    <section id="central" class="destination-section">
+        <div class="container">
+            <div class="destination-container">
+                <div class="destination-image">
+                    <img src="images/central-mongolia-large.jpg" alt="Central Mongolia Landscape">
+                </div>
+                <div class="destination-text">
+                    <h2>Central Mongolia</h2>
+                    <p>Central Mongolia represents the heart of the country, both geographically and culturally. This region is home to the ancient capital of Karakorum, endless rolling steppe landscapes, and the cultural center of Mongolia.</p>
+                    <p>Visitors to Central Mongolia can explore Khustai National Park, home to the reintroduced Przewalski's horses, the stunning Orkhon Valley UNESCO World Heritage site, and numerous ancient monasteries. The region offers excellent opportunities for horseback riding, cultural experiences, and historical exploration.</p>
+                    <a href="tours.html#central-tours" class="btn">View Central Mongolia Tours</a>
+                </div>
+            </div>
+            
+            <h3>Central Mongolia Highlights</h3>
+            <div class="highlight-grid">
+                <div class="highlight-card">
+                    <img src="images/karakorum.jpg" alt="Karakorum">
+                    <div class="highlight-card-content">
+                        <h3>Karakorum</h3>
+                        <p>Ancient capital of the Mongol Empire with historical significance</p>
+                    </div>
+                </div>
+                
+                <div class="highlight-card">
+                    <img src="images/orkhon-valley.jpg" alt="Orkhon Valley">
+                    <div class="highlight-card-content">
+                        <h3>Orkhon Valley</h3>
+                        <p>UNESCO World Heritage site with nomadic culture and beautiful landscapes</p>
+                    </div>
+                </div>
+                
+                <div class="highlight-card">
+                    <img src="images/khustai.jpg" alt="Khustai National Park">
+                    <div class="highlight-card-content">
+                        <h3>Khustai National Park</h3>
+                        <p>Home to the wild Przewalski's horses and diverse steppe wildlife</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Northern Mongolia Section -->
+    <section id="northern" class="destination-section">
+        <div class="container">
+            <div class="destination-container">
+                <div class="destination-text">
+                    <h2>Northern Mongolia</h2>
+                    <p>Northern Mongolia features pristine taiga forests, crystal-clear lakes, and magnificent mountain ranges. The crown jewel of this region is Lake Khuvsgul, often called the "Blue Pearl of Mongolia" and one of Asia's largest freshwater lakes.</p>
+                    <p>This region is home to the Tsaatan reindeer herders, one of the world's last remaining reindeer-herding cultures. Northern Mongolia offers excellent hiking, kayaking, wildlife watching, and authentic cultural experiences in a pristine natural setting.</p>
+                    <a href="tours.html#northern-tours" class="btn">View Northern Mongolia Tours</a>
+                </div>
+                <div class="destination-image">
+                    <img src="images/northern-mongolia-large.jpg" alt="Northern Mongolia Landscape">
+                </div>
+            </div>
+            
+            <h3>Northern Mongolia Highlights</h3>
+            <div class="highlight-grid">
+                <div class="highlight-card">
+                    <img src="images/lake-khuvsgul.jpg" alt="Lake Khuvsgul">
+                    <div class="highlight-card-content">
+                        <h3>Lake Khuvsgul</h3>
+                        <p>Asia's second-largest freshwater lake surrounded by mountains</p>
+                    </div>
+                </div>
+                
+                <div class="highlight-card">
+                    <img src="images/tsaatan.jpg" alt="Tsaatan Reindeer Herders">
+                    <div class="highlight-card-content">
+                        <h3>Tsaatan Reindeer Herders</h3>
+                        <p>Experience the unique lifestyle of Mongolia's reindeer people</p>
+                    </div>
+                </div>
+                
+                <div class="highlight-card">
+                    <img src="images/darkhad-valley.jpg" alt="Darkhad Valley">
+                    <div class="highlight-card-content">
+                        <h3>Darkhad Valley</h3>
+                        <p>Remote valley with stunning landscapes and traditional cultures</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Southern Mongolia (Gobi) Section -->
+    <section id="southern" class="destination-section">
+        <div class="container">
+            <div class="destination-container">
+                <div class="destination-image">
+                    <img src="images/gobi-desert-large.jpg" alt="Gobi Desert Landscape">
+                </div>
+                <div class="destination-text">
+                    <h2>Southern Mongolia (Gobi Desert)</h2>
+                    <p>The legendary Gobi Desert in southern Mongolia offers a dramatic landscape of sand dunes, ice canyons, dinosaur fossil sites, and unique desert flora and fauna. As one of the world's largest deserts, the Gobi presents a stark contrast to Mongolia's northern regions.</p>
+                    <p>Visitors can explore the towering sand dunes at Khongoryn Els, the dramatic red cliffs of Bayanzag (the Flaming Cliffs), and the ice-filled Yolyn Am canyon. The region is also home to desert wildlife including wild Bactrian camels, Gobi bears, and numerous bird species.</p>
+                    <a href="tours.html#gobi-tours" class="btn">View Gobi Desert Tours</a>
+                </div>
+            </div>
+            
+            <h3>Gobi Desert Highlights</h3>
+            <div class="highlight-grid">
+                <div class="highlight-card">
+                    <img src="images/khongoryn-els.jpg" alt="Khongoryn Els">
+                    <div class="highlight-card-content">
+                        <h3>Khongoryn Els</h3>
+                        <p>Mongolia's largest and most spectacular sand dunes</p>
+                    </div>
+                </div>
+                
+                <div class="highlight-card">
+                    <img src="images/flaming-cliffs.jpg" alt="Flaming Cliffs">
+                    <div class="highlight-card-content">
+                        <h3>Bayanzag (Flaming Cliffs)</h3>
+                        <p>Famous dinosaur fossil site with stunning red sandstone formations</p>
+                    </div>
+                </div>
+                
+                <div class="highlight-card">
+                    <img src="images/yolyn-am.jpg" alt="Yolyn Am">
+                    <div class="highlight-card-content">
+                        <h3>Yolyn Am</h3>
+                        <p>Ice canyon that maintains ice well into the summer months</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Eastern Mongolia Section -->
+    <section id="eastern" class="destination-section">
+        <div class="container">
+            <div class="destination-container">
+                <div class="destination-text">
+                    <h2>Eastern Mongolia</h2>
+                    <p>Eastern Mongolia features vast grassland steppes that stretch to the horizon, the birthplace of Genghis Khan, and the gateway to the Manchurian plains. This less-visited region offers a glimpse into Mongolia's history and traditional steppe culture.</p>
+                    <p>The Eastern Steppe is one of the world's largest intact grassland ecosystems and home to massive herds of Mongolian gazelle. Visitors can explore Genghis Khan's birthplace at Dadal, the vast Dornod Mongol Protected Area, and experience the authentic nomadic lifestyle away from more touristed regions.</p>
+                    <a href="tours.html#eastern-tours" class="btn">View Eastern Mongolia Tours</a>
+                </div>
+                <div class="destination-image">
+                    <img src="images/eastern-mongolia-large.jpg" alt="Eastern Mongolia Landscape">
+                </div>
+            </div>
+            
+            <h3>Eastern Mongolia Highlights</h3>
+            <div class="highlight-grid">
+                <div class="highlight-card">
+                    <img src="images/dadal.jpg" alt="Dadal">
+                    <div class="highlight-card-content">
+                        <h3>Dadal (Genghis Khan's Birthplace)</h3>
+                        <p>Historical site marking the birthplace of Mongolia's founding father</p>
+                    </div>
+                </div>
+                
+                <div class="highlight-card">
+                    <img src="images/gazelles.jpg" alt="Mongolian Gazelles">
+                    <div class="highlight-card-content">
+                        <h3>Eastern Steppe</h3>
+                        <p>Vast grasslands home to enormous herds of Mongolian gazelles</p>
+                    </div>
+                </div>
+                
+                <div class="highlight-card">
+                    <img src="images/buir-lake.jpg" alt="Buir Lake">
+                    <div class="highlight-card-content">
+                        <h3>Buir Lake</h3>
+                        <p>Large freshwater lake on the border with China offering fishing and bird watching</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Explore Mongolia?</h2>
+                <p>Contact our travel experts to plan your perfect Mongolian adventure</p>
+                <div class="cta-buttons">
+                    <a href="tours.html" class="btn">Browse Tours</a>
+                    <a href="contact-us.html" class="btn btn-outline">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-col footer-info">
+                        <div class="footer-logo">
+                            <img src="img/khurlogo.png" alt="Khur Travel Mongolia Logo">
+                        </div>
+                        <address>
+                            Room 14, Building 69 Sukhbaatar<br>
+                            District, 14200, Ulaanbaatar, Mongolia
+                        </address>
+                        <p class="footer-contact">
+                            <span><i class="fas fa-phone"></i> 976-70106695</span>
+                            <span><i class="fas fa-mobile-alt"></i> 976-99775008</span>
+                            <span><i class="fas fa-envelope"></i> info@tourmongolia.com</span>
+                        </p>
+                        <div class="footer-social">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Travel Destinations</h4>
+                        <ul>
+                            <li><a href="destinations.html#northern">Northern Mongolia</a></li>
+                            <li><a href="destinations.html#central">Central Mongolia</a></li>
+                            <li><a href="destinations.html#eastern">Eastern Mongolia</a></li>
+                            <li><a href="destinations.html#southern">Southern Mongolia</a></li>
+                            <li><a href="destinations.html#western">Western Mongolia</a></li>
+                            <li><a href="destinations.html">Top Travel Destinations</a></li>
+                            <li><a href="photo-spots.html">Best Photography Spots</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Mongolia Tours</h4>
+                        <ul>
+                            <li><a href="tours.html?type=adventure">Adventure Tours</a></li>
+                            <li><a href="tours.html?type=photography">Photography Tours</a></li>
+                            <li><a href="tours.html?type=culture">Culture Tours</a></li>
+                            <li><a href="tours.html?type=discovery">Discovery Tours</a></li>
+                            <li><a href="tours.html?type=hiking">Hiking & Trekking</a></li>
+                            <li><a href="tours.html?type=riding">Horse & Camel Riding</a></li>
+                            <li><a href="tours.html?type=naadam">Naadam Festival</a></li>
+                            <li><a href="tours.html?type=event">Event Tours</a></li>
+                            <li><a href="tours.html?type=best">Best Sellers</a></li>
+                            <li><a href="tours.html?type=fixed">Fixed Date Tours</a></li>
+                            <li><a href="tours.html?type=discount">Discounted Tours</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Travel Resources</h4>
+                        <div class="footer-double-col">
+                            <div>
+                                <h5>Travel Guide</h5>
+                                <ul>
+                                    <li><a href="trip-planning.html">Trip Planning</a></li>
+                                    <li><a href="travel-tips.html">Travel Tips</a></li>
+                                    <li><a href="things-to-do.html">Things To Do</a></li>
+                                    <li><a href="best-of-mongolia.html">Best of Mongolia</a></li>
+                                    <li><a href="attractions.html">Attractions</a></li>
+                                    <li><a href="custom-trip.html">Custom Trips</a></li>
+                                    <li><a href="blog.html">Travel Blog</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5>About Mongolia</h5>
+                                <ul>
+                                    <li><a href="about-mongolia.html#geography">Geography</a></li>
+                                    <li><a href="about-mongolia.html#history">History</a></li>
+                                    <li><a href="about-mongolia.html#nomads">Nomadic Life</a></li>
+                                    <li><a href="about-mongolia.html#culture">Culture & Heritage</a></li>
+                                    <li><a href="festivals.html">Festivals & Events</a></li>
+                                    <li><a href="nature.html">Nature & Wildlife</a></li>
+                                    <li><a href="cuisine.html">Cuisine</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-wrapper">
+                    <div class="copyright">
+                        <p>&copy; 2007-2023 KHUR TRAVEL CO.LTD. All rights reserved.</p>
+                    </div>
+                    <div class="payment-methods">
+                        <span>Secure Payments:</span>
+                        <img src="images/payment-icons.png" alt="Payment Methods">
+                    </div>
+                    <nav class="footer-nav">
+                        <a href="index.html">Home</a>
+                        <a href="tours.html">Tours</a>
+                        <a href="blog.html">Blog</a>
+                        <a href="terms-conditions.html">Terms</a>
+                        <a href="privacy-policy.html">Privacy</a>
+                        <a href="payment.html">Payment</a>
+                        <a href="contact-us.html">Contact</a>
+                        <a href="sitemap.html">Sitemap</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scroll-top" class="scroll-top" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <script src="js/main.js"></script>
+</body>
+</html> 

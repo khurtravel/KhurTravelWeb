@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Mongolia Trips - Build Your Perfect Journey</title>
+    <meta name="description" content="Create your dream Mongolia trip with Khur Travel. Tailor-made itineraries designed around your preferences, interests, and schedule.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <style>
+        .custom-header {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/C0066T01 (2).JPG');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .custom-header-content {
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .custom-header h1 {
+            font-size: 48px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .custom-header p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        
+        .custom-intro {
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .custom-intro-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .custom-intro h2 {
+            font-size: 36px;
+            margin-bottom: 25px;
+            color: #1a2b3c;
+        }
+        
+        .custom-intro p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        
+        .steps-section {
+            padding: 80px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .steps-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .steps-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .steps-header h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #1a2b3c;
+        }
+        
+        .steps-header p {
+            font-size: 17px;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .step-box {
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .step-box:hover {
+            transform: translateY(-10px);
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background-color: #c93;
+            color: white;
+            font-size: 24px;
+            font-weight: 700;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        
+        .step-box h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #1a2b3c;
+        }
+        
+        .step-box p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #555;
+        }
+        
+        .example-trips {
+            padding: 80px 0;
+        }
+        
+        .examples-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .examples-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .examples-header h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #1a2b3c;
+        }
+        
+        .examples-header p {
+            font-size: 17px;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        .example-card {
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .example-img {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .example-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .example-card:hover .example-img img {
+            transform: scale(1.05);
+        }
+        
+        .example-content {
+            padding: 25px;
+        }
+        
+        .example-content h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #1a2b3c;
+        }
+        
+        .example-content p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        
+        .example-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .example-feature {
+            background-color: rgba(204, 153, 51, 0.1);
+            color: #c93;
+            padding: 5px 12px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        
+        .cta-section {
+            padding: 80px 0;
+            background: linear-gradient(rgba(26,43,60,0.9), rgba(26,43,60,0.9)), url('images/C0014T01.JPG');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .cta-content {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .cta-content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .cta-content p {
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        
+        .btn-large {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #c93;
+            color: white;
+            text-decoration: none;
+            border-radius: 3px;
+            font-weight: 600;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+        
+        .btn-large:hover {
+            background-color: #b82;
+        }
+        
+        @media (max-width: 992px) {
+            .steps-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .custom-header h1 {
+                font-size: 36px;
+            }
+            
+            .custom-header p {
+                font-size: 16px;
+            }
+            
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .examples-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .custom-intro, .steps-section, .example-trips, .cta-section {
+                padding: 50px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-to-content">Skip to content</a>
+    
+    <header>
+        <div class="top-bar">
+            <div class="container">
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <div class="contact-info">
+                    <a href="tel:+97699775008"><i class="fas fa-phone"></i> 976-99775008</a>
+                </div>
+                <div class="top-nav">
+                    <a href="about-us.html">ABOUT US</a>
+                    <a href="contact-us.html">CONTACT US</a>
+                    <a href="enquire.html" class="enquire-btn">ENQUIRE NOW</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-header">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/khurlogo.png" alt="Khur Travel Mongolia Logo">
+                    </a>
+                </div>
+                <div class="search-bar">
+                    <form action="search-results.html" method="get" role="search">
+                        <label for="search" class="visually-hidden">Search tours</label>
+                        <input type="text" id="search" name="query" placeholder="Search tours" aria-label="Search tours">
+                        <button type="submit" aria-label="Submit search"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="main-nav" aria-label="Main Navigation">
+            <div class="container">
+                <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-menu">
+                    <span class="hamburger-icon"></span>
+                </button>
+                <ul id="main-menu">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="destinations.html">DESTINATIONS</a></li>
+                    <li><a href="tours.html">TOURS</a></li>
+                    <li><a href="about-mongolia.html">ABOUT MONGOLIA</a></li>
+                    <li><a href="blog.html">TRAVEL GUIDES</a></li>
+                    <li><a href="about-us.html">ABOUT US</a></li>
+                    <li><a href="contact-us.html">CONTACT</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- Custom Trip Header -->
+        <section class="custom-header">
+            <div class="custom-header-content">
+                <h1>Build Your Custom Mongolia Adventure</h1>
+                <p>Create a tailor-made journey designed around your preferences, interests, and schedule. Our expert local guides will help craft your perfect Mongolia experience.</p>
+                <a href="#custom-form" class="btn-large">Start Planning</a>
+            </div>
+        </section>
+
+        <!-- Custom Trip Introduction -->
+        <section class="custom-intro">
+            <div class="custom-intro-content">
+                <h2>Your Journey, Your Way</h2>
+                <p>At Khur Travel, we specialize in creating personalized Mongolia experiences that perfectly match your travel style, interests, and schedule. Whether you're dreaming of a family adventure across the Gobi Desert, a photography expedition to capture Mongolia's diverse landscapes, or a cultural immersion with nomadic families, our expert team can craft the perfect itinerary just for you.</p>
+                <p>With our extensive local knowledge and network of guides, drivers, and accommodations throughout Mongolia, we'll handle all the complex logistics while you focus on enjoying an authentic adventure tailored specifically to your wishes.</p>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="steps-section">
+            <div class="steps-content">
+                <div class="steps-header">
+                    <h2>How It Works</h2>
+                    <p>Creating your custom Mongolia journey is simple with our straightforward planning process</p>
+                </div>
+                
+                <div class="steps-grid">
+                    <div class="step-box">
+                        <div class="step-number">1</div>
+                        <h3>Share Your Vision</h3>
+                        <p>Fill out our custom trip form or contact us directly with your travel wishes, including destinations, activities, travel dates, group size, and accommodation preferences.</p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <div class="step-number">2</div>
+                        <h3>Receive Your Custom Itinerary</h3>
+                        <p>Our travel experts will design a personalized itinerary based on your preferences and our local expertise, including detailed pricing options.</p>
+                    </div>
+                    
+                    <div class="step-box">
+                        <div class="step-number">3</div>
+                        <h3>Refine & Confirm</h3>
+                        <p>We'll work with you to fine-tune the itinerary until it's perfect. Once you're satisfied, secure your trip with a deposit and we'll handle all the details.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Example Custom Trips -->
+        <section class="example-trips">
+            <div class="examples-content">
+                <div class="examples-header">
+                    <h2>Example Custom Journeys</h2>
+                    <p>Take inspiration from these sample itineraries that we've created for previous travelers</p>
+                </div>
+                
+                <div class="examples-grid">
+                    <div class="example-card">
+                        <div class="example-img">
+                            <img src="images/C0086T01.JPG" alt="Photography Expedition">
+                        </div>
+                        <div class="example-content">
+                            <h3>Photographer's Mongolia</h3>
+                            <p>A specialized journey designed for photography enthusiasts, timed to capture Mongolia's most stunning light and landscapes, with extra time at key locations for the perfect shot.</p>
+                            <div class="example-features">
+                                <span class="example-feature">14 Days</span>
+                                <span class="example-feature">Photography Focus</span>
+                                <span class="example-feature">Golden Hour Timing</span>
+                                <span class="example-feature">All Regions</span>
+                            </div>
+                            <a href="enquire.html" class="btn-primary">Customize This Trip</a>
+                        </div>
+                    </div>
+                    
+                    <div class="example-card">
+                        <div class="example-img">
+                            <img src="images/C0020T01 (2).JPG" alt="Family Adventure">
+                        </div>
+                        <div class="example-content">
+                            <h3>Family Nomadic Adventure</h3>
+                            <p>A family-friendly exploration combining cultural experiences with fun activities for all ages, including horseback riding, archery lessons, staying with nomadic families, and kid-focused adventures.</p>
+                            <div class="example-features">
+                                <span class="example-feature">10 Days</span>
+                                <span class="example-feature">Kid-Friendly</span>
+                                <span class="example-feature">Cultural Immersion</span>
+                                <span class="example-feature">Central Mongolia</span>
+                            </div>
+                            <a href="enquire.html" class="btn-primary">Customize This Trip</a>
+                        </div>
+                    </div>
+                    
+                    <div class="example-card">
+                        <div class="example-img">
+                            <img src="images/C0066T01 (3).JPG" alt="Eagle Hunting Adventure">
+                        </div>
+                        <div class="example-content">
+                            <h3>Western Mongolia Expedition</h3>
+                            <p>An in-depth journey through Mongolia's remote western regions, focusing on the diverse ethnic groups including Kazakh eagle hunters, local festivals, and the dramatic Altai Mountains.</p>
+                            <div class="example-features">
+                                <span class="example-feature">16 Days</span>
+                                <span class="example-feature">Cultural Focus</span>
+                                <span class="example-feature">Eagle Hunting</span>
+                                <span class="example-feature">Western Mongolia</span>
+                            </div>
+                            <a href="enquire.html" class="btn-primary">Customize This Trip</a>
+                        </div>
+                    </div>
+                    
+                    <div class="example-card">
+                        <div class="example-img">
+                            <img src="images/C0096T01 (2).JPG" alt="Wilderness Trekking">
+                        </div>
+                        <div class="example-content">
+                            <h3>Mongolia Wilderness Trek</h3>
+                            <p>A challenging adventure for active travelers featuring multi-day hiking and trekking experiences in Mongolia's most pristine wilderness areas, from forested mountains to remote valleys.</p>
+                            <div class="example-features">
+                                <span class="example-feature">12 Days</span>
+                                <span class="example-feature">Advanced Trekking</span>
+                                <span class="example-feature">Wilderness Camping</span>
+                                <span class="example-feature">Northern Mongolia</span>
+                            </div>
+                            <a href="enquire.html" class="btn-primary">Customize This Trip</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section" id="custom-form">
+            <div class="cta-content">
+                <h2>Ready to Start Planning?</h2>
+                <p>Fill out our custom trip form or contact our travel specialists directly to begin creating your perfect Mongolia adventure. We're excited to help bring your travel dreams to life!</p>
+                <a href="enquire.html" class="btn-large">Start Your Custom Trip</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-col footer-info">
+                        <div class="footer-logo">
+                            <img src="img/khurlogo.png" alt="Khur Travel Mongolia Logo">
+                        </div>
+                        <address>
+                            Room 14, Building 69 Sukhbaatar<br>
+                            District, 14200, Ulaanbaatar, Mongolia
+                        </address>
+                        <p class="footer-contact">
+                            <span><i class="fas fa-phone"></i> 976-70106695</span>
+                            <span><i class="fas fa-mobile-alt"></i> 976-99775008</span>
+                            <span><i class="fas fa-envelope"></i> info@tourmongolia.com</span>
+                        </p>
+                        <div class="footer-social">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Travel Destinations</h4>
+                        <ul>
+                            <li><a href="destinations.html#northern">Northern Mongolia</a></li>
+                            <li><a href="destinations.html#central">Central Mongolia</a></li>
+                            <li><a href="destinations.html#eastern">Eastern Mongolia</a></li>
+                            <li><a href="destinations.html#southern">Southern Mongolia</a></li>
+                            <li><a href="destinations.html#western">Western Mongolia</a></li>
+                            <li><a href="destinations.html">Top Travel Destinations</a></li>
+                            <li><a href="photo-spots.html">Best Photography Spots</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Mongolia Tours</h4>
+                        <ul>
+                            <li><a href="tours.html?type=adventure">Adventure Tours</a></li>
+                            <li><a href="tours.html?type=photography">Photography Tours</a></li>
+                            <li><a href="tours.html?type=culture">Culture Tours</a></li>
+                            <li><a href="tours.html?type=discovery">Discovery Tours</a></li>
+                            <li><a href="tours.html?type=hiking">Hiking & Trekking</a></li>
+                            <li><a href="tours.html?type=riding">Horse & Camel Riding</a></li>
+                            <li><a href="tours.html?type=naadam">Naadam Festival</a></li>
+                            <li><a href="tours.html?type=event">Event Tours</a></li>
+                            <li><a href="tours.html?type=best">Best Sellers</a></li>
+                            <li><a href="tours.html?type=fixed">Fixed Date Tours</a></li>
+                            <li><a href="tours.html?type=discount">Discounted Tours</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Travel Resources</h4>
+                        <div class="footer-double-col">
+                            <div>
+                                <h5>Travel Guide</h5>
+                                <ul>
+                                    <li><a href="trip-planning.html">Trip Planning</a></li>
+                                    <li><a href="travel-tips.html">Travel Tips</a></li>
+                                    <li><a href="things-to-do.html">Things To Do</a></li>
+                                    <li><a href="best-of-mongolia.html">Best of Mongolia</a></li>
+                                    <li><a href="attractions.html">Attractions</a></li>
+                                    <li><a href="custom-trip.html">Custom Trips</a></li>
+                                    <li><a href="blog.html">Travel Blog</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5>About Mongolia</h5>
+                                <ul>
+                                    <li><a href="about-mongolia.html#geography">Geography</a></li>
+                                    <li><a href="about-mongolia.html#history">History</a></li>
+                                    <li><a href="about-mongolia.html#nomads">Nomadic Life</a></li>
+                                    <li><a href="about-mongolia.html#culture">Culture & Heritage</a></li>
+                                    <li><a href="festivals.html">Festivals & Events</a></li>
+                                    <li><a href="nature.html">Nature & Wildlife</a></li>
+                                    <li><a href="cuisine.html">Cuisine</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-wrapper">
+                    <div class="copyright">
+                        <p>&copy; 2007-2023 KHUR TRAVEL CO.LTD. All rights reserved.</p>
+                    </div>
+                    <div class="payment-methods">
+                        <span>Secure Payments:</span>
+                        <img src="images/payment-icons.png" alt="Payment Methods">
+                    </div>
+                    <nav class="footer-nav">
+                        <a href="index.html">Home</a>
+                        <a href="tours.html">Tours</a>
+                        <a href="blog.html">Blog</a>
+                        <a href="terms-conditions.html">Terms</a>
+                        <a href="privacy-policy.html">Privacy</a>
+                        <a href="payment.html">Payment</a>
+                        <a href="contact-us.html">Contact</a>
+                        <a href="sitemap.html">Sitemap</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scroll-top" class="scroll-top" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <script src="js/main.js"></script>
+</body>
+</html> 

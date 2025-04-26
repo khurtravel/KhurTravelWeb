@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - Khur Travel Mongolia</title>
+    <meta name="description" content="Search results for Khur Travel Mongolia tours, destinations, and blog posts.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <style>
+        .search-results-area {
+            padding: 80px 0;
+        }
+        .search-header {
+            margin-bottom: 40px;
+        }
+        .search-filters {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 30px;
+        }
+        .result-card {
+            display: flex;
+            margin-bottom: 30px;
+            background-color: #fff;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .result-image {
+            flex: 0 0 250px;
+            position: relative;
+        }
+        .result-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .result-type {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #ff5e13;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+        .result-content {
+            flex: 1;
+            padding: 20px;
+        }
+        .result-title {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        .result-description {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .result-details {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+        }
+        .result-details span {
+            margin-right: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+        .btn-view {
+            display: inline-block;
+            background-color: #ff5e13;
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 3px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .btn-view:hover {
+            background-color: #e64d00;
+            color: #fff;
+        }
+        .search-again {
+            margin-top: 20px;
+        }
+        .search-again-form {
+            display: flex;
+        }
+        .search-again-form input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 3px 0 0 3px;
+        }
+        .search-again-form button {
+            background-color: #ff5e13;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 0 3px 3px 0;
+            cursor: pointer;
+        }
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        .no-results h3 {
+            margin-bottom: 20px;
+        }
+        .highlight {
+            background-color: rgba(255, 94, 19, 0.2);
+            font-weight: bold;
+        }
+        .suggestions-list {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .suggestions-list li {
+            margin: 5px;
+        }
+        .suggestions-list a {
+            display: block;
+            padding: 5px 15px;
+            background-color: #f0f0f0;
+            border-radius: 20px;
+            color: #333;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .suggestions-list a:hover {
+            background-color: #ff5e13;
+            color: #fff;
+        }
+        @media (max-width: 768px) {
+            .result-card {
+                flex-direction: column;
+            }
+            .result-image {
+                flex: 0 0 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-to-content">Skip to content</a>
+    
+    <header>
+        <div class="top-bar">
+            <div class="container">
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <div class="contact-info">
+                    <a href="tel:+97699775008"><i class="fas fa-phone"></i> 976-99775008</a>
+                </div>
+                <div class="top-nav">
+                    <a href="about-us.html">ABOUT US</a>
+                    <a href="contact-us.html">CONTACT US</a>
+                    <a href="enquire.html" class="enquire-btn">ENQUIRE NOW</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-header">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/khurlogo.png" alt="Khur Travel Mongolia Logo">
+                    </a>
+                </div>
+                <div class="search-bar">
+                    <form action="search-results.html" method="get" role="search" onsubmit="return validateSearch();">
+                        <label for="search" class="visually-hidden">Search tours</label>
+                        <input type="text" id="search" name="query" placeholder="Search tours" aria-label="Search tours" required>
+                        <button type="submit" aria-label="Submit search"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="main-nav" aria-label="Main Navigation">
+            <div class="container">
+                <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-menu">
+                    <span class="hamburger-icon"></span>
+                </button>
+                <ul id="main-menu">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="destinations.html">DESTINATIONS</a></li>
+                    <li><a href="tours.html">TOURS</a></li>
+                    <li><a href="about-mongolia.html">ABOUT MONGOLIA</a></li>
+                    <li><a href="blog.html">TRAVEL GUIDES</a></li>
+                    <li><a href="about-us.html">ABOUT US</a></li>
+                    <li><a href="contact-us.html">CONTACT</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="search-results-container">
+            <div class="container">
+                <div class="search-results-header">
+                    <h2>Search Results <span class="search-query" id="search-query"></span></h2>
+                    <p>Found <span id="results-count">0</span> results for your search</p>
+                </div>
+                
+                <div class="row">
+                    <div class="mobile-filter-toggle">
+                        <button class="filter-toggle" aria-label="Toggle filters" aria-expanded="false" aria-controls="filter-container">
+                            <i class="fas fa-filter"></i> <span>Filter Results</span>
+                        </button>
+                    </div>
+                    
+                    <div class="col-lg-3">
+                        <div class="filter-results" id="filter-container">
+                            <h3>Filter Results</h3>
+                            <form id="filter-form" class="filter-form">
+                                <div class="filter-group">
+                                    <label for="filter-type">Content Type</label>
+                                    <select id="filter-type">
+                                        <option value="">All Types</option>
+                                        <option value="Tour">Tours</option>
+                                        <option value="Destination">Destinations</option>
+                                        <option value="Blog">Blog Posts</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="filter-group">
+                                    <label for="filter-category">Category</label>
+                                    <select id="filter-category">
+                                        <option value="">All Categories</option>
+                                        <option value="Adventure">Adventure</option>
+                                        <option value="Culture">Culture</option>
+                                        <option value="Nature">Nature</option>
+                                        <option value="Festival">Festival</option>
+                                        <option value="Photography">Photography</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="filter-group">
+                                    <label for="filter-location">Location</label>
+                                    <select id="filter-location">
+                                        <option value="">All Locations</option>
+                                        <option value="Gobi Desert">Gobi Desert</option>
+                                        <option value="Central Mongolia">Central Mongolia</option>
+                                        <option value="Northern Mongolia">Northern Mongolia</option>
+                                        <option value="Western Mongolia">Western Mongolia</option>
+                                        <option value="Eastern Mongolia">Eastern Mongolia</option>
+                                    </select>
+                                </div>
+                                
+                                <div class="filter-group">
+                                    <label>Price Range</label>
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <input id="filter-min-price" name="minPrice" type="number" placeholder="Min $">
+                                        </div>
+                                        <div class="form-group">
+                                            <input id="filter-max-price" name="maxPrice" type="number" placeholder="Max $">
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <button type="submit" class="btn-primary">Apply Filters</button>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-9">
+                        <!-- No results section -->
+                        <div id="no-results-section" class="no-results" style="display: none;">
+                            <h3>No Results Found</h3>
+                            <p>We couldn't find any matches for your search term. Please try a different search or browse our popular topics.</p>
+                            
+                            <div class="search-again-container">
+                                <form id="search-again-form" class="search-again-form" onsubmit="return validateSearchAgain();">
+                                    <input type="text" id="search-again-input" placeholder="Try a different search term..." required>
+                                    <button type="submit" class="btn-primary"><i class="fas fa-search"></i> Search</button>
+                                </form>
+                            </div>
+                            
+                            <div class="suggestions">
+                                <h4>Popular Searches</h4>
+                                <div id="suggestions-list" class="suggestion-links">
+                                    <!-- Suggestions will be inserted here -->
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Results container -->
+                        <div id="search-results" class="search-results-grid">
+                            <!-- Search results will be inserted here by JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-col footer-info">
+                        <div class="footer-logo">
+                            <img src="img/khurlogo.png" alt="Khur Travel Mongolia Logo">
+                        </div>
+                        <address>
+                            Room 14, Building 69 Sukhbaatar<br>
+                            District, 14200, Ulaanbaatar, Mongolia
+                        </address>
+                        <p class="footer-contact">
+                            <span><i class="fas fa-phone"></i> 976-70106695</span>
+                            <span><i class="fas fa-mobile-alt"></i> 976-99775008</span>
+                            <span><i class="fas fa-envelope"></i> info@tourmongolia.com</span>
+                        </p>
+                        <div class="footer-social">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Travel Destinations</h4>
+                        <ul>
+                            <li><a href="destinations.html#northern">Northern Mongolia</a></li>
+                            <li><a href="destinations.html#central">Central Mongolia</a></li>
+                            <li><a href="destinations.html#eastern">Eastern Mongolia</a></li>
+                            <li><a href="destinations.html#southern">Southern Mongolia</a></li>
+                            <li><a href="destinations.html#western">Western Mongolia</a></li>
+                            <li><a href="destinations.html">Top Travel Destinations</a></li>
+                            <li><a href="photo-spots.html">Best Photography Spots</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Mongolia Tours</h4>
+                        <ul>
+                            <li><a href="tours.html?type=adventure">Adventure Tours</a></li>
+                            <li><a href="tours.html?type=photography">Photography Tours</a></li>
+                            <li><a href="tours.html?type=culture">Culture Tours</a></li>
+                            <li><a href="tours.html?type=discovery">Discovery Tours</a></li>
+                            <li><a href="tours.html?type=hiking">Hiking & Trekking</a></li>
+                            <li><a href="tours.html?type=riding">Horse & Camel Riding</a></li>
+                            <li><a href="tours.html?type=naadam">Naadam Festival</a></li>
+                            <li><a href="tours.html?type=event">Event Tours</a></li>
+                            <li><a href="tours.html?type=best">Best Sellers</a></li>
+                            <li><a href="tours.html?type=fixed">Fixed Date Tours</a></li>
+                            <li><a href="tours.html?type=discount">Discounted Tours</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Travel Resources</h4>
+                        <div class="footer-double-col">
+                            <div>
+                                <h5>Travel Guide</h5>
+                                <ul>
+                                    <li><a href="trip-planning.html">Trip Planning</a></li>
+                                    <li><a href="travel-tips.html">Travel Tips</a></li>
+                                    <li><a href="things-to-do.html">Things To Do</a></li>
+                                    <li><a href="best-of-mongolia.html">Best of Mongolia</a></li>
+                                    <li><a href="attractions.html">Attractions</a></li>
+                                    <li><a href="custom-trip.html">Custom Trips</a></li>
+                                    <li><a href="blog.html">Travel Blog</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5>About Mongolia</h5>
+                                <ul>
+                                    <li><a href="about-mongolia.html#geography">Geography</a></li>
+                                    <li><a href="about-mongolia.html#history">History</a></li>
+                                    <li><a href="about-mongolia.html#nomads">Nomadic Life</a></li>
+                                    <li><a href="about-mongolia.html#culture">Culture & Heritage</a></li>
+                                    <li><a href="festivals.html">Festivals & Events</a></li>
+                                    <li><a href="nature.html">Nature & Wildlife</a></li>
+                                    <li><a href="cuisine.html">Cuisine</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-wrapper">
+                    <div class="copyright">
+                        <p>&copy; 2007-2023 KHUR TRAVEL CO.LTD. All rights reserved.</p>
+                    </div>
+                    <div class="payment-methods">
+                        <span>Secure Payments:</span>
+                        <img src="images/payment-icons.png" alt="Payment Methods">
+                    </div>
+                    <nav class="footer-nav">
+                        <a href="index.html">Home</a>
+                        <a href="tours.html">Tours</a>
+                        <a href="blog.html">Blog</a>
+                        <a href="terms-conditions.html">Terms</a>
+                        <a href="privacy-policy.html">Privacy</a>
+                        <a href="payment.html">Payment</a>
+                        <a href="contact-us.html">Contact</a>
+                        <a href="sitemap.html">Sitemap</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scroll-top" class="scroll-top" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <button id="scroll-top" class="scroll-top" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+    // Validate search function
+    function validateSearch() {
+        const searchInput = document.getElementById('search');
+        if (!searchInput || !searchInput.value || searchInput.value.trim() === '') {
+            alert('Please enter a search term');
+            return false;
+        }
+        return true;
+    }
+    
+    // Validate search again function
+    function validateSearchAgain() {
+        const searchInput = document.getElementById('search-again-input');
+        if (!searchInput || !searchInput.value || searchInput.value.trim() === '') {
+            alert('Please enter a search term');
+            return false;
+        }
+        window.location.href = `search-results.html?query=${encodeURIComponent(searchInput.value.trim())}`;
+        return false; // Prevent default form submission as we're handling navigation manually
+    }
+    
+    // Debug function to check search functionality
+    window.addEventListener('load', function() {
+        // Check if we're on the search-results page with a query parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const query = urlParams.get('query');
+        
+        // Update search query display
+        if (query) {
+            const searchQueryDisplay = document.getElementById('search-query');
+            if (searchQueryDisplay) {
+                searchQueryDisplay.textContent = ` for "${query}"`;
+            }
+            
+            // Set the search query in the search again form
+            const searchAgainInput = document.getElementById('search-again-input');
+            if (searchAgainInput) {
+                searchAgainInput.value = query;
+            }
+        }
+        
+        // Initialize filter values from URL
+        const typeSelect = document.getElementById('filter-type');
+        const categorySelect = document.getElementById('filter-category');
+        const locationSelect = document.getElementById('filter-location');
+        const minPriceInput = document.getElementById('filter-min-price');
+        const maxPriceInput = document.getElementById('filter-max-price');
+        
+        if (typeSelect) typeSelect.value = urlParams.get('type') || '';
+        if (categorySelect) categorySelect.value = urlParams.get('category') || '';
+        if (locationSelect) locationSelect.value = urlParams.get('location') || '';
+        if (minPriceInput) minPriceInput.value = urlParams.get('minPrice') || '';
+        if (maxPriceInput) maxPriceInput.value = urlParams.get('maxPrice') || '';
+        
+        // Add a "View All Tours" button to the no results section
+        const noResultsSection = document.getElementById('no-results-section');
+        if (noResultsSection) {
+            const existingButton = noResultsSection.querySelector('.view-all-tours-btn');
+            if (!existingButton) {
+                const suggestionsDiv = noResultsSection.querySelector('.suggestions');
+                if (suggestionsDiv) {
+                    const viewAllBtn = document.createElement('div');
+                    viewAllBtn.className = 'view-all-tours-container';
+                    viewAllBtn.style.marginTop = '30px';
+                    viewAllBtn.style.textAlign = 'center';
+                    viewAllBtn.innerHTML = `
+                        <p>Can't find what you're looking for?</p>
+                        <a href="search-results.html?query=all%20tours" class="btn-primary view-all-tours-btn">View All Tours</a>
+                    `;
+                    suggestionsDiv.appendChild(viewAllBtn);
+                }
+            }
+        }
+        
+        // Force a search with current query if no results are shown initially
+        setTimeout(function() {
+            const resultsCount = document.getElementById('results-count');
+            if (query && resultsCount && resultsCount.textContent === '0') {
+                console.log('Search not working, trying to fix...');
+                
+                if (window.KhurSearch && typeof window.KhurSearch.performSearch === 'function') {
+                    const filters = {
+                        type: urlParams.get('type') || '',
+                        category: urlParams.get('category') || '',
+                        location: urlParams.get('location') || '',
+                        minPrice: urlParams.get('minPrice') || '',
+                        maxPrice: urlParams.get('maxPrice') || ''
+                    };
+                    
+                    try {
+                        // Try performing the search again
+                        const results = window.KhurSearch.performSearch(query, filters);
+                        console.log(`Found ${results.length} results for "${query}"`);
+                        
+                        if (results.length > 0) {
+                            // Show the results
+                            const searchResults = document.getElementById('search-results');
+                            if (searchResults) {
+                                // Clear previous results
+                                searchResults.innerHTML = '';
+                                
+                                // Update results count
+                                resultsCount.textContent = results.length;
+                                
+                                // Hide no results section
+                                if (noResultsSection) {
+                                    noResultsSection.style.display = 'none';
+                                }
+                                
+                                // Display results
+                                results.forEach(item => {
+                                    const resultCard = document.createElement('div');
+                                    resultCard.className = 'search-result-card';
+                                    
+                                    const imageUrl = item.image || 'images/placeholder.jpg';
+                                    
+                                    let typeClass = '';
+                                    if (item.type === 'Tour') {
+                                        typeClass = 'tour';
+                                    } else if (item.type === 'Blog') {
+                                        typeClass = 'blog';
+                                    } else if (item.type === 'Destination') {
+                                        typeClass = 'destination';
+                                    }
+                                    
+                                    let metaInfo = '';
+                                    if (item.type === 'Tour') {
+                                        metaInfo = `
+                                            <div class="search-result-meta">
+                                                <span><i class="fas fa-clock"></i> ${item.duration || 'Variable duration'}</span>
+                                                <span><i class="fas fa-map-marker-alt"></i> ${item.location || 'Various locations'}</span>
+                                                <span><i class="fas fa-tag"></i> ${item.price || 'Contact for price'}</span>
+                                            </div>
+                                        `;
+                                    }
+                                    
+                                    resultCard.innerHTML = `
+                                        <div class="search-result-img">
+                                            <img src="${imageUrl}" alt="${item.title}">
+                                            <span class="search-result-type ${typeClass}">${item.type}</span>
+                                        </div>
+                                        <div class="search-result-content">
+                                            <h3>${item.title}</h3>
+                                            <p>${item.description.substring(0, 150)}${item.description.length > 150 ? '...' : ''}</p>
+                                            ${metaInfo}
+                                            <a href="${item.url}" class="btn-small">View Details</a>
+                                        </div>
+                                    `;
+                                    
+                                    searchResults.appendChild(resultCard);
+                                });
+                            }
+                        } else {
+                            // If there are still no results, show "No Results Found"
+                            if (noResultsSection) {
+                                noResultsSection.style.display = 'block';
+                            }
+                        }
+                    } catch (error) {
+                        console.error('Error performing search:', error);
+                    }
+                }
+            }
+        }, 500);
+    });
+    
+    // Create search utility directly in page to ensure it works
+    window.KhurSearch = {
+        tourData: [
+            {
+                id: 1,
+                title: 'Gobi Desert Explorer',
+                description: 'Discover the mysteries of the Gobi Desert on this 5-day adventure. Visit the Flaming Cliffs, sand dunes, and experience nomadic life.',
+                image: 'images/tour-1.jpg',
+                url: 'tour-details.html?id=1',
+                type: 'Tour',
+                category: ['adventure', 'desert', 'nature'],
+                duration: '5 Days',
+                price: '$690',
+                location: 'Southern Mongolia'
+            },
+            {
+                id: 2,
+                title: 'Nomadic Life Experience',
+                description: 'Live with local nomads and learn their way of life. Experience traditional customs, food, and daily activities.',
+                image: 'images/tour-2.jpg',
+                url: 'tour-details.html?id=2',
+                type: 'Tour',
+                category: ['culture', 'nomadic', 'traditional'],
+                duration: '7 Days',
+                price: '$850',
+                location: 'Central Mongolia'
+            },
+            {
+                id: 3,
+                title: 'Horseback Riding Adventure',
+                description: 'Explore the steppes on horseback like true Mongolians. Ride through beautiful landscapes and stay with nomadic families.',
+                image: 'images/tour-3.jpg',
+                url: 'tour-details.html?id=3',
+                type: 'Tour',
+                category: ['adventure', 'riding', 'nature'],
+                duration: '8 Days',
+                price: '$920',
+                location: 'Central Mongolia'
+            },
+            // Adding Central Mongolia tours
+            {
+                id: 11,
+                title: 'Kharkhorin Historical Tour',
+                description: 'Explore the ancient capital of the Mongol Empire and surrounding historical sites. Visit the historic Karakorum region and learn about Mongolian history.',
+                image: 'images/central-mongolia/kharkhorin.jpg',
+                url: 'tour-details-kharkhorin.html',
+                type: 'Tour',
+                category: ['history', 'culture', 'heritage'],
+                duration: '3 Days',
+                price: '$590',
+                location: 'Central Mongolia'
+            },
+            {
+                id: 12,
+                title: 'Hustai National Park Tour',
+                description: 'Observe wild Przewalski horses and experience pristine steppe landscapes in this beautiful national park known for wildlife conservation.',
+                image: 'images/central-mongolia/hustai.jpg',
+                url: 'tour-details-hustai.html',
+                type: 'Tour',
+                category: ['nature', 'wildlife', 'conservation'],
+                duration: '3 Days',
+                price: '$490',
+                location: 'Central Mongolia'
+            },
+            {
+                id: 13,
+                title: 'Central Mongolia Nomadic Homestay',
+                description: 'Live with nomadic families and experience authentic Mongolian traditions. Immerse yourself in the daily life of Mongolian herders.',
+                image: 'images/central-mongolia/homestay.jpg',
+                url: 'tour-details-homestay.html',
+                type: 'Tour',
+                category: ['cultural', 'nomadic', 'homestay'],
+                duration: '4 Days',
+                price: '$780',
+                location: 'Central Mongolia'
+            },
+            {
+                id: 14,
+                title: 'Central Steppes Horse Trek',
+                description: 'Explore the vast steppes of Central Mongolia on horseback. Experience the nomadic way of traveling through the beautiful Mongolian countryside.',
+                image: 'images/central-mongolia/horse-trek.jpg',
+                url: 'tour-details-horse-trek.html',
+                type: 'Tour',
+                category: ['adventure', 'riding', 'nature'],
+                duration: '5 Days',
+                price: '$890',
+                location: 'Central Mongolia'
+            },
+            {
+                id: 15,
+                title: 'Orkhon Valley Heritage Tour',
+                description: 'Discover the UNESCO World Heritage site and its cultural significance. Visit the sacred Orkhon Valley with its rich history and beautiful landscapes.',
+                image: 'images/central-mongolia/orkhon.jpg',
+                url: 'tour-details-orkhon.html',
+                type: 'Tour',
+                category: ['heritage', 'unesco', 'history'],
+                duration: '7 Days',
+                price: '$820',
+                location: 'Central Mongolia'
+            },
+            {
+                id: 16,
+                title: 'Terelj National Park Adventure',
+                description: 'Explore Mongolia\'s most accessible national park near Ulaanbaatar. Visit the famous rock formations and enjoy outdoor activities in this stunning landscape.',
+                image: 'images/central-mongolia/terelj.jpg',
+                url: 'tour-details-terelj.html',
+                type: 'Tour',
+                category: ['adventure', 'nature', 'hiking'],
+                duration: '2 Days',
+                price: '$350',
+                location: 'Central Mongolia'
+            },
+            // Western Mongolia Tours
+            {
+                id: 21,
+                title: 'Altai Tavan Bogd Trek',
+                description: 'Trek to the base of Mongolia\'s highest peaks in the Altai Mountains. Experience breathtaking alpine scenery and encounter Kazakh eagle hunters.',
+                image: 'images/western-mongolia/altai.jpg',
+                url: 'tour-details-tavan-bogd.html',
+                type: 'Tour',
+                category: ['adventure', 'trekking', 'mountain'],
+                duration: '10 Days',
+                price: '$2,450',
+                location: 'Western Mongolia'
+            },
+            {
+                id: 22,
+                title: 'Kazakh Eagle Hunter Experience',
+                description: 'Live with Kazakh eagle hunters and learn about their ancient traditions. Witness eagle hunting and experience the unique culture of Western Mongolia.',
+                image: 'images/western-mongolia/eagle-hunters.jpg',
+                url: 'tour-details-eagle-hunters.html',
+                type: 'Tour',
+                category: ['culture', 'tradition', 'wildlife'],
+                duration: '8 Days',
+                price: '$1,980',
+                location: 'Western Mongolia'
+            },
+            {
+                id: 23,
+                title: 'Khovd River Expedition',
+                description: 'Journey along the Khovd River through diverse landscapes of Western Mongolia. See dramatic canyons, forests, and steppes on this river adventure.',
+                image: 'images/western-mongolia/khovd-river.jpg',
+                url: 'tour-details-khovd-river.html',
+                type: 'Tour',
+                category: ['adventure', 'river', 'nature'],
+                duration: '9 Days',
+                price: '$2,100',
+                location: 'Western Mongolia'
+            },
+            // Southern (Gobi) Mongolia Tours
+            {
+                id: 31,
+                title: 'Ultimate Gobi Desert Adventure',
+                description: 'Comprehensive tour of the Gobi Desert\'s most spectacular sites including the Flaming Cliffs, Khongoryn Els sand dunes, and Yolyn Am ice canyon.',
+                image: 'images/southern-mongolia/gobi-adventure.jpg',
+                url: 'tour-details-ultimate-gobi.html',
+                type: 'Tour',
+                category: ['desert', 'adventure', 'nature'],
+                duration: '8 Days',
+                price: '$1,590',
+                location: 'Southern Mongolia'
+            },
+            {
+                id: 32,
+                title: 'Gobi Desert Camel Trek',
+                description: 'Cross the magnificent Gobi Desert by camel, the traditional way of desert travel. Experience stunning sunsets over the sand dunes and nights under the stars.',
+                image: 'images/southern-mongolia/camel-trek.jpg',
+                url: 'tour-details-camel-trek.html',
+                type: 'Tour',
+                category: ['desert', 'camel', 'adventure'],
+                duration: '6 Days',
+                price: '$1,280',
+                location: 'Southern Mongolia'
+            },
+            {
+                id: 33,
+                title: 'Dinosaur Trail Expedition',
+                description: 'Follow in the footsteps of paleontologists in the Gobi Desert. Visit famous dinosaur fossil sites including Flaming Cliffs (Bayanzag) and Nemegt Basin.',
+                image: 'images/southern-mongolia/dinosaur-trail.jpg',
+                url: 'tour-details-dinosaur.html',
+                type: 'Tour',
+                category: ['paleontology', 'desert', 'history'],
+                duration: '7 Days',
+                price: '$1,750',
+                location: 'Southern Mongolia'
+            },
+            // Northern Mongolia Tours
+            {
+                id: 41,
+                title: 'Lake Khövsgöl Explorer',
+                description: 'Discover the pristine beauty of Mongolia\'s "Blue Pearl" - Lake Khövsgöl. Experience the stunning lake surrounded by mountains and forests.',
+                image: 'images/northern-mongolia/khovsgol.jpg',
+                url: 'tour-details-khovsgol.html',
+                type: 'Tour',
+                category: ['lake', 'nature', 'hiking'],
+                duration: '7 Days',
+                price: '$1,390',
+                location: 'Northern Mongolia'
+            },
+            {
+                id: 42,
+                title: 'Northern Horse Trek',
+                description: 'Ride through the beautiful forested mountains of Northern Mongolia. Cross meadows, ford rivers, and visit remote communities on horseback.',
+                image: 'images/northern-mongolia/horse-trek.jpg',
+                url: 'tour-details-northern-horse.html',
+                type: 'Tour',
+                category: ['riding', 'adventure', 'nature'],
+                duration: '9 Days',
+                price: '$2,150',
+                location: 'Northern Mongolia'
+            },
+            {
+                id: 43,
+                title: 'Tsaatan Reindeer Herders',
+                description: 'Journey to the remote taiga forests to meet the Tsaatan, Mongolia\'s reindeer herders. Experience their unique way of life in harmony with nature.',
+                image: 'images/northern-mongolia/reindeer-herders.jpg',
+                url: 'tour-details-tsaatan.html',
+                type: 'Tour',
+                category: ['culture', 'nomadic', 'remote'],
+                duration: '11 Days',
+                price: '$2,980',
+                location: 'Northern Mongolia'
+            },
+            // Eastern Mongolia Tours
+            {
+                id: 51,
+                title: 'Eastern Steppe Wildlife Tour',
+                description: 'Explore the vast eastern steppes, home to Mongolian gazelles and numerous bird species. Visit Strictly Protected Areas with stunning biodiversity.',
+                image: 'images/eastern-mongolia/steppe-wildlife.jpg',
+                url: 'tour-details-eastern-wildlife.html',
+                type: 'Tour',
+                category: ['wildlife', 'nature', 'photography'],
+                duration: '8 Days',
+                price: '$1,890',
+                location: 'Eastern Mongolia'
+            },
+            {
+                id: 52,
+                title: 'Spiritual Journey to Burkhan Khaldun',
+                description: 'Pilgrimage to the sacred mountain of Burkhan Khaldun in Chinggis Khaan\'s homeland. Experience spiritual traditions and beautiful landscapes.',
+                image: 'images/eastern-mongolia/burkhan-khaldun.jpg',
+                url: 'tour-details-burkhan-khaldun.html',
+                type: 'Tour',
+                category: ['spiritual', 'history', 'hiking'],
+                duration: '6 Days',
+                price: '$1,450',
+                location: 'Eastern Mongolia'
+            },
+            {
+                id: 20,
+                title: 'Western Mongolia Explorer',
+                description: 'Embark on an unforgettable journey to Western Mongolia, home to the majestic Altai Mountains, stunning alpine lakes, and diverse ethnic cultures. Experience eagle hunting and nomadic traditions.',
+                image: 'images/western-mongolia/main.jpg',
+                url: 'tour-details-western-mongolia.html',
+                type: 'Tour',
+                category: ['adventure', 'culture', 'mountain'],
+                duration: '10 Days',
+                price: '$2,250',
+                location: 'Western Mongolia'
+            }
+        ],
+        blogData: [
+            {
+                id: 1,
+                title: 'Mongolian Nomadic Culture',
+                description: 'Learn about the ancient traditions and customs of Mongolian nomads in this informative article.',
+                image: 'images/blog-1.jpg',
+                url: 'blog-post.html?id=1',
+                type: 'Blog',
+                category: ['culture', 'nomadic', 'traditional'],
+                date: 'June 15, 2023'
+            },
+            {
+                id: 2,
+                title: 'Photography Guide: Capturing Mongolia',
+                description: 'Tips and techniques for photography enthusiasts to capture the beauty of Mongolia\'s landscapes and people.',
+                image: 'images/blog-2.jpg',
+                url: 'blog-post.html?id=2',
+                type: 'Blog',
+                category: ['photography', 'guide', 'tips'],
+                date: 'July 8, 2023'
+            }
+        ],
+        destinationData: [
+            {
+                id: 1,
+                title: 'Western Mongolia',
+                description: 'Snow-capped peaks, crystal-clear lakes, and diverse ethnic cultures in Mongolia\'s westernmost region.',
+                image: 'images/destination-1.jpg',
+                url: 'destinations.html#western',
+                type: 'Destination',
+                highlights: ['Altai Mountains', 'Kazakh Eagle Hunters', 'Snow Leopard Territory'],
+                location: 'Western Mongolia'
+            },
+            {
+                id: 2,
+                title: 'Central Mongolia',
+                description: 'Rich history, vast steppes and the heart of the Mongol Empire including the ancient capital of Karakorum.',
+                image: 'images/destination-2.jpg',
+                url: 'destinations.html#central',
+                type: 'Destination',
+                highlights: ['Orkhon Valley', 'Khustai National Park', 'Karakorum'],
+                location: 'Central Mongolia'
+            }
+        ],
+        
+        performSearch: function(query, filters = {}) {
+            if (!query || query.trim() === '') {
+                return [];
+            }
+            
+            const searchTerm = query.toLowerCase().trim();
+            
+            // Special case: If searching for "tour" or "tours", return all tours
+            if (searchTerm === 'tour' || searchTerm === 'tours' || 
+                searchTerm === 'all' || searchTerm === 'all tours') {
+                let allTours = this.tourData.filter(item => item.type === 'Tour');
+                
+                // Apply filters if any
+                if (filters.type && filters.type !== 'Tour') {
+                    allTours = [];
+                }
+                
+                if (filters.category) {
+                    allTours = allTours.filter(item => 
+                        item.category && item.category.includes(filters.category)
+                    );
+                }
+                
+                if (filters.location) {
+                    allTours = allTours.filter(item => 
+                        item.location && item.location.toLowerCase().includes(filters.location.toLowerCase())
+                    );
+                }
+                
+                return allTours;
+            }
+            
+            // Special case: If searching for a location like "Mongolia", "Central", etc.
+            const locationTerms = ['mongolia', 'central', 'western', 'southern', 'northern', 'eastern', 'gobi'];
+            if (locationTerms.includes(searchTerm)) {
+                let locationResults = this.tourData.filter(item => 
+                    item.location && item.location.toLowerCase().includes(searchTerm)
+                );
+                
+                // Apply filters
+                if (filters.type) {
+                    locationResults = locationResults.filter(item => item.type === filters.type);
+                }
+                
+                if (filters.category) {
+                    locationResults = locationResults.filter(item => 
+                        item.category && item.category.includes(filters.category)
+                    );
+                }
+                
+                return locationResults;
+            }
+            
+            // Special case for Central Mongolia tours
+            const centralTerms = ['central mongolia', 'kharkhorin', 'hustai', 'orkhon', 'terelj', 'horse trek', 'homestay'];
+            if (centralTerms.some(term => term.includes(searchTerm)) || centralTerms.some(term => searchTerm.includes(term))) {
+                // Find tours that match Central Mongolia
+                const centralResults = this.tourData.filter(item => 
+                    (item.location && item.location.toLowerCase().includes('central')) ||
+                    (item.title && centralTerms.some(term => item.title.toLowerCase().includes(term))) ||
+                    (item.description && centralTerms.some(term => item.description.toLowerCase().includes(term)))
+                );
+                
+                // Apply filters
+                if (filters.type) {
+                    centralResults = centralResults.filter(item => item.type === filters.type);
+                }
+                
+                if (filters.category) {
+                    centralResults = centralResults.filter(item => 
+                        item.category && item.category.includes(filters.category)
+                    );
+                }
+                
+                return centralResults;
+            }
+            
+            // Special handling for "khur" search term - always return all results
+            if (searchTerm === 'khur') {
+                let allData = [...this.tourData, ...this.blogData, ...this.destinationData];
+                
+                // Apply filters if any
+                if (filters.type) {
+                    allData = allData.filter(item => item.type === filters.type);
+                }
+                
+                return allData;
+            }
+            
+            // Special handling for single-character searches
+            if (searchTerm.length === 1) {
+                // For single characters, look for words starting with that character
+                const allData = [...this.tourData, ...this.blogData, ...this.destinationData];
+                let results = allData.filter(item => {
+                    // Check title words
+                    const titleWords = item.title.toLowerCase().split(/\s+/);
+                    const titleMatch = titleWords.some(word => word.startsWith(searchTerm));
+                    
+                    // Check description words
+                    const descWords = item.description.toLowerCase().split(/\s+/);
+                    const descMatch = descWords.some(word => word.startsWith(searchTerm));
+                    
+                    // Check location if it exists
+                    let locationMatch = false;
+                    if (item.location) {
+                        const locationWords = item.location.toLowerCase().split(/\s+/);
+                        locationMatch = locationWords.some(word => word.startsWith(searchTerm));
+                    }
+                    
+                    // Check category
+                    let categoryMatch = false;
+                    if (item.category) {
+                        categoryMatch = item.category.some(cat => cat.toLowerCase().startsWith(searchTerm));
+                    }
+                    
+                    return titleMatch || descMatch || locationMatch || categoryMatch;
+                });
+                
+                // Apply any filters
+                if (filters.type) {
+                    results = results.filter(item => item.type === filters.type);
+                }
+                
+                if (filters.category) {
+                    results = results.filter(item => 
+                        item.category && item.category.includes(filters.category)
+                    );
+                }
+                
+                if (filters.location) {
+                    results = results.filter(item => 
+                        item.location && item.location.toLowerCase().includes(filters.location.toLowerCase())
+                    );
+                }
+                
+                // If no results found for the single character, return all data
+                if (results.length === 0) {
+                    let allItems = [...this.tourData, ...this.blogData, ...this.destinationData];
+                    
+                    // Apply filters if any
+                    if (filters.type) {
+                        allItems = allItems.filter(item => item.type === filters.type);
+                    }
+                    
+                    // Return at most 5 items to avoid overwhelming the user
+                    return allItems.slice(0, 5);
+                }
+                
+                return results;
+            }
+            
+            const allData = [...this.tourData, ...this.blogData, ...this.destinationData];
+            
+            // Filter by search term
+            let results = allData.filter(item => {
+                // Check title and description - improved to handle even single characters
+                const titleMatch = item.title.toLowerCase().includes(searchTerm);
+                const descMatch = item.description.toLowerCase().includes(searchTerm);
+                
+                // Enhanced search - also check for individual words that start with the search term
+                let enhancedTitleMatch = false;
+                let enhancedDescMatch = false;
+                
+                // Only do the enhanced match if the regular match didn't succeed
+                if (!titleMatch) {
+                    const titleWords = item.title.toLowerCase().split(/\s+/);
+                    enhancedTitleMatch = titleWords.some(word => word.startsWith(searchTerm));
+                }
+                
+                if (!descMatch) {
+                    const descWords = item.description.toLowerCase().split(/\s+/);
+                    enhancedDescMatch = descWords.some(word => word.startsWith(searchTerm));
+                }
+                
+                // Check category
+                let categoryMatch = false;
+                if (item.category) {
+                    categoryMatch = item.category.some(cat => 
+                        cat.toLowerCase().includes(searchTerm) || cat.toLowerCase().startsWith(searchTerm)
+                    );
+                }
+                
+                // Check location
+                let locationMatch = false;
+                if (item.location) {
+                    locationMatch = item.location.toLowerCase().includes(searchTerm);
+                    
+                    // Also check individual words in location
+                    if (!locationMatch) {
+                        const locationWords = item.location.toLowerCase().split(/\s+/);
+                        locationMatch = locationWords.some(word => word.startsWith(searchTerm));
+                    }
+                }
+                
+                // Check highlights
+                let highlightsMatch = false;
+                if (item.highlights) {
+                    highlightsMatch = item.highlights.some(highlight => 
+                        highlight.toLowerCase().includes(searchTerm)
+                    );
+                    
+                    // Also check individual words in highlights
+                    if (!highlightsMatch && item.highlights.length > 0) {
+                        for (const highlight of item.highlights) {
+                            const highlightWords = highlight.toLowerCase().split(/\s+/);
+                            if (highlightWords.some(word => word.startsWith(searchTerm))) {
+                                highlightsMatch = true;
+                                break;
+                            }
+                        }
+                    }
+                }
+                
+                return titleMatch || descMatch || enhancedTitleMatch || enhancedDescMatch || 
+                       categoryMatch || locationMatch || highlightsMatch;
+            });
+            
+            // Then filter by any additional filters
+            if (filters) {
+                if (filters.type) {
+                    results = results.filter(item => item.type === filters.type);
+                }
+                
+                if (filters.category) {
+                    results = results.filter(item => 
+                        item.category && item.category.includes(filters.category)
+                    );
+                }
+                
+                if (filters.location) {
+                    results = results.filter(item => 
+                        item.location && item.location.toLowerCase().includes(filters.location.toLowerCase())
+                    );
+                }
+            }
+            
+            return results;
+        },
+        
+        highlightSearchTerm: function(text, query) {
+            if (!query || !text) return text;
+            
+            const escQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            const regex = new RegExp(`(${escQuery})`, 'gi');
+            
+            return text.replace(regex, '<span class="matching-text">$1</span>');
+        },
+        
+        getSuggestions: function(query) {
+            if (!query || query.trim() === '') return [];
+            
+            const query_lower = query.toLowerCase();
+            const suggestions = [
+                'gobi desert', 'horseback riding', 'nomadic life',
+                'western mongolia', 'camel riding', 'eagle hunting',
+                'naadam festival', 'photography tour', 'khur',
+                'tour', 'blog', 'desert', 'lake', 'mountain',
+                'nomad', 'adventure', 'culture', 'nature', 'festival',
+                'central mongolia', 'kharkhorin', 'hustai', 'orkhon valley',
+                'terelj', 'horse trek', 'homestay'
+            ];
+            
+            // First try to find matches that include the query
+            let results = suggestions.filter(s => s.includes(query_lower));
+            
+            // If no results, try to find words that start with the query
+            if (results.length === 0) {
+                results = suggestions.filter(s => {
+                    const words = s.split(' ');
+                    return words.some(word => word.startsWith(query_lower));
+                });
+            }
+            
+            // If still no results, add some default suggestions
+            if (results.length === 0) {
+                results = ['gobi desert', 'horseback riding', 'nomadic life', 'khur'];
+            }
+            
+            return results;
+        }
+    };
+    </script>
+
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/search-results.js"></script>
+</body>
+</html> 

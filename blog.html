@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mongolia Travel Blog - Khur Travel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Additional styles specific to this page */
+        .page-header {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero-2.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 48px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .page-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .page-intro h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #1a2b3c;
+        }
+        
+        .page-intro p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        .blog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px 80px;
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .blog-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .blog-image {
+            height: 220px;
+            overflow: hidden;
+        }
+        
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .blog-card:hover .blog-image img {
+            transform: scale(1.1);
+        }
+        
+        .blog-content {
+            padding: 25px;
+        }
+        
+        .blog-content .date {
+            color: #c93;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .blog-content h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #1a2b3c;
+        }
+        
+        .blog-content p {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .blog-categories {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        
+        .category {
+            font-size: 12px;
+            background: #f5f5f5;
+            padding: 5px 10px;
+            border-radius: 3px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            color: #666;
+        }
+        
+        .read-more {
+            display: inline-block;
+            color: #c93;
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .read-more:hover {
+            color: #b82;
+        }
+        
+        .sidebar {
+            background: #f5f5f5;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+        
+        .sidebar h3 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #1a2b3c;
+        }
+        
+        .popular-posts {
+            margin-bottom: 30px;
+        }
+        
+        .popular-post {
+            display: flex;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .popular-post:last-child {
+            border-bottom: none;
+        }
+        
+        .post-thumb {
+            width: 80px;
+            height: 80px;
+            margin-right: 15px;
+        }
+        
+        .post-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        
+        .post-info h4 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        
+        .post-info a {
+            color: #1a2b3c;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .post-info a:hover {
+            color: #c93;
+        }
+        
+        .post-info .date {
+            font-size: 12px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header section -->
+    <header>
+        <div class="top-bar">
+            <div class="container">
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <div class="contact-info">
+                    <a href="tel:+97699775008"><i class="fas fa-phone"></i> 976-99775008</a>
+                </div>
+                <div class="top-nav">
+                    <a href="about-us.html">ABOUT US</a>
+                    <a href="contact-us.html">CONTACT US</a>
+                    <a href="enquire.html" class="enquire-btn">ENQUIRE NOW</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-header">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/khurlogo.png" alt="Khur Travel Mongolia Logo">
+                    </a>
+                </div>
+                <div class="search-bar">
+                    <form action="#" method="get">
+                        <input type="text" placeholder="Search tours">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="main-nav">
+            <div class="container">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="destinations.html">DESTINATIONS</a></li>
+                    <li><a href="tours.html">TOURS</a></li>
+                    <li><a href="about-mongolia.html">ABOUT MONGOLIA</a></li>
+                    <li><a href="blog.html" class="active">TRAVEL GUIDES</a></li>
+                    <li><a href="about-us.html">ABOUT US</a></li>
+                    <li><a href="contact-us.html">CONTACT</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <h1>Mongolia Travel Blog</h1>
+        </div>
+    </div>
+
+    <!-- Page Introduction -->
+    <div class="page-intro">
+        <div class="container">
+            <h2>Latest News & Travel Insights</h2>
+            <p>Welcome to our Mongolia travel blog, where we share inspiration, travel tips, and stories from the land of blue skies. Discover the hidden gems of Mongolia, learn about nomadic culture, and get expert advice for your journey.</p>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="container">
+        <div class="row">
+            <div class="blog-container">
+                <div class="blog-grid">
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="images/tour-1.jpg" alt="Exploring Gobi Desert">
+                        </div>
+                        <div class="blog-content">
+                            <span class="date">June 15, 2023</span>
+                            <h3>10 Must-See Attractions in Mongolia's Gobi Desert</h3>
+                            <p>Discover the hidden gems and breathtaking landscapes of the world's northernmost desert, from towering sand dunes to dinosaur fossil sites.</p>
+                            <div class="blog-categories">
+                                <span class="category">Gobi Desert</span>
+                                <span class="category">Travel Tips</span>
+                            </div>
+                            <a href="blog-post-gobi.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="images/destination-3.jpg" alt="Nomadic Life">
+                        </div>
+                        <div class="blog-content">
+                            <span class="date">May 28, 2023</span>
+                            <h3>A Day in the Life of Mongolian Nomads: What to Expect</h3>
+                            <p>Experience the traditional lifestyle of Mongolia's nomadic herders, from morning routines to evening customs, and learn about their sustainable way of life.</p>
+                            <div class="blog-categories">
+                                <span class="category">Nomadic Culture</span>
+                                <span class="category">Experiences</span>
+                            </div>
+                            <a href="blog-post-nomadic.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="images/hero-1.jpg" alt="Naadam Festival">
+                        </div>
+                        <div class="blog-content">
+                            <span class="date">May 10, 2023</span>
+                            <h3>Naadam Festival: Ultimate Guide to Mongolia's Greatest Celebration</h3>
+                            <p>Learn everything you need to know about the spectacular Naadam Festival, including how to attend, what to expect, and the history behind the "Three Manly Games."</p>
+                            <div class="blog-categories">
+                                <span class="category">Festivals</span>
+                                <span class="category">Culture</span>
+                            </div>
+                            <a href="blog-post-naadam.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="images/tour-4.jpg" alt="Lake Khövsgöl">
+                        </div>
+                        <div class="blog-content">
+                            <span class="date">April 22, 2023</span>
+                            <h3>Lake Khövsgöl: Exploring Mongolia's Blue Pearl</h3>
+                            <p>Discover the pristine beauty of Lake Khövsgöl, Mongolia's largest freshwater lake, and learn about the unique ecosystems and activities in this northern paradise.</p>
+                            <div class="blog-categories">
+                                <span class="category">Northern Mongolia</span>
+                                <span class="category">Nature</span>
+                            </div>
+                            <a href="blog-post-khovsgol.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="images/tour-2.jpg" alt="Photography in Mongolia">
+                        </div>
+                        <div class="blog-content">
+                            <span class="date">April 5, 2023</span>
+                            <h3>Photography Guide: Capturing Mongolia's Incredible Landscapes</h3>
+                            <p>Expert tips for photographing Mongolia's diverse landscapes, from golden hour in the steppe to night photography under the clearest skies in the world.</p>
+                            <div class="blog-categories">
+                                <span class="category">Photography</span>
+                                <span class="category">Travel Tips</span>
+                            </div>
+                            <a href="blog-post-photography.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="images/tour-3.jpg" alt="Horse Trekking">
+                        </div>
+                        <div class="blog-content">
+                            <span class="date">March 18, 2023</span>
+                            <h3>Mongolia on Horseback: Essential Guide to Horse Trekking Adventures</h3>
+                            <p>Everything you need to know about experiencing Mongolia the traditional way - on horseback. From beginner tips to the best routes for every skill level.</p>
+                            <div class="blog-categories">
+                                <span class="category">Adventures</span>
+                                <span class="category">Horse Riding</span>
+                            </div>
+                            <a href="blog-post-horse-trekking.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="images/destination-4.jpg" alt="Mongolian Food">
+                        </div>
+                        <div class="blog-content">
+                            <span class="date">March 2, 2023</span>
+                            <h3>Tasting Mongolia: A Culinary Journey Through Nomadic Cuisine</h3>
+                            <p>Explore the unique flavors of traditional Mongolian cuisine, from hearty meat dishes to dairy delicacies, and learn about the cultural significance of food in nomadic life.</p>
+                            <div class="blog-categories">
+                                <span class="category">Food</span>
+                                <span class="category">Culture</span>
+                            </div>
+                            <a href="blog-post-food.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="images/tour-2.jpg" alt="Monastery Tour">
+                        </div>
+                        <div class="blog-content">
+                            <span class="date">February 15, 2023</span>
+                            <h3>Sacred Mongolia: Exploring Buddhist Monasteries and Spiritual Sites</h3>
+                            <p>Discover Mongolia's religious heritage through its ancient monasteries, temples, and spiritual practices that have survived centuries of change.</p>
+                            <div class="blog-categories">
+                                <span class="category">Culture</span>
+                                <span class="category">History</span>
+                            </div>
+                            <a href="blog-post-monasteries.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="images/destination-2.jpg" alt="Family Travel">
+                        </div>
+                        <div class="blog-content">
+                            <span class="date">January 28, 2023</span>
+                            <h3>Family-Friendly Mongolia: Tips for Traveling with Children</h3>
+                            <p>Practical advice for families planning a Mongolian adventure, including kid-friendly activities, accommodation tips, and how to prepare children for a unique cultural experience.</p>
+                            <div class="blog-categories">
+                                <span class="category">Family Travel</span>
+                                <span class="category">Travel Tips</span>
+                            </div>
+                            <a href="blog-post-family.html" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-col footer-info">
+                        <div class="footer-logo">
+                            <img src="img/khurlogo.png" alt="Khur Travel Mongolia Logo">
+                        </div>
+                        <address>
+                            Room 14, Building 69 Sukhbaatar<br>
+                            District, 14200, Ulaanbaatar, Mongolia
+                        </address>
+                        <p class="footer-contact">
+                            <span><i class="fas fa-phone"></i> 976-70106695</span>
+                            <span><i class="fas fa-mobile-alt"></i> 976-99775008</span>
+                            <span><i class="fas fa-envelope"></i> info@tourmongolia.com</span>
+                        </p>
+                        <div class="footer-social">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Travel Destinations</h4>
+                        <ul>
+                            <li><a href="destinations.html#northern">Northern Mongolia</a></li>
+                            <li><a href="destinations.html#central">Central Mongolia</a></li>
+                            <li><a href="destinations.html#eastern">Eastern Mongolia</a></li>
+                            <li><a href="destinations.html#southern">Southern Mongolia</a></li>
+                            <li><a href="destinations.html#western">Western Mongolia</a></li>
+                            <li><a href="destinations.html">Top Travel Destinations</a></li>
+                            <li><a href="photo-spots.html">Best Photography Spots</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Mongolia Tours</h4>
+                        <ul>
+                            <li><a href="tours.html?type=adventure">Adventure Tours</a></li>
+                            <li><a href="tours.html?type=photography">Photography Tours</a></li>
+                            <li><a href="tours.html?type=culture">Culture Tours</a></li>
+                            <li><a href="tours.html?type=discovery">Discovery Tours</a></li>
+                            <li><a href="tours.html?type=hiking">Hiking & Trekking</a></li>
+                            <li><a href="tours.html?type=riding">Horse & Camel Riding</a></li>
+                            <li><a href="tours.html?type=naadam">Naadam Festival</a></li>
+                            <li><a href="tours.html?type=event">Event Tours</a></li>
+                            <li><a href="tours.html?type=best">Best Sellers</a></li>
+                            <li><a href="tours.html?type=fixed">Fixed Date Tours</a></li>
+                            <li><a href="tours.html?type=discount">Discounted Tours</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Travel Resources</h4>
+                        <div class="footer-double-col">
+                            <div>
+                                <h5>Travel Guide</h5>
+                                <ul>
+                                    <li><a href="trip-planning.html">Trip Planning</a></li>
+                                    <li><a href="travel-tips.html">Travel Tips</a></li>
+                                    <li><a href="things-to-do.html">Things To Do</a></li>
+                                    <li><a href="best-of-mongolia.html">Best of Mongolia</a></li>
+                                    <li><a href="attractions.html">Attractions</a></li>
+                                    <li><a href="custom-trip.html">Custom Trips</a></li>
+                                    <li><a href="blog.html">Travel Blog</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5>About Mongolia</h5>
+                                <ul>
+                                    <li><a href="about-mongolia.html#geography">Geography</a></li>
+                                    <li><a href="about-mongolia.html#history">History</a></li>
+                                    <li><a href="about-mongolia.html#nomads">Nomadic Life</a></li>
+                                    <li><a href="about-mongolia.html#culture">Culture & Heritage</a></li>
+                                    <li><a href="festivals.html">Festivals & Events</a></li>
+                                    <li><a href="nature.html">Nature & Wildlife</a></li>
+                                    <li><a href="cuisine.html">Cuisine</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-wrapper">
+                    <div class="copyright">
+                        <p>&copy; 2007-2023 KHUR TRAVEL CO.LTD. All rights reserved.</p>
+                    </div>
+                    <div class="payment-methods">
+                        <span>Secure Payments:</span>
+                        <img src="images/payment-icons.png" alt="Payment Methods">
+                    </div>
+                    <nav class="footer-nav">
+                        <a href="index.html">Home</a>
+                        <a href="tours.html">Tours</a>
+                        <a href="blog.html">Blog</a>
+                        <a href="terms-conditions.html">Terms</a>
+                        <a href="privacy-policy.html">Privacy</a>
+                        <a href="payment.html">Payment</a>
+                        <a href="contact-us.html">Contact</a>
+                        <a href="sitemap.html">Sitemap</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scroll-top" class="scroll-top" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <script src="js/main.js"></script>
+</body>
+</html> 

@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Things To Do in Mongolia - Khur Travel</title>
+    <meta name="description" content="Explore the top activities and experiences Mongolia has to offer, from horseback riding to nomadic homestays and cultural festivals.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <style>
+        .activities-header {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/C0069T01 (2).JPG');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .activities-header h1 {
+            font-size: 48px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .activities-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .activities-intro h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #1a2b3c;
+        }
+        
+        .activities-intro p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        .activity-section {
+            padding: 60px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .activity-section:nth-child(even) {
+            background-color: white;
+        }
+        
+        .activity-container {
+            display: flex;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .activity-image {
+            flex: 0 0 45%;
+            padding-right: 40px;
+        }
+        
+        .activity-image img {
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .activity-text {
+            flex: 0 0 55%;
+        }
+        
+        .activity-text h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #1a2b3c;
+        }
+        
+        .activity-text p {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .activity-text ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .activity-text li {
+            font-size: 16px;
+            margin-bottom: 10px;
+            line-height: 1.6;
+            color: #555;
+        }
+        
+        .btn-primary {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #c93;
+            color: white;
+            text-decoration: none;
+            border-radius: 3px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background-color: #b82;
+        }
+        
+        @media (max-width: 768px) {
+            .activity-container {
+                flex-direction: column;
+            }
+            
+            .activity-image {
+                flex: 1 1 100%;
+                padding-right: 0;
+                margin-bottom: 30px;
+            }
+            
+            .activity-text {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-to-content">Skip to content</a>
+    
+    <header>
+        <div class="top-bar">
+            <div class="container">
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <div class="contact-info">
+                    <a href="tel:+97699775008"><i class="fas fa-phone"></i> 976-99775008</a>
+                </div>
+                <div class="top-nav">
+                    <a href="about-us.html">ABOUT US</a>
+                    <a href="contact-us.html">CONTACT US</a>
+                    <a href="enquire.html" class="enquire-btn">ENQUIRE NOW</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-header">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/khurlogo.png" alt="Khur Travel Mongolia Logo">
+                    </a>
+                </div>
+                <div class="search-bar">
+                    <form action="search-results.html" method="get" role="search">
+                        <label for="search" class="visually-hidden">Search tours</label>
+                        <input type="text" id="search" name="query" placeholder="Search tours" aria-label="Search tours">
+                        <button type="submit" aria-label="Submit search"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="main-nav" aria-label="Main Navigation">
+            <div class="container">
+                <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-menu">
+                    <span class="hamburger-icon"></span>
+                </button>
+                <ul id="main-menu">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="destinations.html">DESTINATIONS</a></li>
+                    <li><a href="tours.html">TOURS</a></li>
+                    <li><a href="about-mongolia.html">ABOUT MONGOLIA</a></li>
+                    <li><a href="blog.html">TRAVEL GUIDES</a></li>
+                    <li><a href="about-us.html">ABOUT US</a></li>
+                    <li><a href="contact-us.html">CONTACT</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- Activities Header -->
+        <div class="activities-header">
+            <div class="container">
+                <h1>Things To Do in Mongolia</h1>
+            </div>
+        </div>
+
+        <!-- Activities Introduction -->
+        <div class="activities-intro">
+            <div class="container">
+                <h2>Unforgettable Experiences in the Land of Blue Sky</h2>
+                <p>Mongolia offers an incredible array of unique activities and experiences that can't be found anywhere else in the world. From riding horses across the vast steppe to spending nights in traditional ger tents with nomadic families, this fascinating country provides authentic adventures for every type of traveler. Explore our guide to the best things to do during your Mongolian journey.</p>
+            </div>
+        </div>
+
+        <!-- Activity Section: Horseback Riding -->
+        <section class="activity-section">
+            <div class="activity-container">
+                <div class="activity-image">
+                    <img src="images/C0069T01 (2).JPG" alt="Horseback Riding in Mongolia">
+                </div>
+                <div class="activity-text">
+                    <h2>Horseback Riding on the Mongolian Steppe</h2>
+                    <p>Mongolians have been skilled horsemen for thousands of years, and there's no better way to experience the country's vast landscapes than on horseback. Whether you're a beginner or experienced rider, this is an essential Mongolian experience.</p>
+                    <ul>
+                        <li><strong>Multi-day Horse Treks:</strong> Journey across diverse terrains from grasslands to mountains</li>
+                        <li><strong>Khentii Mountains:</strong> Ride through the birthplace of Genghis Khan</li>
+                        <li><strong>Horseback Archery:</strong> Try your hand at this traditional skill</li>
+                        <li><strong>Nomadic Horse Games:</strong> Witness or participate in traditional competitions</li>
+                    </ul>
+                    <a href="tours.html?type=riding" class="btn-primary">View Horse Riding Tours</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Activity Section: Nomadic Homestay -->
+        <section class="activity-section">
+            <div class="activity-container">
+                <div class="activity-text">
+                    <h2>Stay with Nomadic Families</h2>
+                    <p>Experience authentic nomadic life by staying with local families in their traditional ger homes. This immersive cultural experience provides insight into a way of life that has remained largely unchanged for centuries.</p>
+                    <ul>
+                        <li><strong>Daily Activities:</strong> Help with herding animals and learn traditional chores</li>
+                        <li><strong>Traditional Cuisine:</strong> Learn to prepare and enjoy authentic Mongolian food</li>
+                        <li><strong>Handicrafts:</strong> Try your hand at traditional crafts like felt-making</li>
+                        <li><strong>Evening Entertainment:</strong> Experience folk songs, music, and storytelling</li>
+                    </ul>
+                    <a href="tours.html?type=culture" class="btn-primary">View Cultural Tours</a>
+                </div>
+                <div class="activity-image">
+                    <img src="images/C0020T01 (2).JPG" alt="Nomadic Family Homestay">
+                </div>
+            </div>
+        </section>
+
+        <!-- Activity Section: Gobi Desert Adventures -->
+        <section class="activity-section">
+            <div class="activity-container">
+                <div class="activity-image">
+                    <img src="images/C0086T01.JPG" alt="Gobi Desert Adventures">
+                </div>
+                <div class="activity-text">
+                    <h2>Explore the Gobi Desert</h2>
+                    <p>The legendary Gobi Desert offers some of Mongolia's most dramatic landscapes and unique experiences. From towering sand dunes to ancient paleontological sites, the Gobi is a must-visit destination.</p>
+                    <ul>
+                        <li><strong>Camel Riding:</strong> Trek across the desert on two-humped Bactrian camels</li>
+                        <li><strong>Khongoryn Els:</strong> Climb the "Singing Sands" dunes at sunset</li>
+                        <li><strong>Flaming Cliffs:</strong> Visit the famous dinosaur fossil site at Bayanzag</li>
+                        <li><strong>Desert Wildlife:</strong> Spot rare animals like wild camels and snow leopards</li>
+                    </ul>
+                    <a href="gobi-tours.html" class="btn-primary">View Gobi Tours</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Activity Section: Eagle Hunting -->
+        <section class="activity-section">
+            <div class="activity-container">
+                <div class="activity-text">
+                    <h2>Witness Eagle Hunting Traditions</h2>
+                    <p>In Western Mongolia's Altai Mountains, Kazakh eagle hunters maintain the ancient tradition of hunting with golden eagles. Witness this spectacular cultural practice that showcases the incredible bond between human and bird.</p>
+                    <ul>
+                        <li><strong>Eagle Hunter Homestay:</strong> Stay with a Kazakh eagle hunting family</li>
+                        <li><strong>Training Sessions:</strong> Watch morning training of these magnificent birds</li>
+                        <li><strong>Golden Eagle Festival:</strong> Attend the annual festival in October</li>
+                        <li><strong>Photography:</strong> Capture stunning portraits of hunters with their eagles</li>
+                    </ul>
+                    <a href="tour-details-altai-eagle.html" class="btn-primary">View Eagle Hunter Tours</a>
+                </div>
+                <div class="activity-image">
+                    <img src="images/C0066T01 (3).JPG" alt="Eagle Hunting in Mongolia">
+                </div>
+            </div>
+        </section>
+
+        <!-- Activity Section: Lake Khövsgöl -->
+        <section class="activity-section">
+            <div class="activity-container">
+                <div class="activity-image">
+                    <img src="images/C0096T01 (2).JPG" alt="Lake Khövsgöl">
+                </div>
+                <div class="activity-text">
+                    <h2>Discover Lake Khövsgöl</h2>
+                    <p>Often called the "Blue Pearl of Mongolia," Lake Khövsgöl is one of Asia's largest freshwater lakes. Surrounded by pristine forests and mountains, it offers a range of activities for nature lovers.</p>
+                    <ul>
+                        <li><strong>Hiking:</strong> Explore scenic trails around the lake's shores</li>
+                        <li><strong>Kayaking:</strong> Paddle on the crystal-clear waters</li>
+                        <li><strong>Visit Tsaatan Reindeer Herders:</strong> Meet this unique indigenous community</li>
+                        <li><strong>Summer Festivals:</strong> Attend the Ice Festival (winter) or Naadam (summer)</li>
+                    </ul>
+                    <a href="tour-details-khovsgol.html" class="btn-primary">View Khövsgöl Tours</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Activity Section: Naadam Festival -->
+        <section class="activity-section">
+            <div class="activity-container">
+                <div class="activity-text">
+                    <h2>Experience the Naadam Festival</h2>
+                    <p>Mongolia's most famous festival celebrates the "three manly games" - wrestling, horse racing, and archery. This centuries-old tradition offers a vibrant display of Mongolian culture, athleticism, and national pride.</p>
+                    <ul>
+                        <li><strong>Opening Ceremony:</strong> Witness the spectacular cultural performances</li>
+                        <li><strong>Wrestling Tournaments:</strong> Watch Mongolia's strongest compete</li>
+                        <li><strong>Horse Racing:</strong> See child jockeys race across the steppe</li>
+                        <li><strong>Local Naadam:</strong> Experience more authentic rural celebrations</li>
+                    </ul>
+                    <a href="tours.html?type=naadam" class="btn-primary">View Naadam Festival Tours</a>
+                </div>
+                <div class="activity-image">
+                    <img src="images/C0022T01 (2).JPG" alt="Naadam Festival">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-col footer-info">
+                        <div class="footer-logo">
+                            <img src="img/khurlogo.png" alt="Khur Travel Mongolia Logo">
+                        </div>
+                        <address>
+                            Room 14, Building 69 Sukhbaatar<br>
+                            District, 14200, Ulaanbaatar, Mongolia
+                        </address>
+                        <p class="footer-contact">
+                            <span><i class="fas fa-phone"></i> 976-70106695</span>
+                            <span><i class="fas fa-mobile-alt"></i> 976-99775008</span>
+                            <span><i class="fas fa-envelope"></i> info@tourmongolia.com</span>
+                        </p>
+                        <div class="footer-social">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Travel Destinations</h4>
+                        <ul>
+                            <li><a href="destinations.html#northern">Northern Mongolia</a></li>
+                            <li><a href="destinations.html#central">Central Mongolia</a></li>
+                            <li><a href="destinations.html#eastern">Eastern Mongolia</a></li>
+                            <li><a href="destinations.html#southern">Southern Mongolia</a></li>
+                            <li><a href="destinations.html#western">Western Mongolia</a></li>
+                            <li><a href="destinations.html">Top Travel Destinations</a></li>
+                            <li><a href="photo-spots.html">Best Photography Spots</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Mongolia Tours</h4>
+                        <ul>
+                            <li><a href="tours.html?type=adventure">Adventure Tours</a></li>
+                            <li><a href="tours.html?type=photography">Photography Tours</a></li>
+                            <li><a href="tours.html?type=culture">Culture Tours</a></li>
+                            <li><a href="tours.html?type=discovery">Discovery Tours</a></li>
+                            <li><a href="tours.html?type=hiking">Hiking & Trekking</a></li>
+                            <li><a href="tours.html?type=riding">Horse & Camel Riding</a></li>
+                            <li><a href="tours.html?type=naadam">Naadam Festival</a></li>
+                            <li><a href="tours.html?type=event">Event Tours</a></li>
+                            <li><a href="tours.html?type=best">Best Sellers</a></li>
+                            <li><a href="tours.html?type=fixed">Fixed Date Tours</a></li>
+                            <li><a href="tours.html?type=discount">Discounted Tours</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Travel Resources</h4>
+                        <div class="footer-double-col">
+                            <div>
+                                <h5>Travel Guide</h5>
+                                <ul>
+                                    <li><a href="trip-planning.html">Trip Planning</a></li>
+                                    <li><a href="travel-tips.html">Travel Tips</a></li>
+                                    <li><a href="things-to-do.html">Things To Do</a></li>
+                                    <li><a href="best-of-mongolia.html">Best of Mongolia</a></li>
+                                    <li><a href="attractions.html">Attractions</a></li>
+                                    <li><a href="custom-trip.html">Custom Trips</a></li>
+                                    <li><a href="blog.html">Travel Blog</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5>About Mongolia</h5>
+                                <ul>
+                                    <li><a href="about-mongolia.html#geography">Geography</a></li>
+                                    <li><a href="about-mongolia.html#history">History</a></li>
+                                    <li><a href="about-mongolia.html#nomads">Nomadic Life</a></li>
+                                    <li><a href="about-mongolia.html#culture">Culture & Heritage</a></li>
+                                    <li><a href="festivals.html">Festivals & Events</a></li>
+                                    <li><a href="nature.html">Nature & Wildlife</a></li>
+                                    <li><a href="cuisine.html">Cuisine</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-wrapper">
+                    <div class="copyright">
+                        <p>&copy; 2007-2023 KHUR TRAVEL CO.LTD. All rights reserved.</p>
+                    </div>
+                    <div class="payment-methods">
+                        <span>Secure Payments:</span>
+                        <img src="images/payment-icons.png" alt="Payment Methods">
+                    </div>
+                    <nav class="footer-nav">
+                        <a href="index.html">Home</a>
+                        <a href="tours.html">Tours</a>
+                        <a href="blog.html">Blog</a>
+                        <a href="terms-conditions.html">Terms</a>
+                        <a href="privacy-policy.html">Privacy</a>
+                        <a href="payment.html">Payment</a>
+                        <a href="contact-us.html">Contact</a>
+                        <a href="sitemap.html">Sitemap</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scroll-top" class="scroll-top" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <script src="js/main.js"></script>
+</body>
+</html> 

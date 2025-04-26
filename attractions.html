@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Mongolia Attractions - Khur Travel</title>
+    <meta name="description" content="Discover Mongolia's top attractions including ancient monasteries, stunning natural landscapes, and unique cultural sites with Khur Travel.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <style>
+        .attractions-header {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/C0014T01.JPG');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .attractions-header h1 {
+            font-size: 48px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .attractions-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .attractions-intro h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #1a2b3c;
+        }
+        
+        .attractions-intro p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        .attraction-section {
+            padding: 60px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .attraction-section:nth-child(even) {
+            background-color: white;
+        }
+        
+        .attraction-container {
+            display: flex;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .attraction-image {
+            flex: 0 0 45%;
+            padding-right: 40px;
+        }
+        
+        .attraction-image img {
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .attraction-text {
+            flex: 0 0 55%;
+        }
+        
+        .attraction-text h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #1a2b3c;
+        }
+        
+        .attraction-text p {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .attraction-text ul {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .attraction-text li {
+            font-size: 16px;
+            margin-bottom: 10px;
+            line-height: 1.6;
+            color: #555;
+        }
+        
+        .btn-primary {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #c93;
+            color: white;
+            text-decoration: none;
+            border-radius: 3px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background-color: #b82;
+        }
+        
+        .attraction-map {
+            max-width: 1000px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+        
+        .attraction-map h2 {
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #1a2b3c;
+        }
+        
+        .map-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .attraction-container {
+                flex-direction: column;
+            }
+            
+            .attraction-image {
+                flex: 1 1 100%;
+                padding-right: 0;
+                margin-bottom: 30px;
+            }
+            
+            .attraction-text {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-to-content">Skip to content</a>
+    
+    <header>
+        <div class="top-bar">
+            <div class="container">
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <div class="contact-info">
+                    <a href="tel:+97699775008"><i class="fas fa-phone"></i> 976-99775008</a>
+                </div>
+                <div class="top-nav">
+                    <a href="about-us.html">ABOUT US</a>
+                    <a href="contact-us.html">CONTACT US</a>
+                    <a href="enquire.html" class="enquire-btn">ENQUIRE NOW</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-header">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/khurlogo.png" alt="Khur Travel Mongolia Logo">
+                    </a>
+                </div>
+                <div class="search-bar">
+                    <form action="search-results.html" method="get" role="search">
+                        <label for="search" class="visually-hidden">Search tours</label>
+                        <input type="text" id="search" name="query" placeholder="Search tours" aria-label="Search tours">
+                        <button type="submit" aria-label="Submit search"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="main-nav" aria-label="Main Navigation">
+            <div class="container">
+                <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-menu">
+                    <span class="hamburger-icon"></span>
+                </button>
+                <ul id="main-menu">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="destinations.html">DESTINATIONS</a></li>
+                    <li><a href="tours.html">TOURS</a></li>
+                    <li><a href="about-mongolia.html">ABOUT MONGOLIA</a></li>
+                    <li><a href="blog.html">TRAVEL GUIDES</a></li>
+                    <li><a href="about-us.html">ABOUT US</a></li>
+                    <li><a href="contact-us.html">CONTACT</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- Attractions Header -->
+        <div class="attractions-header">
+            <div class="container">
+                <h1>Mongolia's Top Attractions</h1>
+            </div>
+        </div>
+
+        <!-- Attractions Introduction -->
+        <div class="attractions-intro">
+            <div class="container">
+                <h2>Discover Mongolia's Natural and Cultural Wonders</h2>
+                <p>Mongolia is home to some of the world's most unique natural wonders and cultural sites. From the vast Gobi Desert to ancient Buddhist monasteries, the country offers diverse attractions that showcase its rich heritage and pristine landscapes. Explore our guide to Mongolia's must-visit destinations for your next adventure.</p>
+            </div>
+        </div>
+
+        <!-- Attraction Section: Gorkhi-Terelj National Park -->
+        <section class="attraction-section">
+            <div class="attraction-container">
+                <div class="attraction-image">
+                    <img src="images/C0014T01.JPG" alt="Gorkhi-Terelj National Park">
+                </div>
+                <div class="attraction-text">
+                    <h2>Gorkhi-Terelj National Park</h2>
+                    <p>Located just 55 km from Ulaanbaatar, Gorkhi-Terelj National Park is one of Mongolia's most accessible natural attractions. Known for its stunning rock formations, pristine rivers, and lush meadows, it offers a perfect introduction to Mongolia's natural beauty.</p>
+                    <ul>
+                        <li><strong>Turtle Rock:</strong> A famous rock formation that resembles a turtle</li>
+                        <li><strong>Aryabal Meditation Temple:</strong> A Buddhist temple nestled in the mountains</li>
+                        <li><strong>Horseback Riding:</strong> Experience traditional Mongolian horseback riding through beautiful valleys</li>
+                        <li><strong>Ger Stay:</strong> Overnight in authentic nomadic gers for a cultural experience</li>
+                    </ul>
+                    <a href="tours.html?type=terelj" class="btn-primary">View Terelj Tours</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Attraction Section: Khustai National Park -->
+        <section class="attraction-section">
+            <div class="attraction-container">
+                <div class="attraction-text">
+                    <h2>Khustai National Park</h2>
+                    <p>Khustai National Park is famous for its successful reintroduction of the Takhi (Przewalski's horse), the last truly wild horse species on Earth. The park is located about 100 km southwest of Ulaanbaatar and offers visitors a chance to see these magnificent animals in their natural habitat.</p>
+                    <ul>
+                        <li><strong>Wild Horse Viewing:</strong> Observe the endangered Przewalski's horses in their natural habitat</li>
+                        <li><strong>Wildlife:</strong> Spot red deer, gazelles, wolves, and numerous bird species</li>
+                        <li><strong>Steppe Landscape:</strong> Experience the beauty of Mongolia's rolling grasslands</li>
+                        <li><strong>Conservation Education:</strong> Learn about wildlife conservation efforts</li>
+                    </ul>
+                    <a href="tours.html?type=hustai" class="btn-primary">View Khustai Tours</a>
+                </div>
+                <div class="attraction-image">
+                    <img src="images/C0020T01 (2).JPG" alt="Khustai National Park">
+                </div>
+            </div>
+        </section>
+
+        <!-- Attraction Section: Gobi Desert -->
+        <section class="attraction-section">
+            <div class="attraction-container">
+                <div class="attraction-image">
+                    <img src="images/C0086T01.JPG" alt="Gobi Desert">
+                </div>
+                <div class="attraction-text">
+                    <h2>Gobi Desert</h2>
+                    <p>The Gobi Desert is one of the world's largest and most iconic deserts, covering much of southern Mongolia. Despite its harsh climate, the Gobi is home to diverse wildlife, stunning landscapes, and important paleontological sites.</p>
+                    <ul>
+                        <li><strong>Khongoryn Els:</strong> Magnificent singing sand dunes reaching up to 300 meters in height</li>
+                        <li><strong>Bayanzag (Flaming Cliffs):</strong> Famous dinosaur fossil site with dramatic red sandstone formations</li>
+                        <li><strong>Yolyn Am (Eagle Valley):</strong> A deep ice canyon that can contain ice year-round</li>
+                        <li><strong>Camel Riding:</strong> Experience traditional Bactrian camel rides across the desert</li>
+                    </ul>
+                    <a href="gobi-tours.html" class="btn-primary">View Gobi Tours</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Attraction Section: Lake Khövsgöl -->
+        <section class="attraction-section">
+            <div class="attraction-container">
+                <div class="attraction-text">
+                    <h2>Lake Khövsgöl</h2>
+                    <p>Lake Khövsgöl, often called the "Blue Pearl of Mongolia," is one of Asia's largest freshwater lakes. Located in northern Mongolia near the Russian border, this pristine lake is surrounded by mountains, forests, and meadows, making it a paradise for nature lovers.</p>
+                    <ul>
+                        <li><strong>Crystal-Clear Waters:</strong> Contains 1% of the world's freshwater reserves</li>
+                        <li><strong>Hiking Trails:</strong> Numerous hiking paths around the lake with stunning views</li>
+                        <li><strong>Tsaatan Reindeer Herders:</strong> Visit the unique indigenous community that herds reindeer</li>
+                        <li><strong>Boating and Kayaking:</strong> Experience the lake's beauty from the water</li>
+                    </ul>
+                    <a href="northern-tours.html" class="btn-primary">View Khövsgöl Tours</a>
+                </div>
+                <div class="attraction-image">
+                    <img src="images/C0096T01 (2).JPG" alt="Lake Khövsgöl">
+                </div>
+            </div>
+        </section>
+
+        <!-- Attraction Section: Altai Tavan Bogd -->
+        <section class="attraction-section">
+            <div class="attraction-container">
+                <div class="attraction-image">
+                    <img src="images/C0066T01 (3).JPG" alt="Altai Tavan Bogd">
+                </div>
+                <div class="attraction-text">
+                    <h2>Altai Tavan Bogd National Park</h2>
+                    <p>Altai Tavan Bogd National Park in western Mongolia is home to the country's highest peaks, including Khüiten Peak (4,374m). This remote region offers dramatic landscapes, glaciers, alpine lakes, and is home to Kazakh eagle hunters.</p>
+                    <ul>
+                        <li><strong>Five Holy Peaks:</strong> Mongolia's highest mountains and stunning glaciers</li>
+                        <li><strong>Kazakh Eagle Hunting:</strong> Witness the ancient tradition of hunting with golden eagles</li>
+                        <li><strong>Spectacular Hiking:</strong> Challenging treks through pristine wilderness</li>
+                        <li><strong>Ancient Rock Art:</strong> Petroglyphs dating back thousands of years</li>
+                    </ul>
+                    <a href="western-tours.html" class="btn-primary">View Western Tours</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Attraction Section: Gandantegchinlen Monastery -->
+        <section class="attraction-section">
+            <div class="attraction-container">
+                <div class="attraction-text">
+                    <h2>Gandantegchinlen Monastery</h2>
+                    <p>Located in Ulaanbaatar, Gandantegchinlen Monastery is one of Mongolia's most important Buddhist centers. Miraculously surviving the communist purges of the 1930s, this active monastery offers visitors a glimpse into Mongolia's spiritual traditions.</p>
+                    <ul>
+                        <li><strong>Janraisig Temple:</strong> Home to a 26-meter-tall gilded statue of Avalokiteśvara</li>
+                        <li><strong>Morning Ceremonies:</strong> Witness monks performing daily prayers and rituals</li>
+                        <li><strong>Buddhist Art:</strong> Marvel at intricate thangka paintings and Buddhist iconography</li>
+                        <li><strong>Cultural Significance:</strong> Learn about Buddhism's role in Mongolian society</li>
+                    </ul>
+                    <a href="tours.html?type=culture" class="btn-primary">View Cultural Tours</a>
+                </div>
+                <div class="attraction-image">
+                    <img src="images/C0022T01 (2).JPG" alt="Gandantegchinlen Monastery">
+                </div>
+            </div>
+        </section>
+
+        <!-- Map of Mongolia Attractions -->
+        <div class="attraction-map">
+            <h2>Map of Mongolia's Top Attractions</h2>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11002067.766810107!2d92.58456249444368!3d46.81072945905357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3627050669aa6d4b%3A0xe0dd213937e6e096!2sMongolia!5e0!3m2!1sen!2sus!4v1619999999999!5m2!1sen!2sus" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-col footer-info">
+                        <div class="footer-logo">
+                            <img src="img/khurlogo.png" alt="Khur Travel Mongolia Logo">
+                        </div>
+                        <address>
+                            Room 14, Building 69 Sukhbaatar<br>
+                            District, 14200, Ulaanbaatar, Mongolia
+                        </address>
+                        <p class="footer-contact">
+                            <span><i class="fas fa-phone"></i> 976-70106695</span>
+                            <span><i class="fas fa-mobile-alt"></i> 976-99775008</span>
+                            <span><i class="fas fa-envelope"></i> info@tourmongolia.com</span>
+                        </p>
+                        <div class="footer-social">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Travel Destinations</h4>
+                        <ul>
+                            <li><a href="destinations.html#northern">Northern Mongolia</a></li>
+                            <li><a href="destinations.html#central">Central Mongolia</a></li>
+                            <li><a href="destinations.html#eastern">Eastern Mongolia</a></li>
+                            <li><a href="destinations.html#southern">Southern Mongolia</a></li>
+                            <li><a href="destinations.html#western">Western Mongolia</a></li>
+                            <li><a href="destinations.html">Top Travel Destinations</a></li>
+                            <li><a href="photo-spots.html">Best Photography Spots</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Mongolia Tours</h4>
+                        <ul>
+                            <li><a href="tours.html?type=adventure">Adventure Tours</a></li>
+                            <li><a href="tours.html?type=photography">Photography Tours</a></li>
+                            <li><a href="tours.html?type=culture">Culture Tours</a></li>
+                            <li><a href="tours.html?type=discovery">Discovery Tours</a></li>
+                            <li><a href="tours.html?type=hiking">Hiking & Trekking</a></li>
+                            <li><a href="tours.html?type=riding">Horse & Camel Riding</a></li>
+                            <li><a href="tours.html?type=naadam">Naadam Festival</a></li>
+                            <li><a href="tours.html?type=event">Event Tours</a></li>
+                            <li><a href="tours.html?type=best">Best Sellers</a></li>
+                            <li><a href="tours.html?type=fixed">Fixed Date Tours</a></li>
+                            <li><a href="tours.html?type=discount">Discounted Tours</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Travel Resources</h4>
+                        <div class="footer-double-col">
+                            <div>
+                                <h5>Travel Guide</h5>
+                                <ul>
+                                    <li><a href="trip-planning.html">Trip Planning</a></li>
+                                    <li><a href="travel-tips.html">Travel Tips</a></li>
+                                    <li><a href="things-to-do.html">Things To Do</a></li>
+                                    <li><a href="best-of-mongolia.html">Best of Mongolia</a></li>
+                                    <li><a href="attractions.html">Attractions</a></li>
+                                    <li><a href="custom-trip.html">Custom Trips</a></li>
+                                    <li><a href="blog.html">Travel Blog</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5>About Mongolia</h5>
+                                <ul>
+                                    <li><a href="about-mongolia.html#geography">Geography</a></li>
+                                    <li><a href="about-mongolia.html#history">History</a></li>
+                                    <li><a href="about-mongolia.html#nomads">Nomadic Life</a></li>
+                                    <li><a href="about-mongolia.html#culture">Culture & Heritage</a></li>
+                                    <li><a href="festivals.html">Festivals & Events</a></li>
+                                    <li><a href="nature.html">Nature & Wildlife</a></li>
+                                    <li><a href="cuisine.html">Cuisine</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-wrapper">
+                    <div class="copyright">
+                        <p>&copy; 2007-2023 KHUR TRAVEL CO.LTD. All rights reserved.</p>
+                    </div>
+                    <div class="payment-methods">
+                        <span>Secure Payments:</span>
+                        <img src="images/payment-icons.png" alt="Payment Methods">
+                    </div>
+                    <nav class="footer-nav">
+                        <a href="index.html">Home</a>
+                        <a href="tours.html">Tours</a>
+                        <a href="blog.html">Blog</a>
+                        <a href="terms-conditions.html">Terms</a>
+                        <a href="privacy-policy.html">Privacy</a>
+                        <a href="payment.html">Payment</a>
+                        <a href="contact-us.html">Contact</a>
+                        <a href="sitemap.html">Sitemap</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scroll-top" class="scroll-top" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <script src="js/main.js"></script>
+</body>
+</html> 

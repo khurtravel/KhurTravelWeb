@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Western Mongolia Tours - Khur Travel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Additional styles specific to this page */
+        .tours-header {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/C0066T01 (3).JPG');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .tours-header h1 {
+            font-size: 48px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .tours-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .tours-intro h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #1a2b3c;
+        }
+        
+        .tours-intro p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        .tour-list {
+            padding: 40px 0 80px;
+            background-color: #f5f5f5;
+        }
+        
+        .tour-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .tour-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .tour-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .tour-img {
+            position: relative;
+        }
+        
+        .tour-img img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .tour-duration {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #c93;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        
+        .tour-content {
+            padding: 25px;
+        }
+        
+        .tour-content h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #1a2b3c;
+        }
+        
+        .tour-content p {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .tour-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            color: #777;
+        }
+        
+        .tour-meta .price {
+            color: #c93;
+            font-weight: 700;
+            font-size: 18px;
+        }
+        
+        .tour-content .btn {
+            display: inline-block;
+            width: 100%;
+            padding: 12px 0;
+            background-color: #c93;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+        
+        .tour-content .btn:hover {
+            background-color: #b82;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header section -->
+    <header>
+        <div class="top-bar">
+            <div class="container">
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <div class="contact-info">
+                    <a href="tel:+97699775008"><i class="fas fa-phone"></i> 976-99775008</a>
+                </div>
+                <div class="top-nav">
+                    <a href="about-us.html">ABOUT US</a>
+                    <a href="contact-us.html">CONTACT US</a>
+                    <a href="enquire.html" class="enquire-btn">ENQUIRE NOW</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-header">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/khurlogo.png" alt="Khur Travel Mongolia Logo">
+                    </a>
+                </div>
+                <div class="search-bar">
+                    <form action="#" method="get">
+                        <input type="text" placeholder="Search tours">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="main-nav">
+            <div class="container">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="destinations.html">DESTINATIONS</a></li>
+                    <li><a href="tours.html" class="active">TOURS</a></li>
+                    <li><a href="about-mongolia.html">ABOUT MONGOLIA</a></li>
+                    <li><a href="blog.html">TRAVEL GUIDES</a></li>
+                    <li><a href="about-us.html">ABOUT US</a></li>
+                    <li><a href="contact-us.html">CONTACT</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Tours Header -->
+    <div class="tours-header">
+        <div class="container">
+            <h1>Western Mongolia Tours</h1>
+        </div>
+    </div>
+
+    <!-- Tours Introduction -->
+    <div class="tours-intro">
+        <div class="container">
+            <h2>Explore Mongolia's Majestic Altai Region</h2>
+            <p>Western Mongolia is home to the magnificent Altai Mountains, pristine alpine lakes, and diverse ethnic groups with unique traditions. This remote and rugged region offers breathtaking landscapes, encounters with eagle hunters of the Kazakh people, and opportunities to experience traditional cultures preserved for centuries. Our Western Mongolia tours take you off the beaten path to discover one of Asia's last true wilderness areas.</p>
+        </div>
+    </div>
+
+    <!-- Tour List -->
+    <section class="tour-list">
+        <div class="container">
+            <div class="section-header">
+                <h2>WESTERN MONGOLIA <span>TOURS</span></h2>
+                <p>Discover our selection of tours in Western Mongolia</p>
+            </div>
+            
+            <div class="tour-grid">
+                <div class="tour-card">
+                    <div class="tour-img">
+                        <img src="images/C0023T01 (2).JPG" alt="Altai Mountains Trek">
+                        <div class="tour-duration">10 Days</div>
+                    </div>
+                    <div class="tour-content">
+                        <h3>TAVAN BOGD MOUNTAINS TREK</h3>
+                        <p>Trek through the majestic Altai Mountains and ascend Mongolia's highest peaks</p>
+                        <div class="tour-meta">
+                            <span><i class="fas fa-star"></i> 4.9</span>
+                            <span><i class="fas fa-mountain"></i> Challenging</span>
+                            <span class="price">$1,590</span>
+                        </div>
+                        <a href="tour-details-tavan-bogd.html" class="btn">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="tour-card">
+                    <div class="tour-img">
+                        <img src="images/DSC00008 (2).JPG" alt="Eagle Hunter Experience">
+                        <div class="tour-duration">7 Days</div>
+                    </div>
+                    <div class="tour-content">
+                        <h3>KAZAKH EAGLE HUNTER EXPERIENCE</h3>
+                        <p>Live with traditional Kazakh eagle hunters and witness their ancient hunting practices</p>
+                        <div class="tour-meta">
+                            <span><i class="fas fa-star"></i> 4.8</span>
+                            <span><i class="fas fa-mountain"></i> Moderate</span>
+                            <span class="price">$1,290</span>
+                        </div>
+                        <a href="tour-details-eagle-hunter.html" class="btn">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="tour-card">
+                    <div class="tour-img">
+                        <img src="images/C0022T01 (2).JPG" alt="Western Mongolia Nomadic Experience">
+                        <div class="tour-duration">8 Days</div>
+                    </div>
+                    <div class="tour-content">
+                        <h3>WESTERN MONGOLIA NOMADIC EXPERIENCE</h3>
+                        <p>Experience the diverse cultures of Western Mongolia's ethnic groups</p>
+                        <div class="tour-meta">
+                            <span><i class="fas fa-star"></i> 4.9</span>
+                            <span><i class="fas fa-mountain"></i> Easy</span>
+                            <span class="price">$1,350</span>
+                        </div>
+                        <a href="tour-details-western-nomadic.html" class="btn">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="tour-card">
+                    <div class="tour-img">
+                        <img src="images/C0096T01 (2).JPG" alt="Khar Us Lake Exploration">
+                        <div class="tour-duration">6 Days</div>
+                    </div>
+                    <div class="tour-content">
+                        <h3>KHAR US LAKE & WETLANDS TOUR</h3>
+                        <p>Explore the pristine lakes and rich wildlife of Western Mongolia's wetland ecosystem</p>
+                        <div class="tour-meta">
+                            <span><i class="fas fa-star"></i> 4.7</span>
+                            <span><i class="fas fa-mountain"></i> Easy</span>
+                            <span class="price">$890</span>
+                        </div>
+                        <a href="tour-details-khar-us.html" class="btn">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="tour-card">
+                    <div class="tour-img">
+                        <img src="images/DSC00008 (2).JPG" alt="Eagle Festival">
+                        <div class="tour-duration">9 Days</div>
+                    </div>
+                    <div class="tour-content">
+                        <h3>GOLDEN EAGLE FESTIVAL TOUR</h3>
+                        <p>Witness the spectacular Golden Eagle Festival held annually in Bayan-Ölgii province</p>
+                        <div class="tour-meta">
+                            <span><i class="fas fa-star"></i> 4.9</span>
+                            <span><i class="fas fa-mountain"></i> Easy</span>
+                            <span class="price">$1,790</span>
+                        </div>
+                        <a href="tour-details-eagle-festival.html" class="btn">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="tour-card">
+                    <div class="tour-img">
+                        <img src="images/C0066T01 (3).JPG" alt="Western Mongolia Photography Tour">
+                        <div class="tour-duration">12 Days</div>
+                    </div>
+                    <div class="tour-content">
+                        <h3>WESTERN MONGOLIA PHOTOGRAPHY EXPEDITION</h3>
+                        <p>Capture the stunning landscapes and unique cultures of Western Mongolia</p>
+                        <div class="tour-meta">
+                            <span><i class="fas fa-star"></i> 4.8</span>
+                            <span><i class="fas fa-mountain"></i> Moderate</span>
+                            <span class="price">$2,190</span>
+                        </div>
+                        <a href="tour-details-western-photo.html" class="btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-col footer-info">
+                        <div class="footer-logo">
+                            <img src="img/khurlogo.png" alt="Khur Travel Mongolia Logo">
+                        </div>
+                        <address>
+                            Room 14, Building 69 Sukhbaatar<br>
+                            District, 14200, Ulaanbaatar, Mongolia
+                        </address>
+                        <p class="footer-contact">
+                            <span><i class="fas fa-phone"></i> 976-70106695</span>
+                            <span><i class="fas fa-mobile-alt"></i> 976-99775008</span>
+                            <span><i class="fas fa-envelope"></i> info@tourmongolia.com</span>
+                        </p>
+                        <div class="footer-social">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Travel Destinations</h4>
+                        <ul>
+                            <li><a href="destinations.html#northern">Northern Mongolia</a></li>
+                            <li><a href="destinations.html#central">Central Mongolia</a></li>
+                            <li><a href="destinations.html#eastern">Eastern Mongolia</a></li>
+                            <li><a href="destinations.html#southern">Southern Mongolia</a></li>
+                            <li><a href="destinations.html#western">Western Mongolia</a></li>
+                            <li><a href="destinations.html">Top Travel Destinations</a></li>
+                            <li><a href="photo-spots.html">Best Photography Spots</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Mongolia Tours</h4>
+                        <ul>
+                            <li><a href="tours.html?type=adventure">Adventure Tours</a></li>
+                            <li><a href="tours.html?type=photography">Photography Tours</a></li>
+                            <li><a href="tours.html?type=culture">Culture Tours</a></li>
+                            <li><a href="tours.html?type=discovery">Discovery Tours</a></li>
+                            <li><a href="tours.html?type=hiking">Hiking & Trekking</a></li>
+                            <li><a href="tours.html?type=riding">Horse & Camel Riding</a></li>
+                            <li><a href="tours.html?type=naadam">Naadam Festival</a></li>
+                            <li><a href="tours.html?type=event">Event Tours</a></li>
+                            <li><a href="tours.html?type=best">Best Sellers</a></li>
+                            <li><a href="tours.html?type=fixed">Fixed Date Tours</a></li>
+                            <li><a href="tours.html?type=discount">Discounted Tours</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Travel Resources</h4>
+                        <div class="footer-double-col">
+                            <div>
+                                <h5>Travel Guide</h5>
+                                <ul>
+                                    <li><a href="trip-planning.html">Trip Planning</a></li>
+                                    <li><a href="travel-tips.html">Travel Tips</a></li>
+                                    <li><a href="things-to-do.html">Things To Do</a></li>
+                                    <li><a href="best-of-mongolia.html">Best of Mongolia</a></li>
+                                    <li><a href="attractions.html">Attractions</a></li>
+                                    <li><a href="custom-trip.html">Custom Trips</a></li>
+                                    <li><a href="blog.html">Travel Blog</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5>About Mongolia</h5>
+                                <ul>
+                                    <li><a href="about-mongolia.html#geography">Geography</a></li>
+                                    <li><a href="about-mongolia.html#history">History</a></li>
+                                    <li><a href="about-mongolia.html#nomads">Nomadic Life</a></li>
+                                    <li><a href="about-mongolia.html#culture">Culture & Heritage</a></li>
+                                    <li><a href="festivals.html">Festivals & Events</a></li>
+                                    <li><a href="nature.html">Nature & Wildlife</a></li>
+                                    <li><a href="cuisine.html">Cuisine</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-wrapper">
+                    <div class="copyright">
+                        <p>&copy; 2007-2023 KHUR TRAVEL CO.LTD. All rights reserved.</p>
+                    </div>
+                    <div class="payment-methods">
+                        <span>Secure Payments:</span>
+                        <img src="images/payment-icons.png" alt="Payment Methods">
+                    </div>
+                    <nav class="footer-nav">
+                        <a href="index.html">Home</a>
+                        <a href="tours.html">Tours</a>
+                        <a href="blog.html">Blog</a>
+                        <a href="terms-conditions.html">Terms</a>
+                        <a href="privacy-policy.html">Privacy</a>
+                        <a href="payment.html">Payment</a>
+                        <a href="contact-us.html">Contact</a>
+                        <a href="sitemap.html">Sitemap</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scroll-top" class="scroll-top" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <script src="js/main.js"></script>
+</body>
+</html> 

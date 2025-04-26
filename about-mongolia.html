@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Mongolia - Khur Travel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Additional styles specific to this page */
+        .about-mongolia-header {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/about-mongolia-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .about-mongolia-header h1 {
+            font-size: 48px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .info-section {
+            padding: 60px 0;
+        }
+        
+        .info-section:nth-child(even) {
+            background-color: #f5f5f5;
+        }
+        
+        .info-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .info-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .info-text h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #1a2b3c;
+            position: relative;
+        }
+        
+        .info-text h2:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background-color: #c93;
+            bottom: -10px;
+            left: 0;
+        }
+        
+        .info-text p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        
+        .info-text ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .info-text ul li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .info-text ul li:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 6px;
+            height: 6px;
+            background-color: #c93;
+            border-radius: 50%;
+        }
+        
+        .info-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .info-image img {
+            width: 100%;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .facts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .fact-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .fact-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .fact-card .icon {
+            font-size: 36px;
+            color: #c93;
+            margin-bottom: 20px;
+        }
+        
+        .fact-card h3 {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #1a2b3c;
+        }
+        
+        .fact-card p {
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header section -->
+    <header>
+        <div class="top-bar">
+            <div class="container">
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <div class="contact-info">
+                    <a href="tel:+97699775008"><i class="fas fa-phone"></i> 976-99775008</a>
+                </div>
+                <div class="top-nav">
+                    <a href="about-us.html">ABOUT US</a>
+                    <a href="contact-us.html">CONTACT US</a>
+                    <a href="enquire.html" class="enquire-btn">ENQUIRE NOW</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-header">
+            <div class="container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="img/khurlogo.png" alt="Khur Travel Mongolia Logo">
+                    </a>
+                </div>
+                <div class="search-bar">
+                    <form action="#" method="get">
+                        <input type="text" placeholder="Search tours">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="main-nav">
+            <div class="container">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="destinations.html">DESTINATIONS</a></li>
+                    <li><a href="tours.html">TOURS</a></li>
+                    <li><a href="about-mongolia.html" class="active">ABOUT MONGOLIA</a></li>
+                    <li><a href="blog.html">TRAVEL GUIDES</a></li>
+                    <li><a href="about-us.html">ABOUT US</a></li>
+                    <li><a href="contact-us.html">CONTACT</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- About Mongolia Header -->
+    <div class="about-mongolia-header">
+        <div class="container">
+            <h1>About Mongolia</h1>
+        </div>
+    </div>
+
+    <!-- Regions of Mongolia Section -->
+    <section class="info-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>DESTINATIONS/АЯЛАЛЫН ЧИГЛЭЛҮҮД</h2>
+                <p>Where to go in Mongolia?</p>
+            </div>
+            
+            <div class="info-container">
+                <div class="info-text">
+                    <p>Mongolia is divided into different regions including Khangai, Gobi and Steppe, each with
+                    unique landscapes, including forests, mountainous areas, vast steppes, and the Gobi Desert,
+                    all rich in natural beauty.</p>
+                    
+                    <ul>
+                        <li><strong>Khangai:</strong> A forested taiga and mountainous region that spans the central, northern,
+                        and western parts of Mongolia.</li>
+                        <li><strong>Steppe:</strong> An expansive, endless prairie that stretches across the eastern part of the
+                        country.</li>
+                        <li><strong>Gobi:</strong> A desert zone covering much of the southeastern part of Mongolia, and it is the
+                        second largest desert after the Sahara.</li>
+                    </ul>
+                </div>
+                <div class="info-image">
+                    <img src="images/C0014T01.JPG" alt="Map of Mongolia's Regions">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Western Mongolia Section -->
+    <section class="info-section">
+        <div class="container">
+            <div class="info-container">
+                <div class="info-image">
+                    <img src="images/C0066T01 (3).JPG" alt="Western Mongolia Landscape">
+                </div>
+                <div class="info-text">
+                    <h2>Western Mongolia</h2>
+                    <p>Known for its breathtaking scenery and unique cultural experiences, Western Mongolia is an
+                    adventurer's paradise. With snow-capped peaks, crystal-clear lakes, and a blend of diverse
+                    ethnic groups, this region is a blend of natural beauty and ancient traditions. The provinces of
+                    Bayan-Ulgii, Khovd, Uvs, and Zavkhan make up this remarkable area.</p>
+                    
+                    <h3>Highlights:</h3>
+                    <ul>
+                        <li><strong>Mountain Treks:</strong> Hike through the snow-covered Altai Tavan Bogd, Tsambagarav,
+                        and Kharkhiraa-Turgen mountain ranges, renowned for their stunning landscapes.</li>
+                        <li><strong>Golden Eagle Hunting:</strong> Discover the fascinating art of eagle hunting practiced by the Kazakh people, a centuries-old tradition.</li>
+                        <li><strong>Scenic Lakes:</strong> Take in the beauty of pristine lakes such as Uvs, Khoton-Khurgan,
+                        and Uureg, perfect for peaceful walks and relaxation.</li>
+                        <li><strong>Cultural Encounters:</strong> Meet the diverse ethnic groups of the region, including Kazakhs
+                        and other nomadic communities.</li>
+                        <li><strong>Ancient Rock Art:</strong> Explore the ancient petroglyphs in Shiveet Uul and Baga Oigor,
+                        where traces of early human life are etched into the landscape.</li>
+                        <li><strong>Khuumii Singing:</strong> Experience the mesmerizing sound of Khuumii (throat singing), an
+                        iconic form of music native to Mongolia's highlands.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Facts Section -->
+    <section class="info-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>QUICK <span>FACTS</span></h2>
+                <p>Essential information about Mongolia</p>
+            </div>
+            
+            <div class="facts-grid">
+                <div class="fact-card">
+                    <div class="icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3>Geography</h3>
+                    <p>Mongolia is a landlocked country in East Asia, bordered by Russia to the north and China to the south. It is the 18th largest country in the world with a total area of 1,564,116 square kilometers.</p>
+                </div>
+                
+                <div class="fact-card">
+                    <div class="icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Population</h3>
+                    <p>Mongolia has a population of approximately 3.3 million people, making it the most sparsely populated sovereign state in the world with an average of 2 people per square kilometer.</p>
+                </div>
+                
+                <div class="fact-card">
+                    <div class="icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3>Language</h3>
+                    <p>The official language is Mongolian, written in Cyrillic script. Many younger Mongolians in urban areas speak English as a second language.</p>
+                </div>
+                
+                <div class="fact-card">
+                    <div class="icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <h3>Currency</h3>
+                    <p>The Mongolian currency is the Tugrik (MNT). Credit cards are widely accepted in Ulaanbaatar, but cash is preferred in rural areas.</p>
+                </div>
+                
+                <div class="fact-card">
+                    <div class="icon">
+                        <i class="fas fa-cloud-sun"></i>
+                    </div>
+                    <h3>Climate</h3>
+                    <p>Mongolia has an extreme continental climate with long, very cold winters and short summers. January averages -30°C (-22°F) while July averages +20°C (68°F) in most areas.</p>
+                </div>
+                
+                <div class="fact-card">
+                    <div class="icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Time Zone</h3>
+                    <p>Mongolia operates on UTC+8, the same as Beijing, China. Mongolia does not observe daylight saving time.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Geography Section -->
+    <section class="info-section">
+        <div class="container">
+            <div class="info-container">
+                <div class="info-text">
+                    <h2>Mongolian Geography</h2>
+                    <p>Mongolia is a landlocked country located in East Asia and Central Asia. It is sandwiched between Russia to the north and China to the south, with a vast territory of over 1.5 million square kilometers.</p>
+                    <p>The landscape consists of these main geographical regions:</p>
+                    <ul>
+                        <li><strong>The Gobi Desert</strong> - Covers much of the southern part of Mongolia, one of the world's great deserts</li>
+                        <li><strong>Mountain Ranges</strong> - Including the Altai Mountains in the west and the Khangai Mountains in the central part</li>
+                        <li><strong>Steppe</strong> - Vast grasslands that cover much of the eastern and central regions</li>
+                        <li><strong>Taiga Forests</strong> - Northern regions include forests similar to Siberia</li>
+                        <li><strong>Lakes and Rivers</strong> - Including Lake Khövsgöl in the north, one of the largest freshwater lakes in Asia</li>
+                    </ul>
+                    <p>Mongolia's diverse geography offers stunning landscapes for visitors, from snow-capped mountains to vast desert dunes and grassy plains extending to the horizon.</p>
+                </div>
+                <div class="info-image">
+                    <img src="images/C0023T01 (2).JPG" alt="Mongolia Geography">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- History Section -->
+    <section class="info-section">
+        <div class="container">
+            <div class="info-container">
+                <div class="info-image">
+                    <img src="images/C0022T01 (2).JPG" alt="Mongolia History">
+                </div>
+                <div class="info-text">
+                    <h2>Mongolian History</h2>
+                    <p>Mongolia has a rich and storied history, most famously known for the Mongol Empire created by Genghis Khan in the 13th century, which became the largest contiguous land empire in world history.</p>
+                    <p>Key periods in Mongolian history include:</p>
+                    <ul>
+                        <li><strong>Ancient Mongolia</strong> - Home to various nomadic tribes from prehistoric times</li>
+                        <li><strong>Xiongnu Empire</strong> (209 BC–93 AD) - The first recorded nomadic empire on the Mongolian plateau</li>
+                        <li><strong>Mongol Empire</strong> (1206–1368) - Founded by Genghis Khan, it became the largest contiguous land empire in history</li>
+                        <li><strong>Qing Dynasty Rule</strong> (1691–1911) - Mongolia was under the control of the Manchu-led Qing dynasty</li>
+                        <li><strong>Independence and Soviet Era</strong> (1921–1990) - Mongolia declared independence with Soviet support and became a socialist state</li>
+                        <li><strong>Democratic Mongolia</strong> (1990–present) - Following peaceful democratic revolution, Mongolia adopted a multi-party system and market economy</li>
+                    </ul>
+                    <p>Today, Mongolia preserves its rich cultural heritage while continuing to develop as a modern nation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nomadic Culture Section -->
+    <section class="info-section">
+        <div class="container">
+            <div class="info-container">
+                <div class="info-text">
+                    <h2>Mongolian People and Nomads</h2>
+                    <p>Despite rapid urbanization, Mongolia maintains a strong nomadic tradition with approximately 30% of the population still practicing a nomadic or semi-nomadic lifestyle.</p>
+                    <p>Nomadic herders move their camps several times a year in search of better pastures for their animals. A typical Mongolian herder family might own horses, sheep, goats, cattle, and camels (in the Gobi region).</p>
+                    <p>The traditional dwelling of Mongolian nomads is the ger (yurt), a portable, round tent covered with skins or felt. The ger is perfectly adapted to the Mongolian climate and nomadic lifestyle, being both portable and providing insulation against extreme temperatures.</p>
+                    <p>Mongolian culture is deeply influenced by nomadic traditions, including:</p>
+                    <ul>
+                        <li>Strong hospitality traditions toward guests and travelers</li>
+                        <li>Deep connection with nature and animals</li>
+                        <li>Traditional music using instruments like the morin khuur (horsehead fiddle)</li>
+                        <li>Unique cuisine based on dairy products and meat</li>
+                        <li>Traditional sports like wrestling, archery, and horse racing</li>
+                    </ul>
+                </div>
+                <div class="info-image">
+                    <img src="images/C0020T01 (2).JPG" alt="Mongolia Nomads">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture and Heritage Section -->
+    <section class="info-section">
+        <div class="container">
+            <div class="info-container">
+                <div class="info-image">
+                    <img src="images/DSC00008 (2).JPG" alt="Mongolia Culture">
+                </div>
+                <div class="info-text">
+                    <h2>Mongolian Culture and Heritage</h2>
+                    <p>Mongolian culture is one of the world's oldest and most unique, shaped by the country's nomadic traditions, harsh climate, and historical empires.</p>
+                    <p>Key elements of Mongolian cultural heritage include:</p>
+                    <ul>
+                        <li><strong>Traditional Music</strong> - Including throat singing (khoomei) and the morin khuur (horsehead fiddle)</li>
+                        <li><strong>Traditional Costumes</strong> - The deel, a long, loose tunic worn by both men and women</li>
+                        <li><strong>Buddhist Tradition</strong> - Tibetan Buddhism is the predominant religion, with many monasteries across the country</li>
+                        <li><strong>Naadam Festival</strong> - Celebrating the "three manly games" of wrestling, horse racing, and archery</li>
+                        <li><strong>Mongolian Cuisine</strong> - Based on meat and dairy products, including buuz (dumplings), khorkhog (meat stew), and airag (fermented mare's milk)</li>
+                        <li><strong>Traditional Crafts</strong> - Including felt making, leather working, and embroidery</li>
+                    </ul>
+                    <p>Visitors to Mongolia have the opportunity to experience this living heritage through homestays with nomadic families, cultural performances, and participation in traditional festivals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Random Mongolia Gallery -->
+    <section class="photo-gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2>MONGOLIA <span>PHOTO GALLERY</span></h2>
+                <p>Stunning images showcasing Mongolia's diverse landscapes and culture</p>
+            </div>
+            
+            <div id="random-gallery" class="gallery-grid">
+                <!-- Random images will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-col footer-info">
+                        <div class="footer-logo">
+                            <img src="img/khurlogo.png" alt="Khur Travel Mongolia Logo">
+                        </div>
+                        <address>
+                            Room 14, Building 69 Sukhbaatar<br>
+                            District, 14200, Ulaanbaatar, Mongolia
+                        </address>
+                        <p class="footer-contact">
+                            <span><i class="fas fa-phone"></i> 976-70106695</span>
+                            <span><i class="fas fa-mobile-alt"></i> 976-99775008</span>
+                            <span><i class="fas fa-envelope"></i> info@tourmongolia.com</span>
+                        </p>
+                        <div class="footer-social">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Travel Destinations</h4>
+                        <ul>
+                            <li><a href="destinations.html#northern">Northern Mongolia</a></li>
+                            <li><a href="destinations.html#central">Central Mongolia</a></li>
+                            <li><a href="destinations.html#eastern">Eastern Mongolia</a></li>
+                            <li><a href="destinations.html#southern">Southern Mongolia</a></li>
+                            <li><a href="destinations.html#western">Western Mongolia</a></li>
+                            <li><a href="destinations.html">Top Travel Destinations</a></li>
+                            <li><a href="photo-spots.html">Best Photography Spots</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Mongolia Tours</h4>
+                        <ul>
+                            <li><a href="tours.html?type=adventure">Adventure Tours</a></li>
+                            <li><a href="tours.html?type=photography">Photography Tours</a></li>
+                            <li><a href="tours.html?type=culture">Culture Tours</a></li>
+                            <li><a href="tours.html?type=discovery">Discovery Tours</a></li>
+                            <li><a href="tours.html?type=hiking">Hiking & Trekking</a></li>
+                            <li><a href="tours.html?type=riding">Horse & Camel Riding</a></li>
+                            <li><a href="tours.html?type=naadam">Naadam Festival</a></li>
+                            <li><a href="tours.html?type=event">Event Tours</a></li>
+                            <li><a href="tours.html?type=best">Best Sellers</a></li>
+                            <li><a href="tours.html?type=fixed">Fixed Date Tours</a></li>
+                            <li><a href="tours.html?type=discount">Discounted Tours</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Travel Resources</h4>
+                        <div class="footer-double-col">
+                            <div>
+                                <h5>Travel Guide</h5>
+                                <ul>
+                                    <li><a href="trip-planning.html">Trip Planning</a></li>
+                                    <li><a href="travel-tips.html">Travel Tips</a></li>
+                                    <li><a href="things-to-do.html">Things To Do</a></li>
+                                    <li><a href="best-of-mongolia.html">Best of Mongolia</a></li>
+                                    <li><a href="attractions.html">Attractions</a></li>
+                                    <li><a href="custom-trip.html">Custom Trips</a></li>
+                                    <li><a href="blog.html">Travel Blog</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5>About Mongolia</h5>
+                                <ul>
+                                    <li><a href="about-mongolia.html#geography">Geography</a></li>
+                                    <li><a href="about-mongolia.html#history">History</a></li>
+                                    <li><a href="about-mongolia.html#nomads">Nomadic Life</a></li>
+                                    <li><a href="about-mongolia.html#culture">Culture & Heritage</a></li>
+                                    <li><a href="festivals.html">Festivals & Events</a></li>
+                                    <li><a href="nature.html">Nature & Wildlife</a></li>
+                                    <li><a href="cuisine.html">Cuisine</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-wrapper">
+                    <div class="copyright">
+                        <p>&copy; 2007-2023 KHUR TRAVEL CO.LTD. All rights reserved.</p>
+                    </div>
+                    <div class="payment-methods">
+                        <span>Secure Payments:</span>
+                        <img src="images/payment-icons.png" alt="Payment Methods">
+                    </div>
+                    <nav class="footer-nav">
+                        <a href="index.html">Home</a>
+                        <a href="tours.html">Tours</a>
+                        <a href="blog.html">Blog</a>
+                        <a href="terms-conditions.html">Terms</a>
+                        <a href="privacy-policy.html">Privacy</a>
+                        <a href="payment.html">Payment</a>
+                        <a href="contact-us.html">Contact</a>
+                        <a href="sitemap.html">Sitemap</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scroll-top" class="scroll-top" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <script src="js/main.js"></script>
+    <script src="js/random-gallery.js"></script>
+</body>
+</html> 
