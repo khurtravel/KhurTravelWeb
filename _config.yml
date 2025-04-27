@@ -1,2 +1,23 @@
-url: 'https://khurmongoliatravel.com'
-baseurl: ''
+# GitHub Pages configuration for Khur Travel
+
+# Site settings
+title: Khur Travel - Authentic Mongolia Tours & Adventures
+description: Experience authentic Mongolia with Khur Travel's carefully curated tours. Explore the vast steppes, nomadic culture, and breathtaking landscapes.
+url: https://khurtravel.github.io
+baseurl: ""
+
+# Force HTTPS
+enforce_ssl: khurtravel.github.io
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+
+# Exclude files from processing
+exclude:
+  - KhurTravelWeb.zip
+  - khur-travel.zip
+  - README-404.md
+  - IMAGE-UPDATES-SUMMARY.md
+  - IMAGE-README.md
+  - image-organization-plan.md 
