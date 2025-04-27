@@ -14,8 +14,14 @@
     <!-- Open Graph tags for social sharing -->
     <meta property="og:title" content="Khur Travel - Authentic Mongolia Tours">
     <meta property="og:description" content="Experience authentic Mongolia with Khur Travel's curated tours.">
-    <meta property="og:image" content="images/og-image.jpg">
-    <meta property="og:url" content="https://www.tourmongolia.com">
+    <meta property="og:image" content="https://khurtravel.github.io/images/og-image.jpg">
+    <meta property="og:url" content="https://khurtravel.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Khur Travel Mongolia">
+    <!-- Ensure base URL for GitHub Pages -->
+    <base href="https://khurtravel.github.io/">
+    <!-- Force HTTPS -->
+    <script src="js/enforce-https.js"></script>
     <style>
         /* Fix for hero slider */
         .hero-slider .slide {
@@ -561,5 +567,11 @@
     <script src="js/animations.js"></script>
     <script src="js/main.js"></script>
     <script src="js/image-preloader.js"></script>
+    <!-- Add Content Security Policy to enforce HTTPS -->
+    <script>
+        if (window.location.protocol === 'http:' && !window.location.hostname.includes('localhost') && !window.location.hostname.includes('127.0.0.1')) {
+            window.location.href = window.location.href.replace('http:', 'https:');
+        }
+    </script>
 </body>
 </html>
