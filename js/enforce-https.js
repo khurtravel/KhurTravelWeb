@@ -1,5 +1,27 @@
 /**
- * GitHub Pages HTTPS Enforcement
+ * MODIFIED FOR LOCAL TESTING
+ * Original file backed up to enforce-https.js.bak
+ */
+
+// Skip all redirects when running on localhost
+if (window.location.hostname === 'localhost' || 
+    window.location.hostname === '127.0.0.1' ||
+    window.location.hostname.startsWith('192.168.')) {
+  console.log('Redirects disabled for local testing');
+} else {
+  /**
+ * MODIFIED FOR LOCAL TESTING
+ * Original file backed up to enforce-https.js.bak
+ */
+
+// Skip all redirects when running on localhost
+if (window.location.hostname === 'localhost' || 
+    window.location.hostname === '127.0.0.1' ||
+    window.location.hostname.startsWith('192.168.')) {
+  console.log('Redirects disabled for local testing');
+} else {
+  /**
+ * HTTPS Enforcement for khurmongoliatravel.com
  * This script ensures all resources are loaded securely
  */
 
@@ -33,6 +55,13 @@
             link.href = link.href.replace('http:', 'https:');
         });
 
+        // Ensure all relative URLs use the correct base path with khurmongoliatravel.com
+        if (!document.querySelector('base')) {
+            var base = document.createElement('base');
+            base.href = 'https://khurmongoliatravel.com/';
+            document.head.appendChild(base);
+        }
+
         // Handle dynamic content loading (AJAX, fetch)
         const originalFetch = window.fetch;
         window.fetch = function(resource, init) {
@@ -52,3 +81,5 @@
         };
     });
 })(); 
+}
+}

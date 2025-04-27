@@ -1,13 +1,16 @@
-# GitHub Pages configuration for Khur Travel
+# Configuration for Khur Travel Mongolia Website
 
 # Site settings
 title: Khur Travel - Authentic Mongolia Tours & Adventures
 description: Experience authentic Mongolia with Khur Travel's carefully curated tours. Explore the vast steppes, nomadic culture, and breathtaking landscapes.
-url: https://khurtravel.github.io
+url: https://khurmongoliatravel.com
 baseurl: ""
 
 # Force HTTPS
-enforce_ssl: khurtravel.github.io
+enforce_ssl: khurmongoliatravel.com
+
+# Clean URLs (remove .html extension)
+permalink: pretty
 
 # Build settings
 markdown: kramdown
@@ -20,4 +23,11 @@ exclude:
   - README-404.md
   - IMAGE-UPDATES-SUMMARY.md
   - IMAGE-README.md
-  - image-organization-plan.md 
+  - image-organization-plan.md
+  - .htaccess
+  - rename-to-lowercase.sh
+  - update-base-href.sh
+  - fix-image-extensions.sh
+  - fix-github-pages.sh
+  - fix-links-and-paths.sh
+  - fix-image-paths.sh 

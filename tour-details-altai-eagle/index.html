@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Altai Mountains & Eagle Hunters Tour - Khur Travel</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Additional styles specific to this page */
+        .tour-header {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/tour-1.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .tour-header-content {
+            max-width: 800px;
+        }
+        
+        .tour-header h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .tour-header p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .tour-header .meta {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .tour-header .meta-item {
+            display: flex;
+            align-items: center;
+        }
+        
+        .tour-header .meta-item i {
+            margin-right: 8px;
+            color: #c93;
+        }
+        
+        .tour-overview {
+            padding: 60px 0;
+        }
+        
+        .tour-details-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 50px;
+        }
+        
+        @media (max-width: 768px) {
+            .tour-details-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .tour-description h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #1a2b3c;
+        }
+        
+        .tour-description p {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        .tour-sidebar {
+            background: #f5f5f5;
+            padding: 30px;
+            border-radius: 8px;
+        }
+        
+        .tour-price {
+            font-size: 32px;
+            font-weight: 700;
+            color: #c93;
+            margin-bottom: 20px;
+        }
+        
+        .tour-book-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #c93;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 20px;
+            transition: background-color 0.3s;
+        }
+        
+        .tour-book-btn:hover {
+            background-color: #b82;
+        }
+        
+        .tour-enquire-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #c93;
+            color: #c93;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 30px;
+            transition: all 0.3s;
+        }
+        
+        .tour-enquire-btn:hover {
+            background-color: #c93;
+            color: white;
+        }
+        
+        .tour-info-list {
+            margin-bottom: 30px;
+        }
+        
+        .tour-info-item {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        
+        .tour-info-item i {
+            min-width: 30px;
+            color: #c93;
+        }
+        
+        .tour-itinerary {
+            padding: 60px 0;
+            background-color: #f5f5f5;
+        }
+        
+        .day-item {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+        }
+        
+        .day-header {
+            background-color: #1a2b3c;
+            color: white;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .day-content {
+            padding: 25px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 25px;
+        }
+        
+        @media (max-width: 768px) {
+            .day-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .day-details p {
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+        
+        .day-details ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .day-details li {
+            margin-bottom: 8px;
+        }
+        
+        .day-image img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        
+        .included-section {
+            padding: 60px 0;
+        }
+        
+        .included-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+        
+        @media (max-width: 768px) {
+            .included-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .included-list {
+            margin-left: 20px;
+        }
+        
+        .included-list li, .not-included-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: baseline;
+        }
+        
+        .included-list li:before {
+            content: '\f00c';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: #5cb85c;
+            margin-right: 10px;
+        }
+        
+        .not-included-list {
+            margin-left: 20px;
+        }
+        
+        .not-included-list li:before {
+            content: '\f00d';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            color: #d9534f;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header section -->
+    <header>
+        <div class="top-bar">
+            <div class="container">
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <div class="contact-info">
+                    <a href="tel:+97699119777"><i class="fas fa-phone"></i> 976-99119777</a>
+                </div>
+                <div class="top-nav">
+                    <a href="about-us">ABOUT US</a>
+                    <a href="contact-us">CONTACT US</a>
+                    <a href="enquire" class="enquire-btn">ENQUIRE NOW</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-header">
+            <div class="container">
+                <div class="logo">
+                    <a href="index">
+                        <img src="/img/khurlogo.png" alt="Khur Travel Mongolia Logo">
+                    </a>
+                </div>
+                <div class="search-bar">
+                    <form action="#" method="get">
+                        <input type="text" placeholder="Search tours">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="main-nav">
+            <div class="container">
+                <ul>
+                    <li><a href="index">HOME</a></li>
+                    <li><a href="destinations">DESTINATIONS</a></li>
+                    <li><a href="tours" class="active">TOURS</a></li>
+                    <li><a href="about-mongolia">ABOUT MONGOLIA</a></li>
+                    <li><a href="blog">TRAVEL GUIDES</a></li>
+                    <li><a href="about-us">ABOUT US</a></li>
+                    <li><a href="contact-us">CONTACT</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Tour Header -->
+    <div class="tour-header">
+        <div class="container">
+            <div class="tour-header-content">
+                <h1>Altai Mountains & Eagle Hunters Tour</h1>
+                <p>Experience the majestic Altai Mountains and the fascinating culture of Kazakh eagle hunters</p>
+                <div class="meta">
+                    <div class="meta-item">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>7 Days</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-mountain"></i>
+                        <span>Moderate</span>
+                    </div>
+                    <div class="meta-item">
+                        <i class="fas fa-star"></i>
+                        <span>4.9 (32 reviews)</span>
+                    </div>
+                </div>
+                <a href="enquire" class="btn-primary">Enquire Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tour Overview -->
+    <section class="tour-overview">
+        <div class="container">
+            <div class="tour-details-grid">
+                <div class="tour-description">
+                    <h2>Tour Overview</h2>
+                    <p>Embark on an unforgettable adventure to Western Mongolia's Altai Mountains region, where you'll experience the unique culture of Kazakh eagle hunters and the breathtaking landscapes of the Altai Mountains. This 7-day tour combines natural beauty with authentic cultural experiences.</p>
+                    
+                    <p>You'll have the opportunity to stay with eagle hunter families, witness ancient hunting traditions, trek through stunning mountain scenery, visit pristine lakes, and explore remote villages. Throughout the journey, you'll gain insight into the region's diverse ethnic groups and their traditional way of life.</p>
+                    
+                    <p>This tour is perfect for adventure seekers, photography enthusiasts, and cultural explorers who want to experience one of Mongolia's most spectacular and culturally rich regions. With experienced local guides, comfortable accommodations, and carefully planned activities, you'll discover the best that Western Mongolia has to offer.</p>
+                    
+                    <h2>Tour Highlights</h2>
+                    <ul>
+                        <li>Stay with authentic Kazakh eagle hunter families in their traditional homes</li>
+                        <li>Witness eagle hunting demonstrations and learn about this ancient tradition</li>
+                        <li>Trek through the dramatic landscapes of the Altai Mountains</li>
+                        <li>Visit stunning alpine lakes including Khoton-Khurgan and Dayan</li>
+                        <li>Experience the warm hospitality of nomadic families</li>
+                        <li>Explore ancient petroglyphs at Shiveet Uul</li>
+                        <li>Enjoy traditional Kazakh cuisine and cultural performances</li>
+                        <li>Visit the vibrant provincial capital of Ulgii and its local markets</li>
+                    </ul>
+                </div>
+                
+                <div class="tour-sidebar">
+                    <div class="tour-price">
+                        From $1,290 per person
+                    </div>
+                    <a href="booking.html?tour=altai-eagle" class="tour-book-btn">Book Now</a>
+                    <a href="enquire.html?tour=altai-eagle" class="tour-enquire-btn">Enquire</a>
+                    
+                    <div class="tour-info-list">
+                        <div class="tour-info-item">
+                            <i class="far fa-calendar-alt"></i>
+                            <div>
+                                <strong>Duration:</strong> 7 Days / 6 Nights
+                            </div>
+                        </div>
+                        <div class="tour-info-item">
+                            <i class="fas fa-user-friends"></i>
+                            <div>
+                                <strong>Group Size:</strong> 2-12 People
+                            </div>
+                        </div>
+                        <div class="tour-info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Location:</strong> Western Mongolia (Bayan-Ulgii Province)
+                            </div>
+                        </div>
+                        <div class="tour-info-item">
+                            <i class="fas fa-mountain"></i>
+                            <div>
+                                <strong>Difficulty:</strong> Moderate
+                            </div>
+                        </div>
+                        <div class="tour-info-item">
+                            <i class="fas fa-plane-departure"></i>
+                            <div>
+                                <strong>Start/End:</strong> Ulaanbaatar
+                            </div>
+                        </div>
+                        <div class="tour-info-item">
+                            <i class="fas fa-home"></i>
+                            <div>
+                                <strong>Accommodation:</strong> Hotels, Ger Camps, Family Homestays
+                            </div>
+                        </div>
+                        <div class="tour-info-item">
+                            <i class="fas fa-utensils"></i>
+                            <div>
+                                <strong>Meals:</strong> All meals included
+                            </div>
+                        </div>
+                        <div class="tour-info-item">
+                            <i class="fas fa-car"></i>
+                            <div>
+                                <strong>Transportation:</strong> 4WD Vehicles, Domestic Flights
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="departure-dates">
+                        <h3>2023 Departure Dates</h3>
+                        <ul>
+                            <li>June 10 - June 16</li>
+                            <li>July 15 - July 21</li>
+                            <li>August 5 - August 11</li>
+                            <li>September 9 - September 15</li>
+                        </ul>
+                        <p>Custom dates available for private groups</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tour Itinerary -->
+    <section class="tour-itinerary">
+        <div class="container">
+            <div class="section-header">
+                <h2>TOUR <span>ITINERARY</span></h2>
+                <p>Day-by-day plan for your Altai Mountains & Eagle Hunters adventure</p>
+            </div>
+            
+            <!-- Day 1 -->
+            <div class="day-item">
+                <div class="day-header">
+                    <h3>Day 1: Ulaanbaatar to Ulgii</h3>
+                    <span>Flight, City Tour</span>
+                </div>
+                <div class="day-content">
+                    <div class="day-details">
+                        <p>Your journey begins with a morning domestic flight from Ulaanbaatar to Ulgii, the capital of Bayan-Ulgii province (3 hour flight). Upon arrival, you'll be greeted by your local guide and transferred to your hotel.</p>
+                        <p>After lunch at a local restaurant, enjoy a city tour of Ulgii, including the local museum, mosque, and vibrant market where you can see traditional Kazakh handicrafts. In the evening, enjoy a welcome dinner with traditional Kazakh cuisine and a cultural performance featuring traditional music and dombra (stringed instrument) playing.</p>
+                        <p><strong>Accommodation:</strong> Hotel in Ulgii</p>
+                        <p><strong>Meals:</strong> Lunch, Dinner</p>
+                    </div>
+                    <div class="day-image">
+                        <img src="/images/tour-1.jpg" alt="Ulgii City">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Day 2 -->
+            <div class="day-item">
+                <div class="day-header">
+                    <h3>Day 2: Ulgii to Eagle Hunter Family</h3>
+                    <span>Cultural Experience</span>
+                </div>
+                <div class="day-content">
+                    <div class="day-details">
+                        <p>After breakfast, drive through picturesque countryside to a Kazakh eagle hunter family (approx. 3-4 hours). Upon arrival, you'll be welcomed by the family and settled into your accommodations.</p>
+                        <p>Spend the afternoon learning about the ancient tradition of eagle hunting, including how eagles are trained and the special relationship between hunters and their birds. You'll have the opportunity to witness a demonstration of eagle hunting skills and perhaps even try holding a trained golden eagle on your arm (with assistance).</p>
+                        <p>In the evening, enjoy dinner with the family and learn about their way of life through conversations with your guide as translator.</p>
+                        <p><strong>Accommodation:</strong> Family Homestay or nearby Ger Camp</p>
+                        <p><strong>Meals:</strong> Breakfast, Lunch, Dinner</p>
+                    </div>
+                    <div class="day-image">
+                        <img src="/images/tour-2.jpg" alt="Eagle Hunter">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- More days would follow in the same format -->
+            
+        </div>
+    </section>
+
+    <!-- Inclusions Section -->
+    <section class="included-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>WHAT'S <span>INCLUDED</span></h2>
+                <p>Everything you need to know about what's covered in your tour price</p>
+            </div>
+            
+            <div class="included-grid">
+                <div>
+                    <h3>Included in the Price</h3>
+                    <ul class="included-list">
+                        <li>Domestic flights between Ulaanbaatar and Ulgii</li>
+                        <li>All accommodations (hotels, ger camps, and homestays)</li>
+                        <li>All meals as specified in the itinerary</li>
+                        <li>All transportation in 4WD vehicles</li>
+                        <li>English-speaking guides and local Kazakh translators</li>
+                        <li>Eagle hunting demonstrations and cultural activities</li>
+                        <li>Entrance fees to museums and parks</li>
+                        <li>Bottled water during excursions</li>
+                        <li>Welcome and farewell dinners</li>
+                        <li>All taxes and service charges</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3>Not Included in the Price</h3>
+                    <ul class="not-included-list">
+                        <li>International flights to/from Mongolia</li>
+                        <li>Travel insurance (required)</li>
+                        <li>Visa fees</li>
+                        <li>Alcoholic and soft drinks</li>
+                        <li>Personal expenses and souvenirs</li>
+                        <li>Tips for guides and drivers</li>
+                        <li>Extra activities not mentioned in the itinerary</li>
+                        <li>Early check-in or late check-out from hotels</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Experience the Altai Mountains?</h2>
+                <p>Secure your place on this unforgettable adventure to Western Mongolia</p>
+                <div class="cta-buttons">
+                    <a href="booking.html?tour=altai-eagle" class="btn-primary">Book This Tour</a>
+                    <a href="enquire.html?tour=altai-eagle" class="btn-outline">Ask a Question</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-col footer-info">
+                        <div class="footer-logo">
+                            <img src="/img/khurlogo.png" alt="Khur Travel Mongolia Logo">
+                        </div>
+                        <address>
+                            Room 14, Building 69 Sukhbaatar<br>
+                            District, 14200, Ulaanbaatar, Mongolia
+                        </address>
+                        <p class="footer-contact">
+                            <span><i class="fas fa-phone"></i> 976-70106695</span>
+                            <span><i class="fas fa-mobile-alt"></i> 976-99119777</span>
+                            <span><i class="fas fa-envelope"></i> info@tourmongolia.com</span>
+                        </p>
+                        <div class="footer-social">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Travel Destinations</h4>
+                        <ul>
+                            <li><a href="destinations.html#northern">Northern Mongolia</a></li>
+                            <li><a href="destinations.html#central">Central Mongolia</a></li>
+                            <li><a href="destinations.html#eastern">Eastern Mongolia</a></li>
+                            <li><a href="destinations.html#southern">Southern Mongolia</a></li>
+                            <li><a href="destinations.html#western">Western Mongolia</a></li>
+                            <li><a href="destinations">Top Travel Destinations</a></li>
+                            <li><a href="photo-spots">Best Photography Spots</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Mongolia Tours</h4>
+                        <ul>
+                            <li><a href="tours.html?type=adventure">Adventure Tours</a></li>
+                            <li><a href="tours.html?type=photography">Photography Tours</a></li>
+                            <li><a href="tours.html?type=culture">Culture Tours</a></li>
+                            <li><a href="tours.html?type=discovery">Discovery Tours</a></li>
+                            <li><a href="tours.html?type=hiking">Hiking & Trekking</a></li>
+                            <li><a href="tours.html?type=riding">Horse & Camel Riding</a></li>
+                            <li><a href="tours.html?type=naadam">Naadam Festival</a></li>
+                            <li><a href="tours.html?type=event">Event Tours</a></li>
+                            <li><a href="tours.html?type=best">Best Sellers</a></li>
+                            <li><a href="tours.html?type=fixed">Fixed Date Tours</a></li>
+                            <li><a href="tours.html?type=discount">Discounted Tours</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Travel Resources</h4>
+                        <div class="footer-double-col">
+                            <div>
+                                <h5>Travel Guide</h5>
+                                <ul>
+                                    <li><a href="trip-planning">Trip Planning</a></li>
+                                    <li><a href="travel-tips">Travel Tips</a></li>
+                                    <li><a href="things-to-do">Things To Do</a></li>
+                                    <li><a href="best-of-mongolia">Best of Mongolia</a></li>
+                                    <li><a href="attractions">Attractions</a></li>
+                                    <li><a href="custom-trip">Custom Trips</a></li>
+                                    <li><a href="blog">Travel Blog</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5>About Mongolia</h5>
+                                <ul>
+                                    <li><a href="about-mongolia.html#geography">Geography</a></li>
+                                    <li><a href="about-mongolia.html#history">History</a></li>
+                                    <li><a href="about-mongolia.html#nomads">Nomadic Life</a></li>
+                                    <li><a href="about-mongolia.html#culture">Culture & Heritage</a></li>
+                                    <li><a href="festivals">Festivals & Events</a></li>
+                                    <li><a href="nature">Nature & Wildlife</a></li>
+                                    <li><a href="cuisine">Cuisine</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-wrapper">
+                    <div class="copyright">
+                        <p>&copy; 2007-2023 KHUR TRAVEL CO.LTD. All rights reserved.</p>
+                    </div>
+                    <div class="payment-methods">
+                        <span>Secure Payments:</span>
+                        <img src="/images/payment-icons.png" alt="Payment Methods">
+                    </div>
+                    <nav class="footer-nav">
+                        <a href="index">Home</a>
+                        <a href="tours">Tours</a>
+                        <a href="blog">Blog</a>
+                        <a href="terms-conditions">Terms</a>
+                        <a href="privacy-policy">Privacy</a>
+                        <a href="payment">Payment</a>
+                        <a href="contact-us">Contact</a>
+                        <a href="sitemap">Sitemap</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scroll-top" class="scroll-top" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <script src="/js/main.js"></script>
+<script src="/js/url-handler.js"></script><script src="js/image-path-corrector.js"></script></body>
+</html> 

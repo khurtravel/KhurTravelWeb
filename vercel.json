@@ -1,0 +1,170 @@
+{
+  "rewrites": [
+    {
+      "source": "/:path*",
+      "destination": "/:path*/index.html"
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/about-mongolia.html",
+      "destination": "/about-mongolia",
+      "permanent": true
+    },
+    {
+      "source": "/about-us.html",
+      "destination": "/about-us",
+      "permanent": true
+    },
+    {
+      "source": "/attractions.html",
+      "destination": "/attractions",
+      "permanent": true
+    },
+    {
+      "source": "/blog.html",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/central-tours.html",
+      "destination": "/central-tours",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us.html",
+      "destination": "/contact-us",
+      "permanent": true
+    },
+    {
+      "source": "/custom-trip.html",
+      "destination": "/custom-trip",
+      "permanent": true
+    },
+    {
+      "source": "/destinations.html",
+      "destination": "/destinations",
+      "permanent": true
+    },
+    {
+      "source": "/enquire.html",
+      "destination": "/enquire",
+      "permanent": true
+    },
+    {
+      "source": "/example-page.html",
+      "destination": "/example-page",
+      "permanent": true
+    },
+    {
+      "source": "/secure-content-example.html",
+      "destination": "/examples/secure-content-example",
+      "permanent": true
+    },
+    {
+      "source": "/gobi-tours.html",
+      "destination": "/gobi-tours",
+      "permanent": true
+    },
+    {
+      "source": "/naadam-tours.html",
+      "destination": "/naadam-tours",
+      "permanent": true
+    },
+    {
+      "source": "/northern-tours.html",
+      "destination": "/northern-tours",
+      "permanent": true
+    },
+    {
+      "source": "/payment.html",
+      "destination": "/payment",
+      "permanent": true
+    },
+    {
+      "source": "/privacy-policy.html",
+      "destination": "/privacy-policy",
+      "permanent": true
+    },
+    {
+      "source": "/search-results.html",
+      "destination": "/search-results",
+      "permanent": true
+    },
+    {
+      "source": "/sitemap.html",
+      "destination": "/sitemap",
+      "permanent": true
+    },
+    {
+      "source": "/tailor-made.html",
+      "destination": "/tailor-made",
+      "permanent": true
+    },
+    {
+      "source": "/terms-conditions.html",
+      "destination": "/terms-conditions",
+      "permanent": true
+    },
+    {
+      "source": "/things-to-do.html",
+      "destination": "/things-to-do",
+      "permanent": true
+    },
+    {
+      "source": "/tour-details-altai-eagle.html",
+      "destination": "/tour-details-altai-eagle",
+      "permanent": true
+    },
+    {
+      "source": "/tour-details-khovsgol.html",
+      "destination": "/tour-details-khovsgol",
+      "permanent": true
+    },
+    {
+      "source": "/tour-details-northern-horse.html",
+      "destination": "/tour-details-northern-horse",
+      "permanent": true
+    },
+    {
+      "source": "/tour-details-tavan-bogd.html",
+      "destination": "/tour-details-tavan-bogd",
+      "permanent": true
+    },
+    {
+      "source": "/tour-details-tsaatan.html",
+      "destination": "/tour-details-tsaatan",
+      "permanent": true
+    },
+    {
+      "source": "/tour-details-western-exploration.html",
+      "destination": "/tour-details-western-exploration",
+      "permanent": true
+    },
+    {
+      "source": "/tour-details-western-mongolia.html",
+      "destination": "/tour-details-western-mongolia",
+      "permanent": true
+    },
+    {
+      "source": "/tour-details-western-nomadic.html",
+      "destination": "/tour-details-western-nomadic",
+      "permanent": true
+    },
+    {
+      "source": "/tour-details.html",
+      "destination": "/tour-details",
+      "permanent": true
+    },
+    {
+      "source": "/tours.html",
+      "destination": "/tours",
+      "permanent": true
+    },
+    {
+      "source": "/western-tours.html",
+      "destination": "/western-tours",
+      "permanent": true
+    }
+  ]
+}

@@ -4,16 +4,16 @@
  */
 document.addEventListener('DOMContentLoaded', function() {
   const images = [
-    'images/C0014T01.JPG',
-    'images/C0022T01 (2).JPG',
-    'images/C0023T01 (2).JPG',
-    'images/C0020T01 (2).JPG',
-    'images/C0066T01 (3).JPG',
-    'images/C0069T01 (2).JPG',
-    'images/C0086T01.JPG',
-    'images/C0096T01 (2).JPG',
-    'images/DSC00008 (2).JPG',
-    'images/DSC00073.JPG'
+    'images/C0014T01.jpg',
+    'images/C0022T01 (2).jpg',
+    'images/C0023T01 (2).jpg',
+    'images/C0020T01 (2).jpg',
+    'images/C0066T01 (3).jpg',
+    'images/C0069T01 (2).jpg',
+    'images/C0086T01.jpg',
+    'images/C0096T01 (2).jpg',
+    'images/DSC00008 (2).jpg',
+    'images/DSC00073.jpg'
   ];
 
   // Fisher-Yates shuffle algorithm

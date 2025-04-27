@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khur Mongolia Travel - Template with Directory URL Routing</title>
+    
+    <!-- CSS styles -->
+    <link rel="stylesheet" href="/css/main.css">
+    
+    <!-- Load the utility loader first -->
+    <script src="/js/load-utilities.js"></script>
+    
+    <!-- Load URL directory router -->
+    <script src="/js/url-directory-router.js" defer></script>
+    
+    <!-- Optional: Configure the URL Directory Router -->
+    <script>
+        // This code runs after the router is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Enable debug mode during development
+            if (window.UrlDirectoryRouter) {
+                // Enable debug mode if needed
+                // UrlDirectoryRouter.setDebug(true);
+                
+                // Add any custom mappings if needed
+                // UrlDirectoryRouter.addMapping('/custom-path/', '/custom-file.html');
+            }
+        });
+    </script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <ul>
+                <!-- These links will automatically be converted to directory-style URLs -->
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/tours">Tours</a>
+                    <ul>
+                        <li><a href="/western-tours">Western Tours</a></li>
+                        <li><a href="/northern-tours">Northern Tours</a></li>
+                        <li><a href="/central-tours">Central Tours</a></li>
+                        <li><a href="/gobi-tours">Gobi Tours</a></li>
+                    </ul>
+                </li>
+                <li><a href="/about-us">About Us</a></li>
+                <li><a href="/contact-us">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <h1>Directory-Style URL Routing Example</h1>
+        
+        <p>This page demonstrates how directory-style URL routing works. Check your browser's address bar - it should display a clean URL without the .html extension.</p>
+        
+        <h2>Tour Links (will use directory structure)</h2>
+        <ul>
+            <li><a href="/tour-details-western-nomadic">Western Nomadic Tour</a></li>
+            <li><a href="/tour-details-northern-horse">Northern Horse Tour</a></li>
+            <li><a href="/tour-details-tsaatan">Tsaatan Tour</a></li>
+        </ul>
+        
+        <h2>About Links (will use directory structure)</h2>
+        <ul>
+            <li><a href="/about-mongolia">About Mongolia</a></li>
+            <li><a href="/about-us">About Us</a></li>
+        </ul>
+        
+        <h2>Policy Links (will use directory structure)</h2>
+        <ul>
+            <li><a href="/terms-conditions">Terms & Conditions</a></li>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+        </ul>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2023 Khur Mongolia Travel. All rights reserved.</p>
+        <ul>
+            <li><a href="/terms-conditions">Terms</a></li>
+            <li><a href="/privacy-policy">Privacy</a></li>
+            <li><a href="/sitemap">Sitemap</a></li>
+        </ul>
+    </footer>
+
+    <!-- Load the secure content loader last -->
+    <script src="/js/secure-content-loader.js"></script>
+</body>
+</html> 

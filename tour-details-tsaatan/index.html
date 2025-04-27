@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tsaatan Reindeer Herders Tour - Khur Travel Mongolia</title>
+    <meta name="description" content="Experience the unique culture of Mongolia's Tsaatan reindeer herders on this unforgettable journey to northern Mongolia's remote taiga forests.">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <style>
+        .tour-header {
+            position: relative;
+            height: 500px;
+            background: url('images/C0096T01 (1).jpg') no-repeat center center;
+            background-size: cover;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+        
+        .tour-header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.7));
+        }
+        
+        .tour-header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+        
+        .tour-header h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .tour-header p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 600px;
+            line-height: 1.6;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        
+        .tour-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .tour-badge {
+            padding: 8px 16px;
+            background-color: rgba(255,255,255,0.2);
+            border-radius: 30px;
+            backdrop-filter: blur(5px);
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .tour-badge i {
+            margin-right: 5px;
+        }
+        
+        .tour-features {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .tour-feature {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+        }
+        
+        .tour-feature i {
+            margin-right: 8px;
+            font-size: 18px;
+            color: #c93;
+        }
+        
+        .tour-overview {
+            padding: 60px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .overview-content {
+            display: flex;
+            gap: 40px;
+        }
+        
+        .overview-text {
+            flex: 0 0 60%;
+        }
+        
+        .overview-text h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #1a2b3c;
+        }
+        
+        .overview-text p {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .overview-sidebar {
+            flex: 0 0 35%;
+            background-color: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .tour-price {
+            font-size: 28px;
+            font-weight: 700;
+            color: #c93;
+            margin-bottom: 20px;
+        }
+        
+        .tour-price span {
+            font-size: 16px;
+            font-weight: 400;
+            color: #666;
+        }
+        
+        .book-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #c93;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 3px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            transition: background-color 0.3s;
+        }
+        
+        .book-btn:hover {
+            background-color: #b82;
+        }
+        
+        .tour-info-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .tour-info-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 15px;
+        }
+        
+        .tour-info-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .tour-info-label {
+            font-weight: 600;
+            color: #1a2b3c;
+        }
+        
+        .tour-info-value {
+            color: #666;
+        }
+        
+        .tour-itinerary {
+            padding: 60px 0;
+        }
+        
+        .tour-itinerary h2 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: #1a2b3c;
+            text-align: center;
+        }
+        
+        .itinerary-day {
+            margin-bottom: 40px;
+            border-left: 3px solid #c93;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .itinerary-day:last-child {
+            margin-bottom: 0;
+        }
+        
+        .itinerary-day:before {
+            content: '';
+            position: absolute;
+            left: -10px;
+            top: 0;
+            width: 20px;
+            height: 20px;
+            background-color: #c93;
+            border-radius: 50%;
+        }
+        
+        .day-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #1a2b3c;
+        }
+        
+        .day-description {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #555;
+        }
+        
+        .tour-gallery {
+            padding: 60px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .tour-gallery h2 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: #1a2b3c;
+            text-align: center;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            height: 240px;
+            overflow: hidden;
+            border-radius: 5px;
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .related-tours {
+            padding: 60px 0;
+        }
+        
+        .related-tours h2 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: #1a2b3c;
+            text-align: center;
+        }
+        
+        .related-tours-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        
+        .related-tour-card {
+            background-color: white;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .related-tour-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .related-tour-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .related-tour-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .related-tour-content {
+            padding: 20px;
+        }
+        
+        .related-tour-content h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: #1a2b3c;
+        }
+        
+        .related-tour-content p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        
+        .related-tour-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .btn-secondary {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: transparent;
+            border: 2px solid #c93;
+            color: #c93;
+            text-decoration: none;
+            border-radius: 3px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #c93;
+            color: white;
+        }
+        
+        @media (max-width: 992px) {
+            .overview-content {
+                flex-direction: column;
+            }
+            
+            .overview-text, .overview-sidebar {
+                flex: 1 1 100%;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .related-tours-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .tour-header {
+                height: 400px;
+            }
+            
+            .tour-header h1 {
+                font-size: 32px;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .related-tours-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-to-content">Skip to content</a>
+    
+    <header>
+        <div class="top-bar">
+            <div class="container">
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <div class="contact-info">
+                    <a href="tel:+97699119777"><i class="fas fa-phone"></i> 976-99119777</a>
+                </div>
+                <div class="top-nav">
+                    <a href="about-us">ABOUT US</a>
+                    <a href="contact-us">CONTACT US</a>
+                    <a href="enquire" class="enquire-btn">ENQUIRE NOW</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-header">
+            <div class="container">
+                <div class="logo">
+                    <a href="index">
+                        <img src="/img/khurlogo.png" alt="Khur Travel Mongolia Logo">
+                    </a>
+                </div>
+                <div class="search-bar">
+                    <form action="search-results.html" method="get" role="search">
+                        <label for="search" class="visually-hidden">Search tours</label>
+                        <input type="text" id="search" name="query" placeholder="Search tours" aria-label="Search tours">
+                        <button type="submit" aria-label="Submit search"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="main-nav" aria-label="Main Navigation">
+            <div class="container">
+                <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-menu">
+                    <span class="hamburger-icon"></span>
+                </button>
+                <ul id="main-menu">
+                    <li><a href="index">HOME</a></li>
+                    <li><a href="destinations">DESTINATIONS</a></li>
+                    <li><a href="tours">TOURS</a></li>
+                    <li><a href="about-mongolia">ABOUT MONGOLIA</a></li>
+                    <li><a href="blog">TRAVEL GUIDES</a></li>
+                    <li><a href="about-us">ABOUT US</a></li>
+                    <li><a href="contact-us">CONTACT</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- Tour Header -->
+        <div class="tour-header">
+            <div class="tour-header-overlay"></div>
+            <div class="container">
+                <div class="tour-header-content">
+                    <div class="tour-badges">
+                        <span class="tour-badge"><i class="fas fa-mountain"></i> Cultural Experience</span>
+                        <span class="tour-badge"><i class="fas fa-camera"></i> Photography</span>
+                        <span class="tour-badge"><i class="fas fa-users"></i> Small Group</span>
+                    </div>
+                    <h1>Tsaatan Reindeer Herders Journey</h1>
+                    <p>Experience the unique lifestyle of Mongolia's Tsaatan people, one of the world's last reindeer herding communities living in the remote northern taiga forests.</p>
+                    <div class="tour-features">
+                        <div class="tour-feature">
+                            <i class="fas fa-clock"></i> 9 Days
+                        </div>
+                        <div class="tour-feature">
+                            <i class="fas fa-map-marker-alt"></i> Northern Mongolia
+                        </div>
+                        <div class="tour-feature">
+                            <i class="fas fa-user-friends"></i> Max 8 people
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tour Overview -->
+        <section class="tour-overview">
+            <div class="container">
+                <div class="overview-content">
+                    <div class="overview-text">
+                        <h2>Tour Overview</h2>
+                        <p>This unique journey takes you to northern Mongolia's remote taiga forest to visit the Tsaatan (Dukha) people, one of the world's last remaining reindeer herding communities. Beginning in Ulaanbaatar, you'll travel to the pristine shores of Lake Khövsgöl before venturing deeper into the taiga to experience the traditional way of life of these indigenous people.</p>
+                        <p>The Tsaatan people have maintained their ancient traditions and nomadic way of life, moving with their reindeer herds through the forests and mountains of northern Mongolia. Living in tepee-like structures called "ortz," they depend on their reindeer for transportation, milk, cheese, and occasionally meat.</p>
+                        <p>This tour offers a rare opportunity to immerse yourself in their culture, learn about their shamanistic beliefs, and experience the daily routines of reindeer herding. You'll also enjoy the breathtaking landscapes of northern Mongolia, including the beautiful Lake Khövsgöl, often called the "Blue Pearl of Mongolia."</p>
+                        <p>This journey is perfect for adventure travelers, cultural enthusiasts, and photographers looking to document one of the world's most unique indigenous cultures.</p>
+                    </div>
+                    <div class="overview-sidebar">
+                        <div class="tour-price">$1,790 <span>per person</span></div>
+                        <a href="enquire.html?tour=tsaatan-reindeer" class="book-btn">Book This Tour</a>
+                        <ul class="tour-info-list">
+                            <li>
+                                <div class="tour-info-label">Duration</div>
+                                <div class="tour-info-value">9 Days / 8 Nights</div>
+                            </li>
+                            <li>
+                                <div class="tour-info-label">Group Size</div>
+                                <div class="tour-info-value">2-8 people</div>
+                            </li>
+                            <li>
+                                <div class="tour-info-label">Difficulty</div>
+                                <div class="tour-info-value">Moderate</div>
+                            </li>
+                            <li>
+                                <div class="tour-info-label">Best Time</div>
+                                <div class="tour-info-value">June - September</div>
+                            </li>
+                            <li>
+                                <div class="tour-info-label">Accommodation</div>
+                                <div class="tour-info-value">Hotel, Ger Camps, Tents</div>
+                            </li>
+                            <li>
+                                <div class="tour-info-label">Transport</div>
+                                <div class="tour-info-value">4x4 Vehicle, Horse Riding</div>
+                            </li>
+                            <li>
+                                <div class="tour-info-label">Meals</div>
+                                <div class="tour-info-value">Full Board</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tour Itinerary -->
+        <section class="tour-itinerary">
+            <div class="container">
+                <h2>Tour Itinerary</h2>
+                <div class="itinerary-day">
+                    <div class="day-title">Day 1: Arrival in Ulaanbaatar</div>
+                    <div class="day-description">
+                        <p>Upon arrival at Chinggis Khaan International Airport, you'll be met by your guide and transferred to your hotel in the city center. After check-in and some rest, enjoy a welcome dinner featuring traditional Mongolian cuisine and a cultural performance of throat singing and traditional dance.</p>
+                        <p><strong>Accommodation:</strong> Hotel in Ulaanbaatar</p>
+                    </div>
+                </div>
+                <div class="itinerary-day">
+                    <div class="day-title">Day 2: Ulaanbaatar to Murun</div>
+                    <div class="day-description">
+                        <p>Morning flight to Murun, the capital of Khövsgöl province. Upon arrival, we'll drive to nearby Uushgiin Deer Stone complex, featuring ancient megaliths dating back to the Bronze Age. After lunch, continue driving through beautiful landscapes to reach our ger camp near Murun.</p>
+                        <p><strong>Accommodation:</strong> Ger Camp</p>
+                    </div>
+                </div>
+                <div class="itinerary-day">
+                    <div class="day-title">Day 3: Murun to Lake Khövsgöl</div>
+                    <div class="day-description">
+                        <p>After breakfast, we drive to Lake Khövsgöl, one of Asia's largest freshwater lakes. The journey takes us through stunning steppe landscapes and rolling hills. Upon arrival, we'll check in to our lakeside ger camp and have time to explore the lakeshore and enjoy the pristine beauty of this "Blue Pearl of Mongolia."</p>
+                        <p><strong>Accommodation:</strong> Ger Camp at Lake Khövsgöl</p>
+                    </div>
+                </div>
+                <div class="itinerary-day">
+                    <div class="day-title">Day 4: Lake Khövsgöl to Tsagaan Nuur</div>
+                    <div class="day-description">
+                        <p>We continue our journey north to Tsagaan Nuur (White Lake) village, the last settlement before entering the remote taiga region. The drive takes us through beautiful forest landscapes and offers chances to spot wildlife. We'll spend the night at a local family's home or in tents, preparing for our trek into the taiga.</p>
+                        <p><strong>Accommodation:</strong> Homestay or Tented Camp</p>
+                    </div>
+                </div>
+                <div class="itinerary-day">
+                    <div class="day-title">Day 5-6: Tsaatan Reindeer Herders Camp</div>
+                    <div class="day-description">
+                        <p>We begin our horse or reindeer riding journey into the taiga forest to reach the summer camps of the Tsaatan people. Depending on their location, this journey can take 4-6 hours. We'll spend two days living with a Tsaatan family, experiencing their daily activities including reindeer herding, milking, and learning about their traditional crafts, cuisine, and shamanistic beliefs. We'll have the opportunity to ride reindeer, help with daily chores, and participate in traditional activities.</p>
+                        <p><strong>Accommodation:</strong> Camping near Tsaatan Family</p>
+                    </div>
+                </div>
+                <div class="itinerary-day">
+                    <div class="day-title">Day 7: Return to Tsagaan Nuur</div>
+                    <div class="day-description">
+                        <p>We say goodbye to our Tsaatan hosts and make our way back to Tsagaan Nuur village. This gives us time to reflect on our experiences and enjoy the beautiful taiga landscape one more time.</p>
+                        <p><strong>Accommodation:</strong> Homestay or Tented Camp</p>
+                    </div>
+                </div>
+                <div class="itinerary-day">
+                    <div class="day-title">Day 8: Return to Murun and Flight to Ulaanbaatar</div>
+                    <div class="day-description">
+                        <p>We drive back to Murun, enjoying the landscapes along the way. From Murun, we'll catch an afternoon flight back to Ulaanbaatar. Evening at leisure to explore the city or do some last-minute shopping.</p>
+                        <p><strong>Accommodation:</strong> Hotel in Ulaanbaatar</p>
+                    </div>
+                </div>
+                <div class="itinerary-day">
+                    <div class="day-title">Day 9: Departure</div>
+                    <div class="day-description">
+                        <p>After breakfast, transfer to the airport for your departure flight. End of our services.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tour Gallery -->
+        <section class="tour-gallery">
+            <div class="container">
+                <h2>Tour Gallery</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="/images/C0096T01 (1).jpg" alt="Tsaatan Reindeer Herders">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="/images/C0096T01 (2).jpg" alt="Lake Khövsgöl">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="/images/C0096T01 (3).jpg" alt="Taiga Landscape">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="/images/C0096T01 (4).jpg" alt="Reindeer Herd">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="/images/C0096T01 (5).jpg" alt="Tsaatan Camp">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="/images/C0096T01 (6).jpg" alt="Northern Mongolia Scenery">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Related Tours -->
+        <section class="related-tours">
+            <div class="container">
+                <h2>You Might Also Like</h2>
+                <div class="related-tours-grid">
+                    <div class="related-tour-card">
+                        <div class="related-tour-img">
+                            <img src="/images/C0096T01 (4).jpg" alt="Lake Khövsgöl Journey">
+                        </div>
+                        <div class="related-tour-content">
+                            <h3>Lake Khövsgöl Journey</h3>
+                            <p>Explore the pristine beauty of Mongolia's largest freshwater lake with stunning landscapes and local culture.</p>
+                            <div class="related-tour-info">
+                                <span>6 Days</span>
+                                <span>$790</span>
+                            </div>
+                            <a href="tour-details-khovsgol" class="btn-secondary">View Tour</a>
+                        </div>
+                    </div>
+                    <div class="related-tour-card">
+                        <div class="related-tour-img">
+                            <img src="/images/C0066T01 (2).jpg" alt="Northern Horse Riding Adventure">
+                        </div>
+                        <div class="related-tour-content">
+                            <h3>Northern Horse Riding Adventure</h3>
+                            <p>Ride through the beautiful northern Mongolian landscapes on this horseback adventure.</p>
+                            <div class="related-tour-info">
+                                <span>8 Days</span>
+                                <span>$920</span>
+                            </div>
+                            <a href="tour-details-northern-horse" class="btn-secondary">View Tour</a>
+                        </div>
+                    </div>
+                    <div class="related-tour-card">
+                        <div class="related-tour-img">
+                            <img src="/images/C0020T01 (3).jpg" alt="Western Mongolia Exploration">
+                        </div>
+                        <div class="related-tour-content">
+                            <h3>Western Mongolia Exploration</h3>
+                            <p>Discover the diverse landscapes and ethnic cultures of Western Mongolia.</p>
+                            <div class="related-tour-info">
+                                <span>10 Days</span>
+                                <span>$1,250</span>
+                            </div>
+                            <a href="tour-details-western-exploration" class="btn-secondary">View Tour</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-col footer-info">
+                        <div class="footer-logo">
+                            <img src="/img/khurlogo.png" alt="Khur Travel Mongolia Logo">
+                        </div>
+                        <address>
+                            Room 14, Building 69 Sukhbaatar<br>
+                            District, 14200, Ulaanbaatar, Mongolia
+                        </address>
+                        <p class="footer-contact">
+                            <span><i class="fas fa-phone"></i> 976-70106695</span>
+                            <span><i class="fas fa-mobile-alt"></i> 976-99119777</span>
+                            <span><i class="fas fa-envelope"></i> info@tourmongolia.com</span>
+                        </p>
+                        <div class="footer-social">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Travel Destinations</h4>
+                        <ul>
+                            <li><a href="destinations.html#northern">Northern Mongolia</a></li>
+                            <li><a href="destinations.html#central">Central Mongolia</a></li>
+                            <li><a href="destinations.html#eastern">Eastern Mongolia</a></li>
+                            <li><a href="destinations.html#southern">Southern Mongolia</a></li>
+                            <li><a href="destinations.html#western">Western Mongolia</a></li>
+                            <li><a href="destinations">Top Travel Destinations</a></li>
+                            <li><a href="photo-spots">Best Photography Spots</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Mongolia Tours</h4>
+                        <ul>
+                            <li><a href="tours.html?type=adventure">Adventure Tours</a></li>
+                            <li><a href="tours.html?type=photography">Photography Tours</a></li>
+                            <li><a href="tours.html?type=culture">Culture Tours</a></li>
+                            <li><a href="tours.html?type=discovery">Discovery Tours</a></li>
+                            <li><a href="tours.html?type=hiking">Hiking & Trekking</a></li>
+                            <li><a href="tours.html?type=riding">Horse & Camel Riding</a></li>
+                            <li><a href="tours.html?type=naadam">Naadam Festival</a></li>
+                            <li><a href="tours.html?type=event">Event Tours</a></li>
+                            <li><a href="tours.html?type=best">Best Sellers</a></li>
+                            <li><a href="tours.html?type=fixed">Fixed Date Tours</a></li>
+                            <li><a href="tours.html?type=discount">Discounted Tours</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Travel Resources</h4>
+                        <div class="footer-double-col">
+                            <div>
+                                <h5>Travel Guide</h5>
+                                <ul>
+                                    <li><a href="trip-planning">Trip Planning</a></li>
+                                    <li><a href="travel-tips">Travel Tips</a></li>
+                                    <li><a href="things-to-do">Things To Do</a></li>
+                                    <li><a href="best-of-mongolia">Best of Mongolia</a></li>
+                                    <li><a href="attractions">Attractions</a></li>
+                                    <li><a href="custom-trip">Custom Trips</a></li>
+                                    <li><a href="blog">Travel Blog</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5>About Mongolia</h5>
+                                <ul>
+                                    <li><a href="about-mongolia.html#geography">Geography</a></li>
+                                    <li><a href="about-mongolia.html#history">History</a></li>
+                                    <li><a href="about-mongolia.html#nomads">Nomadic Life</a></li>
+                                    <li><a href="about-mongolia.html#culture">Culture & Heritage</a></li>
+                                    <li><a href="festivals">Festivals & Events</a></li>
+                                    <li><a href="nature">Nature & Wildlife</a></li>
+                                    <li><a href="cuisine">Cuisine</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-wrapper">
+                    <div class="copyright">
+                        <p>&copy; 2007-2023 KHUR TRAVEL CO.LTD. All rights reserved.</p>
+                    </div>
+                    <div class="payment-methods">
+                        <span>Secure Payments:</span>
+                        <img src="/images/payment-icons.png" alt="Payment Methods">
+                    </div>
+                    <nav class="footer-nav">
+                        <a href="index">Home</a>
+                        <a href="tours">Tours</a>
+                        <a href="blog">Blog</a>
+                        <a href="terms-conditions">Terms</a>
+                        <a href="privacy-policy">Privacy</a>
+                        <a href="payment">Payment</a>
+                        <a href="contact-us">Contact</a>
+                        <a href="sitemap">Sitemap</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scroll-top" class="scroll-top" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <script src="/js/main.js"></script>
+<script src="/js/url-handler.js"></script><script src="js/image-path-corrector.js"></script></body>
+</html> 

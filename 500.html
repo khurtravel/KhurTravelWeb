@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>500 - Server Error | Khur</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+    <style>
+        .error-container {
+            text-align: center;
+            padding: 100px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .error-code {
+            font-size: 120px;
+            font-weight: 700;
+            color: #e74c3c;
+            margin: 0;
+            line-height: 1;
+        }
+        
+        .error-message {
+            font-size: 36px;
+            font-weight: 600;
+            margin: 10px 0;
+        }
+        
+        .error-description {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #555;
+        }
+        
+        .error-actions {
+            margin: 30px 0;
+        }
+        
+        .error-actions a {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 12px 24px;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .error-actions a:hover {
+            background-color: #2980b9;
+        }
+        
+        .error-help {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+        
+        .error-help h3 {
+            margin-top: 0;
+            color: #333;
+        }
+        
+        .error-illustration {
+            max-width: 300px;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="/"><img src="/images/logo.png" alt="Khur Logo"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/destinations">Destinations</a></li>
+                    <li><a href="/tours">Tours</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="error-container">
+            <h1 class="error-code">500</h1>
+            <h2 class="error-message">Server Error</h2>
+            <p class="error-description">We're experiencing some technical difficulties at the moment. Our team has been notified and is working to fix the issue.</p>
+            
+            <div class="error-illustration">
+                <img src="/images/500-error.svg" alt="Server Error Illustration" onerror="this.style.display='none'">
+            </div>
+            
+            <div class="error-actions">
+                <a href="/">Return to Homepage</a>
+                <a href="javascript:history.back()">Go Back</a>
+            </div>
+            
+            <div class="error-help">
+                <h3>What you can do:</h3>
+                <ul>
+                    <li>Refresh the page and try again</li>
+                    <li>Clear your browser cache and cookies</li>
+                    <li>Try again later</li>
+                    <li>If the problem persists, please <a href="/contact">contact us</a></li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-sections">
+                <div class="footer-section">
+                    <h3>Explore</h3>
+                    <ul>
+                        <li><a href="/destinations">Destinations</a></li>
+                        <li><a href="/tours">Tours</a></li>
+                        <li><a href="/gallery">Gallery</a></li>
+                        <li><a href="/blog">Travel Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Information</h3>
+                    <ul>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/privacy">Privacy Policy</a></li>
+                        <li><a href="/terms">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-icons">
+                        <a href="#"><img src="/images/icons/facebook.svg" alt="Facebook"></a>
+                        <a href="#"><img src="/images/icons/instagram.svg" alt="Instagram"></a>
+                        <a href="#"><img src="/images/icons/twitter.svg" alt="Twitter"></a>
+                        <a href="#"><img src="/images/icons/youtube.svg" alt="YouTube"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Khur Travel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Log the 500 error for debugging
+        (function() {
+            if (window.analytics && typeof window.analytics.track === 'function') {
+                window.analytics.track('Error Encountered', {
+                    errorType: '500',
+                    url: window.location.href,
+                    referrer: document.referrer
+                });
+            }
+        })();
+    </script>
+</body>
+</html> 

@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour Details - Khur Travel Mongolia</title>
+    <meta name="description" content="View details about this exciting Mongolia tour. Discover itineraries, pricing, and everything you need to know.">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <style>
+        .tour-header {
+            position: relative;
+            height: 500px;
+            background: url('images/C0096T01 (1).jpg') no-repeat center center;
+            background-size: cover;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+        
+        .tour-header-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.7));
+        }
+        
+        .tour-header-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+        
+        .tour-header h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .tour-header p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 600px;
+            line-height: 1.6;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+        
+        .tour-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .tour-badge {
+            padding: 8px 16px;
+            background-color: rgba(255,255,255,0.2);
+            border-radius: 30px;
+            backdrop-filter: blur(5px);
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .tour-badge i {
+            margin-right: 5px;
+        }
+        
+        .tour-features {
+            display: flex;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .tour-feature {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+        }
+        
+        .tour-feature i {
+            margin-right: 8px;
+            font-size: 18px;
+            color: #c93;
+        }
+        
+        .tour-overview {
+            padding: 60px 0;
+            background-color: #f8f9fa;
+        }
+        
+        .overview-content {
+            display: flex;
+            gap: 40px;
+        }
+        
+        .overview-text {
+            flex: 0 0 60%;
+        }
+        
+        .overview-text h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #1a2b3c;
+        }
+        
+        .overview-text p {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            color: #555;
+        }
+        
+        .overview-sidebar {
+            flex: 0 0 35%;
+            background-color: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .tour-price {
+            font-size: 28px;
+            font-weight: 700;
+            color: #c93;
+            margin-bottom: 20px;
+        }
+        
+        .tour-price span {
+            font-size: 16px;
+            font-weight: 400;
+            color: #666;
+        }
+        
+        .book-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background-color: #c93;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 3px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            transition: background-color 0.3s;
+        }
+        
+        .book-btn:hover {
+            background-color: #b82;
+        }
+        
+        .tour-info-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .tour-info-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 15px;
+        }
+        
+        .tour-info-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .tour-info-label {
+            font-weight: 600;
+            color: #1a2b3c;
+        }
+        
+        .tour-info-value {
+            color: #666;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 50px 0;
+        }
+        
+        .loading p {
+            font-size: 18px;
+            color: #1a2b3c;
+            margin-bottom: 20px;
+        }
+        
+        .spinner {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(204,153,51,0.3);
+            border-radius: 50%;
+            border-top-color: #c93;
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        @media (max-width: 992px) {
+            .overview-content {
+                flex-direction: column;
+            }
+            
+            .overview-text, .overview-sidebar {
+                flex: 1 1 100%;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .tour-header {
+                height: 400px;
+            }
+            
+            .tour-header h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-to-content">Skip to content</a>
+    
+    <header>
+        <div class="top-bar">
+            <div class="container">
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <div class="contact-info">
+                    <a href="tel:+97699119777"><i class="fas fa-phone"></i> 976-99119777</a>
+                </div>
+                <div class="top-nav">
+                    <a href="about-us">ABOUT US</a>
+                    <a href="contact-us">CONTACT US</a>
+                    <a href="enquire" class="enquire-btn">ENQUIRE NOW</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-header">
+            <div class="container">
+                <div class="logo">
+                    <a href="index">
+                        <img src="/img/khurlogo.png" alt="Khur Travel Mongolia Logo">
+                    </a>
+                </div>
+                <div class="search-bar">
+                    <form action="search-results.html" method="get" role="search">
+                        <label for="search" class="visually-hidden">Search tours</label>
+                        <input type="text" id="search" name="query" placeholder="Search tours" aria-label="Search tours">
+                        <button type="submit" aria-label="Submit search"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="main-nav" aria-label="Main Navigation">
+            <div class="container">
+                <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-menu">
+                    <span class="hamburger-icon"></span>
+                </button>
+                <ul id="main-menu">
+                    <li><a href="index">HOME</a></li>
+                    <li><a href="destinations">DESTINATIONS</a></li>
+                    <li><a href="tours">TOURS</a></li>
+                    <li><a href="about-mongolia">ABOUT MONGOLIA</a></li>
+                    <li><a href="blog">TRAVEL GUIDES</a></li>
+                    <li><a href="about-us">ABOUT US</a></li>
+                    <li><a href="contact-us">CONTACT</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <div id="tour-content">
+            <!-- Tour content will be dynamically loaded here -->
+            <div class="loading">
+                <p>Loading tour details...</p>
+                <div class="spinner"></div>
+            </div>
+        </div>
+        
+        <!-- Tour Header (will be populated by JS) -->
+        <div id="tour-header" class="tour-header" style="display: none;">
+            <div class="tour-header-overlay"></div>
+            <div class="container">
+                <div class="tour-header-content">
+                    <div class="tour-badges">
+                        <span class="tour-badge"><i class="fas fa-mountain"></i> <span id="tour-type">Adventure</span></span>
+                        <span class="tour-badge"><i class="fas fa-users"></i> Small Group</span>
+                    </div>
+                    <h1 id="tour-title">Loading Tour...</h1>
+                    <p id="tour-description">Please wait while we load the tour details.</p>
+                    <div class="tour-features">
+                        <div class="tour-feature">
+                            <i class="fas fa-clock"></i> <span id="tour-duration">7 Days</span>
+                        </div>
+                        <div class="tour-feature">
+                            <i class="fas fa-map-marker-alt"></i> <span id="tour-destination">Mongolia</span>
+                        </div>
+                        <div class="tour-feature">
+                            <i class="fas fa-user-friends"></i> Max 8 people
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tour Overview (will be populated by JS) -->
+        <section id="tour-overview" class="tour-overview" style="display: none;">
+            <div class="container">
+                <div class="overview-content">
+                    <div class="overview-text">
+                        <h2>Tour Overview</h2>
+                        <p id="tour-overview-text">Loading overview...</p>
+                    </div>
+                    <div class="overview-sidebar">
+                        <div class="tour-price">$<span id="tour-price">0</span> <span>per person</span></div>
+                        <a href="enquire" class="book-btn">Book This Tour</a>
+                        <ul class="tour-info-list">
+                            <li>
+                                <div class="tour-info-label">Duration</div>
+                                <div class="tour-info-value"><span id="tour-duration-days">0</span> Days</div>
+                            </li>
+                            <li>
+                                <div class="tour-info-label">Group Size</div>
+                                <div class="tour-info-value">2-8 people</div>
+                            </li>
+                            <li>
+                                <div class="tour-info-label">Difficulty</div>
+                                <div class="tour-info-value" id="tour-difficulty">Moderate</div>
+                            </li>
+                            <li>
+                                <div class="tour-info-label">Best Time</div>
+                                <div class="tour-info-value" id="tour-best-time">June - September</div>
+                            </li>
+                            <li>
+                                <div class="tour-info-label">Accommodation</div>
+                                <div class="tour-info-value" id="tour-accommodation">Hotels & Ger Camps</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fallback content when no tour ID is provided -->
+        <section id="recommended-tours" class="tour-overview">
+            <div class="container">
+                <h2>Our Recommended Tours</h2>
+                <p>Please visit our <a href="tours">tours page</a> to browse all available Mongolia experiences.</p>
+                
+                <div class="tour-grid" style="margin-top: 40px;">
+                    <div class="tour-card">
+                        <div class="tour-img">
+                            <img src="/images/C0086T01.jpg" alt="Gobi Desert Tour">
+                            <div class="tour-duration">5 Days</div>
+                        </div>
+                        <div class="tour-content">
+                            <h3>GOBI DESERT EXPLORER</h3>
+                            <p>Discover the mysteries of the Gobi Desert</p>
+                            <div class="tour-meta">
+                                <span><i class="fas fa-star"></i> 4.9</span>
+                                <span><i class="fas fa-mountain"></i> Moderate</span>
+                                <span class="price">$690</span>
+                            </div>
+                            <a href="tour-details-western-nomadic" class="btn">View Details</a>
+                        </div>
+                    </div>
+                    
+                    <div class="tour-card">
+                        <div class="tour-img">
+                            <img src="/images/C0096T01 (2).jpg" alt="Lake Khövsgöl Tour">
+                            <div class="tour-duration">6 Days</div>
+                        </div>
+                        <div class="tour-content">
+                            <h3>LAKE KHÖVSGÖL JOURNEY</h3>
+                            <p>Visit the stunning blue pearl of Mongolia</p>
+                            <div class="tour-meta">
+                                <span><i class="fas fa-star"></i> 4.9</span>
+                                <span><i class="fas fa-mountain"></i> Easy</span>
+                                <span class="price">$780</span>
+                            </div>
+                            <a href="tour-details-khovsgol" class="btn">View Details</a>
+                        </div>
+                    </div>
+                    
+                    <div class="tour-card">
+                        <div class="tour-img">
+                            <img src="/images/C0066T01 (3).jpg" alt="Western Mongolia Tour">
+                            <div class="tour-duration">9 Days</div>
+                        </div>
+                        <div class="tour-content">
+                            <h3>WESTERN MONGOLIA EXPLORER</h3>
+                            <p>Discover the beautiful Altai Mountains region</p>
+                            <div class="tour-meta">
+                                <span><i class="fas fa-star"></i> 4.8</span>
+                                <span><i class="fas fa-mountain"></i> Moderate</span>
+                                <span class="price">$1,190</span>
+                            </div>
+                            <a href="tour-details-western-mongolia" class="btn">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-col footer-info">
+                        <div class="footer-logo">
+                            <img src="/img/khurlogo.png" alt="Khur Travel Mongolia Logo">
+                        </div>
+                        <address>
+                            Room 14, Building 69 Sukhbaatar<br>
+                            District, 14200, Ulaanbaatar, Mongolia
+                        </address>
+                        <p class="footer-contact">
+                            <span><i class="fas fa-phone"></i> 976-70106695</span>
+                            <span><i class="fas fa-mobile-alt"></i> 976-99119777</span>
+                            <span><i class="fas fa-envelope"></i> info@tourmongolia.com</span>
+                        </p>
+                        <div class="footer-social">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Travel Destinations</h4>
+                        <ul>
+                            <li><a href="destinations.html#northern">Northern Mongolia</a></li>
+                            <li><a href="destinations.html#central">Central Mongolia</a></li>
+                            <li><a href="destinations.html#eastern">Eastern Mongolia</a></li>
+                            <li><a href="destinations.html#southern">Southern Mongolia</a></li>
+                            <li><a href="destinations.html#western">Western Mongolia</a></li>
+                            <li><a href="destinations">Top Travel Destinations</a></li>
+                            <li><a href="photo-spots">Best Photography Spots</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Mongolia Tours</h4>
+                        <ul>
+                            <li><a href="tours.html?type=adventure">Adventure Tours</a></li>
+                            <li><a href="tours.html?type=photography">Photography Tours</a></li>
+                            <li><a href="tours.html?type=culture">Culture Tours</a></li>
+                            <li><a href="tours.html?type=discovery">Discovery Tours</a></li>
+                            <li><a href="tours.html?type=hiking">Hiking & Trekking</a></li>
+                            <li><a href="tours.html?type=riding">Horse & Camel Riding</a></li>
+                            <li><a href="tours.html?type=naadam">Naadam Festival</a></li>
+                            <li><a href="tours.html?type=event">Event Tours</a></li>
+                            <li><a href="tours.html?type=best">Best Sellers</a></li>
+                            <li><a href="tours.html?type=fixed">Fixed Date Tours</a></li>
+                            <li><a href="tours.html?type=discount">Discounted Tours</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Travel Resources</h4>
+                        <div class="footer-double-col">
+                            <div>
+                                <h5>Travel Guide</h5>
+                                <ul>
+                                    <li><a href="trip-planning">Trip Planning</a></li>
+                                    <li><a href="travel-tips">Travel Tips</a></li>
+                                    <li><a href="things-to-do">Things To Do</a></li>
+                                    <li><a href="best-of-mongolia">Best of Mongolia</a></li>
+                                    <li><a href="attractions">Attractions</a></li>
+                                    <li><a href="custom-trip">Custom Trips</a></li>
+                                    <li><a href="blog">Travel Blog</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5>About Mongolia</h5>
+                                <ul>
+                                    <li><a href="about-mongolia.html#geography">Geography</a></li>
+                                    <li><a href="about-mongolia.html#history">History</a></li>
+                                    <li><a href="about-mongolia.html#nomads">Nomadic Life</a></li>
+                                    <li><a href="about-mongolia.html#culture">Culture & Heritage</a></li>
+                                    <li><a href="festivals">Festivals & Events</a></li>
+                                    <li><a href="nature">Nature & Wildlife</a></li>
+                                    <li><a href="cuisine">Cuisine</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-wrapper">
+                    <div class="copyright">
+                        <p>&copy; 2007-2023 KHUR TRAVEL CO.LTD. All rights reserved.</p>
+                    </div>
+                    <div class="payment-methods">
+                        <span>Secure Payments:</span>
+                        <img src="/images/payment-icons.png" alt="Payment Methods">
+                    </div>
+                    <nav class="footer-nav">
+                        <a href="index">Home</a>
+                        <a href="tours">Tours</a>
+                        <a href="blog">Blog</a>
+                        <a href="terms-conditions">Terms</a>
+                        <a href="privacy-policy">Privacy</a>
+                        <a href="payment">Payment</a>
+                        <a href="contact-us">Contact</a>
+                        <a href="sitemap">Sitemap</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scroll-top" class="scroll-top" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <script src="/js/main.js"></script>
+    <script>
+        // Simple tour details loader based on URL parameter
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get tour ID from URL query parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const tourId = urlParams.get('id');
+            
+            if (!tourId) {
+                // No tour ID provided, show recommended tours instead
+                document.getElementById('tour-content').style.display = 'none';
+                document.getElementById('recommended-tours').style.display = 'block';
+                return;
+            }
+            
+            // Here we would normally fetch tour data from a server
+            // For this example, we'll use some hardcoded data based on the ID
+            const tourData = {
+                1: {
+                    title: 'Gobi Desert Explorer',
+                    description: 'Experience the wonders of the legendary Gobi Desert with this immersive journey through Mongolia\'s most iconic landscapes.',
+                    type: 'Adventure',
+                    duration: 5,
+                    destination: 'Southern Mongolia',
+                    price: 690,
+                    difficulty: 'Moderate',
+                    bestTime: 'June - September',
+                    accommodation: 'Hotels & Ger Camps',
+                    overviewText: 'The Gobi Desert Explorer takes you through the diverse landscapes of the legendary Gobi Desert. Visit the towering sand dunes of Khongoryn Els, the dramatic red cliffs of Bayanzag where dinosaur fossils were discovered, and the stunning gorges of Yolyn Am. Experience the traditional nomadic lifestyle by staying in authentic ger camps and meeting local herding families. This tour combines natural wonders with cultural experiences for an unforgettable Mongolian adventure.'
+                },
+                2: {
+                    title: 'Northern Mongolia & Lake Khövsgöl',
+                    description: 'Discover the pristine beauty of Mongolia\'s northern wilderness including the stunning Lake Khövsgöl, known as the "Blue Pearl of Mongolia".',
+                    type: 'Nature',
+                    duration: 6,
+                    destination: 'Northern Mongolia',
+                    price: 780,
+                    difficulty: 'Easy',
+                    bestTime: 'June - August',
+                    accommodation: 'Hotels, Ger Camps & Homestays',
+                    overviewText: 'This journey takes you to the pristine wilderness of northern Mongolia, home to the crystal-clear Lake Khövsgöl. Known as the "Blue Pearl of Mongolia," this alpine lake is surrounded by forested mountains, meadows filled with wildflowers, and traditional settlements of nomadic herders. You\'ll have the opportunity to hike through beautiful landscapes, ride horses along the lakeshore, and even visit the unique Tsaatan reindeer herders who maintain their ancient way of life in the taiga forest. This tour is perfect for nature lovers and those seeking to experience Mongolia\'s diverse cultures and landscapes.'
+                },
+                3: {
+                    title: 'Western Mongolia Explorer',
+                    description: 'Journey through the remote and rugged landscapes of Western Mongolia, home to the majestic Altai Mountains and diverse ethnic groups.',
+                    type: 'Cultural',
+                    duration: 9,
+                    destination: 'Western Mongolia',
+                    price: 1190,
+                    difficulty: 'Moderate',
+                    bestTime: 'July - September',
+                    accommodation: 'Hotels, Ger Camps & Homestays',
+                    overviewText: 'The Western Mongolia Explorer takes you to the most remote and culturally diverse region of the country. Home to the soaring peaks of the Altai Mountains and a mosaic of ethnic groups, Western Mongolia offers unparalleled cultural and natural experiences. Visit Kazakh eagle hunters who maintain the ancient tradition of hunting with golden eagles, explore Tavan Bogd National Park with its magnificent glaciers and Mongolia\'s highest peaks, and meet the diverse ethnic communities that call this region home. This comprehensive journey combines dramatic landscapes, unique wildlife, and rich cultural traditions for an unforgettable Mongolian adventure.'
+                }
+            };
+            
+            // Check if we have data for the requested tour ID
+            if (!tourData[tourId]) {
+                // Invalid tour ID, show recommended tours instead
+                document.getElementById('tour-content').style.display = 'none';
+                document.getElementById('recommended-tours').style.display = 'block';
+                return;
+            }
+            
+            // Hide loading indicator
+            document.querySelector('.loading').style.display = 'none';
+            
+            // Populate tour header
+            document.getElementById('tour-header').style.display = 'block';
+            document.getElementById('tour-title').textContent = tourData[tourId].title;
+            document.getElementById('tour-description').textContent = tourData[tourId].description;
+            document.getElementById('tour-type').textContent = tourData[tourId].type;
+            document.getElementById('tour-duration').textContent = `${tourData[tourId].duration} Days`;
+            document.getElementById('tour-destination').textContent = tourData[tourId].destination;
+            
+            // Populate tour overview
+            document.getElementById('tour-overview').style.display = 'block';
+            document.getElementById('tour-price').textContent = tourData[tourId].price;
+            document.getElementById('tour-duration-days').textContent = tourData[tourId].duration;
+            document.getElementById('tour-difficulty').textContent = tourData[tourId].difficulty;
+            document.getElementById('tour-best-time').textContent = tourData[tourId].bestTime;
+            document.getElementById('tour-accommodation').textContent = tourData[tourId].accommodation;
+            document.getElementById('tour-overview-text').textContent = tourData[tourId].overviewText;
+            
+            // Set page title
+            document.title = `${tourData[tourId].title} - Khur Travel Mongolia`;
+        });
+    </script>
+<script src="/js/url-handler.js"></script><script src="js/image-path-corrector.js"></script></body>
+</html> 

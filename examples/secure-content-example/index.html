@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khur Mongolia - Secure Content Example</title>
+    
+    <!-- Load utilities first in the head -->
+    <script src="../js/load-utilities.js"></script>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .demo-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        h1, h2 {
+            color: #2c3e50;
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-right: 10px;
+        }
+        
+        .button:hover {
+            background: #2980b9;
+        }
+        
+        .console {
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 15px;
+            font-family: monospace;
+            max-height: 200px;
+            overflow-y: auto;
+            margin-top: 10px;
+        }
+        
+        .image-demo img {
+            max-width: 300px;
+            border: 1px solid #ddd;
+            margin: 10px;
+        }
+        
+        code {
+            background: #f8f8f8;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Secure Content Loader Demonstration</h1>
+        
+        <div class="demo-section">
+            <h2>Console Output</h2>
+            <p>Click the button below to enable debugging and see console messages:</p>
+            <button class="button" id="enableDebug">Enable Debug Mode</button>
+            <button class="button" id="disableDebug">Disable Debug Mode</button>
+            <div class="console" id="consoleOutput">Console messages will appear here...</div>
+        </div>
+        
+        <div class="demo-section">
+            <h2>Image Path Correction</h2>
+            <p>The images below have incorrect paths that will be automatically fixed:</p>
+            
+            <div class="image-demo">
+                <!-- Images with incorrect paths that will be fixed -->
+                <img src="http://example.com/images/sample1.jpg" alt="Example 1">
+                <img src="images/sample2.jpg" alt="Example 2">
+                <img src="/images/sample3.jpg" alt="Example 3">
+            </div>
+            
+            <p>After the page loads, these images will be corrected to use:</p>
+            <ul>
+                <li>Proper protocol (https instead of http)</li>
+                <li>Relative paths fixed to absolute when needed</li>
+                <li>Missing image fallbacks</li>
+            </ul>
+        </div>
+        
+        <div class="demo-section">
+            <h2>Link Protocol Updates</h2>
+            <p>The following links will be updated to match the current protocol:</p>
+            <ul>
+                <li><a href="http://example.com/page1">Example Link 1</a></li>
+                <li><a href="https://example.com/page2">Example Link 2</a></li>
+                <li><a href="//example.com/page3">Example Link 3</a></li>
+            </ul>
+        </div>
+        
+        <div class="demo-section">
+            <h2>Dynamic Content</h2>
+            <p>Click the button to add new content with mixed protocols - it will be automatically fixed:</p>
+            <button class="button" id="addContent">Add Dynamic Content</button>
+            <div id="dynamicContent"></div>
+        </div>
+    </div>
+    
+    <script>
+        // Function to format and display console messages in our UI
+        function logToConsole(message) {
+            const consoleOutput = document.getElementById('consoleOutput');
+            const logEntry = document.createElement('div');
+            logEntry.textContent = '> ' + message;
+            consoleOutput.appendChild(logEntry);
+            consoleOutput.scrollTop = consoleOutput.scrollHeight;
+        }
+        
+        // Override console.log to show messages in our UI
+        const originalConsoleLog = console.log;
+        console.log = function() {
+            const args = Array.from(arguments);
+            originalConsoleLog.apply(console, args);
+            
+            // Only capture our utility messages
+            const message = args.join(' ');
+            if (message.includes('[Khur') || message.includes('[Secure')) {
+                logToConsole(message);
+            }
+        };
+        
+        // Enable debug mode button
+        document.getElementById('enableDebug').addEventListener('click', function() {
+            window.KhurUtilities.setDebug(true);
+            logToConsole('Debug mode enabled');
+            
+            // If SecureContentLoader is loaded, we'll also see its debug messages
+            if (window.SecureContentLoader) {
+                window.SecureContentLoader.setDebug(true);
+            }
+        });
+        
+        // Disable debug mode button
+        document.getElementById('disableDebug').addEventListener('click', function() {
+            window.KhurUtilities.setDebug(false);
+            logToConsole('Debug mode disabled');
+            
+            if (window.SecureContentLoader) {
+                window.SecureContentLoader.setDebug(false);
+            }
+        });
+        
+        // Add dynamic content button
+        document.getElementById('addContent').addEventListener('click', function() {
+            const dynamicContent = document.getElementById('dynamicContent');
+            
+            // Clear previous content
+            dynamicContent.innerHTML = '';
+            
+            // Add new content with mixed protocols
+            const newContent = document.createElement('div');
+            newContent.innerHTML = `
+                <div style="margin-top: 15px; padding: 15px; border: 1px dashed #ccc;">
+                    <h3>Dynamically Added Content</h3>
+                    <p>This content was added dynamically and includes mixed content:</p>
+                    <img src="http://example.com/images/dynamic-image.jpg" alt="Dynamic Image" style="max-width: 200px;">
+                    <p>Link to <a href="http://example.com/dynamic">dynamic page</a></p>
+                    <div style="background-image: url('http://example.com/images/bg.jpg'); height: 100px; width: 100%; margin-top: 10px;">
+                        Background image element
+                    </div>
+                </div>
+            `;
+            
+            dynamicContent.appendChild(newContent);
+            logToConsole('Dynamic content added - protocols should be automatically fixed');
+        });
+    </script>
+</body>
+</html> 

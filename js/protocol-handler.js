@@ -1,0 +1,189 @@
+/**
+ * MODIFIED FOR LOCAL TESTING
+ * Original file backed up to protocol-handler.js.bak
+ */
+
+// Skip all redirects when running on localhost
+if (window.location.hostname === 'localhost' || 
+    window.location.hostname === '127.0.0.1' ||
+    window.location.hostname.startsWith('192.168.')) {
+  console.log('Redirects disabled for local testing');
+} else {
+  /**
+ * MODIFIED FOR LOCAL TESTING
+ * Original file backed up to protocol-handler.js.bak
+ */
+
+// Skip all redirects when running on localhost
+if (window.location.hostname === 'localhost' || 
+    window.location.hostname === '127.0.0.1' ||
+    window.location.hostname.startsWith('192.168.')) {
+  console.log('Redirects disabled for local testing');
+} else {
+  /**
+ * Protocol Handler
+ * 
+ * This script handles protocol-related functionality:
+ * 1. Forces redirect from HTTP to HTTPS in production environments
+ * 2. Updates links on the page to match the current protocol
+ * 3. Provides functions to safely build URLs with the correct protocol
+ */
+(function() {
+    // Configuration
+    const FORCE_HTTPS = true; // Set to false to disable forced HTTPS redirects
+    const PRODUCTION_DOMAINS = ['khurmongoliatravel.com', 'www.khurmongoliatravel.com'];
+    
+    // Initialize when DOM is ready
+    document.addEventListener('DOMContentLoaded', function() {
+        // Only force HTTPS on production domains
+        if (FORCE_HTTPS && shouldForceHttps()) {
+            redirectToHttps();
+        }
+        
+        // Fix links on the page
+        updatePageLinks();
+        
+        // Observe DOM changes to fix dynamically added links
+        observeDynamicLinks();
+    });
+    
+    /**
+     * Determine if we should force HTTPS based on current domain
+     */
+    function shouldForceHttps() {
+        const currentDomain = window.location.hostname;
+        return PRODUCTION_DOMAINS.includes(currentDomain);
+    }
+    
+    /**
+     * Redirect from HTTP to HTTPS if needed
+     */
+    function redirectToHttps() {
+        if (window.location.protocol !== 'https:') {
+            // Store the attempt in localStorage to prevent redirect loops
+            const redirectAttempts = parseInt(localStorage.getItem('httpsRedirectAttempts') || '0');
+            
+            if (redirectAttempts < 3) {
+                localStorage.setItem('httpsRedirectAttempts', (redirectAttempts + 1).toString());
+                window.location.href = window.location.href.replace('http:', 'https:');
+            } else {
+                // Log error after 3 attempts to prevent infinite loops
+                console.error('Failed to redirect to HTTPS after multiple attempts');
+                // Reset after 1 hour
+                setTimeout(function() {
+                    localStorage.removeItem('httpsRedirectAttempts');
+                }, 3600000);
+            }
+        } else {
+            // Clear redirect attempts when successfully on HTTPS
+            localStorage.removeItem('httpsRedirectAttempts');
+        }
+    }
+    
+    /**
+     * Update all links on the page to use the current protocol
+     */
+    function updatePageLinks() {
+        const currentProtocol = window.location.protocol;
+        const links = document.querySelectorAll('a[href^="http:"], a[href^="https:"]');
+        
+        links.forEach(function(link) {
+            const href = link.getAttribute('href');
+            const url = new URL(href);
+            
+            // Only update links to our own domain
+            if (PRODUCTION_DOMAINS.includes(url.hostname)) {
+                // Update the protocol to match current
+                url.protocol = currentProtocol;
+                link.setAttribute('href', url.toString());
+            }
+        });
+    }
+    
+    /**
+     * Create a mutation observer to monitor and fix dynamically added links
+     */
+    function observeDynamicLinks() {
+        const observer = new MutationObserver(function(mutations) {
+            let needsLinkUpdate = false;
+            
+            mutations.forEach(function(mutation) {
+                if (mutation.type === 'childList') {
+                    mutation.addedNodes.forEach(function(node) {
+                        if (node.nodeType === 1) { // Element node
+                            if (node.tagName === 'A' && 
+                                (node.href.startsWith('http:') || node.href.startsWith('https:'))) {
+                                needsLinkUpdate = true;
+                            } else if (node.querySelectorAll) {
+                                const links = node.querySelectorAll('a[href^="http:"], a[href^="https:"]');
+                                if (links.length > 0) {
+                                    needsLinkUpdate = true;
+                                }
+                            }
+                        }
+                    });
+                } else if (mutation.type === 'attributes') {
+                    if (mutation.attributeName === 'href' && 
+                        mutation.target.tagName === 'A' &&
+                        (mutation.target.href.startsWith('http:') || 
+                         mutation.target.href.startsWith('https:'))) {
+                        needsLinkUpdate = true;
+                    }
+                }
+            });
+            
+            if (needsLinkUpdate) {
+                updatePageLinks();
+            }
+        });
+        
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true,
+            attributes: true,
+            attributeFilter: ['href']
+        });
+    }
+    
+    /**
+     * Public API - Make these functions available globally
+     */
+    window.ProtocolHandler = {
+        /**
+         * Build a URL with the correct protocol
+         * @param {string} path - The path or full URL
+         * @return {string} The URL with the correct protocol
+         */
+        buildUrl: function(path) {
+            if (!path) return '';
+            
+            // If it's already a full URL
+            if (path.startsWith('http:') || path.startsWith('https:')) {
+                const url = new URL(path);
+                // Only modify our own domains
+                if (PRODUCTION_DOMAINS.includes(url.hostname)) {
+                    url.protocol = window.location.protocol;
+                    return url.toString();
+                }
+                return path;
+            }
+            
+            // It's a relative path, make it absolute
+            const baseUrl = window.location.protocol + '//' + window.location.host;
+            if (path.startsWith('/')) {
+                return baseUrl + path;
+            } else {
+                // Handle relative paths that don't start with slash
+                const currentPath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
+                return baseUrl + currentPath + path;
+            }
+        },
+        
+        /**
+         * Force update all links on the page
+         */
+        updateLinks: updatePageLinks
+    };
+})(); 
+}
+}

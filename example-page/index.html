@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example Page - Before Clean URL Transformation</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <script src="/js/main.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/about-us">About Us</a></li>
+                <li><a href="/contact-us">Contact</a></li>
+                <li><a href="/tours">Tours</a>
+                    <ul>
+                        <li><a href="/western-tours">Western Tours</a></li>
+                        <li><a href="/northern-tours">Northern Tours</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Example Page Before Transformation</h1>
+        
+        <p>This page demonstrates the HTML structure before transformation to clean URLs.</p>
+        
+        <h2>Notice the following:</h2>
+        <ul>
+            <li>All links have .html extensions</li>
+            <li>CSS and JS references use relative paths</li>
+            <li>The page is in the root directory</li>
+        </ul>
+        
+        <h2>After running the transformation script:</h2>
+        <ul>
+            <li>This file will be moved to /example-page/index.html</li>
+            <li>All links will be updated to use directory style (e.g., /about-us/ instead of about-us.html)</li>
+            <li>Resource paths will be made absolute (e.g., /css/main.css instead of css/main.css)</li>
+        </ul>
+        
+        <p>Here are more example links:</p>
+        <ul>
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms-conditions">Terms & Conditions</a></li>
+            <li><a href="/blog">Blog</a></li>
+        </ul>
+        
+        <img src="/images/sample.jpg" alt="Sample Image">
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Example Company. All rights reserved.</p>
+        <ul>
+            <li><a href="/terms-conditions">Terms</a></li>
+            <li><a href="/privacy-policy">Privacy</a></li>
+        </ul>
+    </footer>
+</body>
+</html> 

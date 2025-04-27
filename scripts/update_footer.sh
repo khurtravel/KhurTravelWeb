@@ -48,7 +48,7 @@ for file in "${HTML_FILES[@]}"; do
                         </address>\
                         <p class="footer-contact">\
                             <span><i class="fas fa-phone"></i> 976-70106695</span>\
-                            <span><i class="fas fa-mobile-alt"></i> 976-99775008</span>\
+                            <span><i class="fas fa-mobile-alt"></i> 976-99119777</span>\
                             <span><i class="fas fa-envelope"></i> info@tourmongolia.com</span>\
                         </p>\
                         <div class="footer-social">\

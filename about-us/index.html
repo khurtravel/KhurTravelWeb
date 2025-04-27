@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Khur Travel Mongolia</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        .page-header {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/hero-1.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 48px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .about-intro {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .about-intro h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #1a2b3c;
+        }
+        
+        .about-intro p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .about-section {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 80px;
+            align-items: center;
+        }
+        
+        .about-text {
+            flex: 1 1 600px;
+            padding: 0 30px;
+        }
+        
+        .about-text h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #1a2b3c;
+        }
+        
+        .about-text p {
+            margin-bottom: 15px;
+            line-height: 1.7;
+            color: #555;
+        }
+        
+        .about-image {
+            flex: 1 1 400px;
+            padding: 0 20px;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .reversed {
+            flex-direction: row-reverse;
+        }
+        
+        .team-section {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+        
+        .team-section h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            color: #1a2b3c;
+        }
+        
+        .team-section p {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+            color: #555;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .team-member {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+        
+        .member-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .member-info {
+            padding: 20px;
+        }
+        
+        .member-info h4 {
+            font-size: 20px;
+            margin-bottom: 5px;
+            color: #1a2b3c;
+        }
+        
+        .member-info .position {
+            color: #c93;
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .member-info p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .member-social {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .member-social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: #f5f5f5;
+            border-radius: 50%;
+            color: #555;
+            transition: all 0.3s;
+        }
+        
+        .member-social a:hover {
+            background: #c93;
+            color: white;
+        }
+        
+        .testimonial-section {
+            background: #f8f8f8;
+            padding: 60px 0;
+            margin-bottom: 80px;
+        }
+        
+        .testimonial-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .testimonial-section h3 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: #1a2b3c;
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .testimonial-card .quote {
+            font-size: 20px;
+            color: #c93;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-content {
+            font-style: italic;
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: #1a2b3c;
+        }
+        
+        .author-info .country {
+            font-size: 14px;
+            color: #777;
+        }
+        
+        .cta-section {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/DSC00073.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 60px;
+        }
+        
+        .cta-section h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        
+        .cta-section p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 18px;
+            line-height: 1.7;
+        }
+        
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .btn-primary {
+            background-color: #c93;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            display: inline-block;
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 13px 30px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        
+        .btn-primary:hover {
+            background-color: #b82;
+        }
+        
+        .btn-secondary:hover {
+            background-color: white;
+            color: #1a2b3c;
+        }
+        
+        @media (max-width: 768px) {
+            .about-section {
+                flex-direction: column;
+            }
+            
+            .about-text, .about-image {
+                flex: 1 1 100%;
+                padding: 0;
+                margin-bottom: 30px;
+            }
+            
+            .reversed {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header section -->
+    <header>
+        <div class="top-bar">
+            <div class="container">
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <div class="contact-info">
+                    <a href="tel:+97699119777"><i class="fas fa-phone"></i> 976-99119777</a>
+                </div>
+                <div class="top-nav">
+                    <a href="about-us" class="active">ABOUT US</a>
+                    <a href="contact-us">CONTACT US</a>
+                    <a href="enquire" class="enquire-btn">ENQUIRE NOW</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-header">
+            <div class="container">
+                <div class="logo">
+                    <a href="index">
+                        <img src="/img/khurlogo.png" alt="Khur Travel Mongolia Logo">
+                    </a>
+                </div>
+                <div class="search-bar">
+                    <form action="#" method="get">
+                        <input type="text" placeholder="Search tours">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="main-nav">
+            <div class="container">
+                <ul>
+                    <li><a href="index">HOME</a></li>
+                    <li><a href="destinations">DESTINATIONS</a></li>
+                    <li><a href="tours">TOURS</a></li>
+                    <li><a href="about-mongolia">ABOUT MONGOLIA</a></li>
+                    <li><a href="blog">TRAVEL GUIDES</a></li>
+                    <li><a href="about-us" class="active">ABOUT US</a></li>
+                    <li><a href="contact-us">CONTACT</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container">
+            <h1>About Khur Travel</h1>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="about-container">
+        <div class="about-intro">
+            <h2>Your Trusted Mongolia Travel Specialist Since 2007</h2>
+            <p>At Khur Travel, we're passionate about sharing the authentic beauty and culture of Mongolia with travelers from around the world. With over 15 years of experience, our team of local experts is committed to creating unforgettable journeys that connect you with the true spirit of this remarkable land.</p>
+        </div>
+        
+        <div class="about-section">
+            <div class="about-text">
+                <h3>Our Story</h3>
+                <p>Khur Travel was founded in 2007 by a group of passionate Mongolian travel enthusiasts with a shared vision: to showcase the authentic beauty of Mongolia to the world while supporting local communities and preserving our precious natural environment.</p>
+                <p>What began as a small operation has grown into one of Mongolia's most respected travel companies, serving thousands of satisfied travelers from across the globe. Throughout our journey, we've maintained our commitment to quality, authenticity, and sustainability.</p>
+                <p>Our name "Khur" comes from the traditional Mongolian horsehead fiddle, an ancient string instrument that symbolizes our rich cultural heritage. Just as the khuur creates beautiful melodies that touch the soul, we strive to create travel experiences that resonate deeply with our guests.</p>
+            </div>
+            <div class="about-image">
+                <img src="/images/C0022T01 (2).jpg" alt="Khur Travel Team">
+            </div>
+        </div>
+        
+        <div class="about-section reversed">
+            <div class="about-text">
+                <h3>Our Philosophy</h3>
+                <p>We believe that travel should be transformative, enriching, and responsible. Every tour we design is crafted with these principles in mind:</p>
+                <p><strong>Authenticity:</strong> We create genuine cultural connections between travelers and local communities, offering insights into Mongolia's nomadic traditions that can't be found in guidebooks.</p>
+                <p><strong>Expertise:</strong> Our guides are passionate locals with deep knowledge of Mongolia's history, culture, and natural wonders, ensuring you receive the most informed and engaging experience possible.</p>
+                <p><strong>Sustainability:</strong> We're committed to environmentally responsible tourism practices that respect and preserve Mongolia's pristine landscapes for future generations.</p>
+                <p><strong>Personalization:</strong> We understand that every traveler is unique, which is why we offer both carefully curated itineraries and fully customized experiences tailored to your specific interests.</p>
+            </div>
+            <div class="about-image">
+                <img src="/images/C0014T01.jpg" alt="Mongolian Landscapes">
+            </div>
+        </div>
+        
+        <div class="team-section">
+            <h3>Meet Our Team</h3>
+            <p>Our dedicated team of travel specialists, guides, and support staff work together to ensure your Mongolian adventure exceeds all expectations. With diverse backgrounds but a shared passion for Mongolia, our team members are the heart of Khur Travel.</p>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="/images/C0022T01 (2).jpg" alt="Batbayar Tserenpil">
+                    </div>
+                    <div class="member-info">
+                        <h4>Batbayar Tserenpil</h4>
+                        <span class="position">Founder & CEO</span>
+                        <p>With over 20 years in tourism, Batbayar's deep knowledge of Mongolia and commitment to sustainable travel has shaped our company's vision and values.</p>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="/images/C0069T01 (2).jpg" alt="Oyuntsetseg Davaajav">
+                    </div>
+                    <div class="member-info">
+                        <h4>Oyuntsetseg Davaajav</h4>
+                        <span class="position">Operations Manager</span>
+                        <p>Oyuntsetseg ensures every tour runs smoothly, coordinating our team and partners across Mongolia to deliver exceptional experiences.</p>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="/images/C0020T01 (2).jpg" alt="Tsolmon Bat-Erdene">
+                    </div>
+                    <div class="member-info">
+                        <h4>Tsolmon Bat-Erdene</h4>
+                        <span class="position">Senior Tour Guide</span>
+                        <p>Fluent in English and Japanese, Tsolmon specializes in cultural and historical tours and has led over 200 expeditions across Mongolia.</p>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <div class="member-image">
+                        <img src="/images/C0096T01 (2).jpg" alt="Enkhjargal Ganbold">
+                    </div>
+                    <div class="member-info">
+                        <h4>Enkhjargal Ganbold</h4>
+                        <span class="position">Travel Consultant</span>
+                        <p>Enkhjargal's attention to detail and understanding of travelers' needs helps create perfectly tailored itineraries for our clients.</p>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="testimonial-section">
+            <div class="testimonial-container">
+                <h3>What Our Travelers Say</h3>
+                <div class="testimonial-grid">
+                    <div class="testimonial-card">
+                        <div class="quote"><i class="fas fa-quote-left"></i></div>
+                        <div class="testimonial-content">
+                            Our 12-day journey through Mongolia with Khur Travel was truly life-changing. From the vast Gobi Desert to the nomadic communities in Central Mongolia, every day brought new wonders. Our guide Tsolmon was exceptional - knowledgeable, professional, and fun!
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="/images/C0023T01 (2).jpg" alt="Sarah Johnson">
+                            </div>
+                            <div class="author-info">
+                                <h4>Sarah Johnson</h4>
+                                <span class="country">United States</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="quote"><i class="fas fa-quote-left"></i></div>
+                        <div class="testimonial-content">
+                            As a photographer, I was looking for authentic experiences and spectacular landscapes, and Khur Travel delivered beyond my expectations. They took me to perfect locations at the right times, and facilitated meaningful interactions with local families.
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="/images/C0086T01.jpg" alt="Thomas Weber">
+                            </div>
+                            <div class="author-info">
+                                <h4>Thomas Weber</h4>
+                                <span class="country">Germany</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="quote"><i class="fas fa-quote-left"></i></div>
+                        <div class="testimonial-content">
+                            We took the 9-day Naadam Festival tour and it exceeded all expectations. The festival itself was incredible, and Khur Travel arranged special access that allowed us to get amazing photos. The accommodations were comfortable and the food was excellent!
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">
+                                <img src="/images/DSC00008 (2).jpg" alt="Yuki and Takashi Tanaka">
+                            </div>
+                            <div class="author-info">
+                                <h4>Yuki and Takashi Tanaka</h4>
+                                <span class="country">Japan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cta-section">
+            <h3>Ready to Explore Mongolia?</h3>
+            <p>Let us help you create the perfect Mongolian adventure tailored to your interests, timeline, and travel style. Whether you're seeking cultural immersion, outdoor adventure, wildlife encounters, or photographic opportunities, our team is ready to craft your dream journey.</p>
+            <div class="btn-group">
+                <a href="enquire" class="btn-primary">Plan Your Trip</a>
+                <a href="contact-us" class="btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-col footer-info">
+                        <div class="footer-logo">
+                            <img src="/img/khurlogo.png" alt="Khur Travel Mongolia Logo">
+                        </div>
+                        <address>
+                            Room 14, Building 69 Sukhbaatar<br>
+                            District, 14200, Ulaanbaatar, Mongolia
+                        </address>
+                        <p class="footer-contact">
+                            <span><i class="fas fa-phone"></i> 976-70106695</span>
+                            <span><i class="fas fa-mobile-alt"></i> 976-99119777</span>
+                            <span><i class="fas fa-envelope"></i> info@tourmongolia.com</span>
+                        </p>
+                        <div class="footer-social">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Travel Destinations</h4>
+                        <ul>
+                            <li><a href="destinations.html#northern">Northern Mongolia</a></li>
+                            <li><a href="destinations.html#central">Central Mongolia</a></li>
+                            <li><a href="destinations.html#eastern">Eastern Mongolia</a></li>
+                            <li><a href="destinations.html#southern">Southern Mongolia</a></li>
+                            <li><a href="destinations.html#western">Western Mongolia</a></li>
+                            <li><a href="destinations">Top Travel Destinations</a></li>
+                            <li><a href="photo-spots">Best Photography Spots</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Mongolia Tours</h4>
+                        <ul>
+                            <li><a href="tours.html?type=adventure">Adventure Tours</a></li>
+                            <li><a href="tours.html?type=photography">Photography Tours</a></li>
+                            <li><a href="tours.html?type=culture">Culture Tours</a></li>
+                            <li><a href="tours.html?type=discovery">Discovery Tours</a></li>
+                            <li><a href="tours.html?type=hiking">Hiking & Trekking</a></li>
+                            <li><a href="tours.html?type=riding">Horse & Camel Riding</a></li>
+                            <li><a href="tours.html?type=naadam">Naadam Festival</a></li>
+                            <li><a href="tours.html?type=event">Event Tours</a></li>
+                            <li><a href="tours.html?type=best">Best Sellers</a></li>
+                            <li><a href="tours.html?type=fixed">Fixed Date Tours</a></li>
+                            <li><a href="tours.html?type=discount">Discounted Tours</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Travel Resources</h4>
+                        <div class="footer-double-col">
+                            <div>
+                                <h5>Travel Guide</h5>
+                                <ul>
+                                    <li><a href="trip-planning">Trip Planning</a></li>
+                                    <li><a href="travel-tips">Travel Tips</a></li>
+                                    <li><a href="things-to-do">Things To Do</a></li>
+                                    <li><a href="best-of-mongolia">Best of Mongolia</a></li>
+                                    <li><a href="attractions">Attractions</a></li>
+                                    <li><a href="custom-trip">Custom Trips</a></li>
+                                    <li><a href="blog">Travel Blog</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5>About Mongolia</h5>
+                                <ul>
+                                    <li><a href="about-mongolia.html#geography">Geography</a></li>
+                                    <li><a href="about-mongolia.html#history">History</a></li>
+                                    <li><a href="about-mongolia.html#nomads">Nomadic Life</a></li>
+                                    <li><a href="about-mongolia.html#culture">Culture & Heritage</a></li>
+                                    <li><a href="festivals">Festivals & Events</a></li>
+                                    <li><a href="nature">Nature & Wildlife</a></li>
+                                    <li><a href="cuisine">Cuisine</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-wrapper">
+                    <div class="copyright">
+                        <p>&copy; 2007-2023 KHUR TRAVEL CO.LTD. All rights reserved.</p>
+                    </div>
+                    <div class="payment-methods">
+                        <span>Secure Payments:</span>
+                        <img src="/images/payment-icons.png" alt="Payment Methods">
+                    </div>
+                    <nav class="footer-nav">
+                        <a href="index">Home</a>
+                        <a href="tours">Tours</a>
+                        <a href="blog">Blog</a>
+                        <a href="terms-conditions">Terms</a>
+                        <a href="privacy-policy">Privacy</a>
+                        <a href="payment">Payment</a>
+                        <a href="contact-us">Contact</a>
+                        <a href="sitemap">Sitemap</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scroll-top" class="scroll-top" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="/js/main.js"></script>
+<script src="/js/url-handler.js"></script><script src="js/image-path-corrector.js"></script></body>
+</html> 

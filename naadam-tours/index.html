@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naadam Festival Tours - Khur Travel</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Additional styles specific to this page */
+        .tours-header {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/DSC00008 (2).jpg');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .tours-header h1 {
+            font-size: 48px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .tours-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .tours-intro h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #1a2b3c;
+        }
+        
+        .tours-intro p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #555;
+        }
+        
+        .tour-list {
+            padding: 40px 0 80px;
+            background-color: #f5f5f5;
+        }
+        
+        .tour-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .tour-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .tour-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .tour-img {
+            position: relative;
+        }
+        
+        .tour-img img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .tour-duration {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #c93;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+        
+        .tour-content {
+            padding: 25px;
+        }
+        
+        .tour-content h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #1a2b3c;
+        }
+        
+        .tour-content p {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        
+        .tour-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            color: #777;
+        }
+        
+        .tour-meta .price {
+            color: #c93;
+            font-weight: 700;
+            font-size: 18px;
+        }
+        
+        .tour-content .btn {
+            display: inline-block;
+            width: 100%;
+            padding: 12px 0;
+            background-color: #c93;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+        
+        .tour-content .btn:hover {
+            background-color: #b82;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header section -->
+    <header>
+        <div class="top-bar">
+            <div class="container">
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <div class="contact-info">
+                    <a href="tel:+97699119777"><i class="fas fa-phone"></i> 976-99119777</a>
+                </div>
+                <div class="top-nav">
+                    <a href="about-us">ABOUT US</a>
+                    <a href="contact-us">CONTACT US</a>
+                    <a href="enquire" class="enquire-btn">ENQUIRE NOW</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-header">
+            <div class="container">
+                <div class="logo">
+                    <a href="index">
+                        <img src="/img/khurlogo.png" alt="Khur Travel Mongolia Logo">
+                    </a>
+                </div>
+                <div class="search-bar">
+                    <form action="#" method="get">
+                        <input type="text" placeholder="Search tours">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="main-nav">
+            <div class="container">
+                <ul>
+                    <li><a href="index">HOME</a></li>
+                    <li><a href="destinations">DESTINATIONS</a></li>
+                    <li><a href="tours" class="active">TOURS</a></li>
+                    <li><a href="about-mongolia">ABOUT MONGOLIA</a></li>
+                    <li><a href="blog">TRAVEL GUIDES</a></li>
+                    <li><a href="about-us">ABOUT US</a></li>
+                    <li><a href="contact-us">CONTACT</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Tours Header -->
+    <div class="tours-header">
+        <div class="container">
+            <h1>Naadam Festival Tours</h1>
+        </div>
+    </div>
+
+    <!-- Tours Introduction -->
+    <div class="tours-intro">
+        <div class="container">
+            <h2>Experience Mongolia's Most Important Festival</h2>
+            <p>The Naadam Festival is Mongolia's most spectacular celebration and a UNESCO Intangible Cultural Heritage. Held annually in July, this centuries-old tradition features the "Three Manly Games" - wrestling, horse racing, and archery. Our Naadam Festival tours offer you a front-row seat to this colorful cultural extravaganza, combining the festival experience with explorations of Mongolia's stunning landscapes and nomadic traditions.</p>
+        </div>
+    </div>
+
+    <!-- Tour List -->
+    <section class="tour-list">
+        <div class="container">
+            <div class="section-header">
+                <h2>NAADAM FESTIVAL <span>TOURS</span></h2>
+                <p>Discover our selection of tours featuring the Naadam Festival</p>
+            </div>
+            
+            <div class="tour-grid">
+                <div class="tour-card">
+                    <div class="tour-img">
+                        <img src="/images/hero-1.jpg" alt="Classic Naadam Festival Tour">
+                        <div class="tour-duration">7 Days</div>
+                    </div>
+                    <div class="tour-content">
+                        <h3>CLASSIC NAADAM FESTIVAL TOUR</h3>
+                        <p>Experience the national Naadam Festival in Ulaanbaatar with excursions to nearby attractions</p>
+                        <div class="tour-meta">
+                            <span><i class="fas fa-star"></i> 4.9</span>
+                            <span><i class="fas fa-mountain"></i> Easy</span>
+                            <span class="price">$1,190</span>
+                        </div>
+                        <a href="tour-details-classic-naadam" class="btn">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="tour-card">
+                    <div class="tour-img">
+                        <img src="/images/hero-1.jpg" alt="Naadam and Gobi Desert">
+                        <div class="tour-duration">10 Days</div>
+                    </div>
+                    <div class="tour-content">
+                        <h3>NAADAM FESTIVAL & GOBI DESERT</h3>
+                        <p>Combine the excitement of Naadam with an exploration of the stunning Gobi Desert</p>
+                        <div class="tour-meta">
+                            <span><i class="fas fa-star"></i> 4.8</span>
+                            <span><i class="fas fa-mountain"></i> Moderate</span>
+                            <span class="price">$1,790</span>
+                        </div>
+                        <a href="tour-details-naadam-gobi" class="btn">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="tour-card">
+                    <div class="tour-img">
+                        <img src="/images/tour-3.jpg" alt="Nomadic Naadam">
+                        <div class="tour-duration">8 Days</div>
+                    </div>
+                    <div class="tour-content">
+                        <h3>NOMADIC NAADAM EXPERIENCE</h3>
+                        <p>Experience an authentic local Naadam celebration in a rural province away from tourist crowds</p>
+                        <div class="tour-meta">
+                            <span><i class="fas fa-star"></i> 4.9</span>
+                            <span><i class="fas fa-mountain"></i> Easy</span>
+                            <span class="price">$1,450</span>
+                        </div>
+                        <a href="tour-details-nomadic-naadam" class="btn">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="tour-card">
+                    <div class="tour-img">
+                        <img src="/images/tour-2.jpg" alt="Naadam and Khuvsgul">
+                        <div class="tour-duration">12 Days</div>
+                    </div>
+                    <div class="tour-content">
+                        <h3>NAADAM FESTIVAL & LAKE KHÖVSGÖL</h3>
+                        <p>Witness Naadam in Ulaanbaatar then journey to the pristine northern lake region</p>
+                        <div class="tour-meta">
+                            <span><i class="fas fa-star"></i> 4.8</span>
+                            <span><i class="fas fa-mountain"></i> Moderate</span>
+                            <span class="price">$2,090</span>
+                        </div>
+                        <a href="tour-details-naadam-khovsgol" class="btn">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="tour-card">
+                    <div class="tour-img">
+                        <img src="/images/tour-4.jpg" alt="Western Mongolia Naadam">
+                        <div class="tour-duration">14 Days</div>
+                    </div>
+                    <div class="tour-content">
+                        <h3>NAADAM & WESTERN MONGOLIA</h3>
+                        <p>Experience the national Naadam Festival followed by an adventure in the Altai Mountains</p>
+                        <div class="tour-meta">
+                            <span><i class="fas fa-star"></i> 4.9</span>
+                            <span><i class="fas fa-mountain"></i> Challenging</span>
+                            <span class="price">$2,490</span>
+                        </div>
+                        <a href="tour-details-naadam-western" class="btn">View Details</a>
+                    </div>
+                </div>
+                
+                <div class="tour-card">
+                    <div class="tour-img">
+                        <img src="/images/hero-1.jpg" alt="Naadam Photography Tour">
+                        <div class="tour-duration">9 Days</div>
+                    </div>
+                    <div class="tour-content">
+                        <h3>NAADAM PHOTOGRAPHY TOUR</h3>
+                        <p>Capture stunning images of this colorful festival with expert photography guidance</p>
+                        <div class="tour-meta">
+                            <span><i class="fas fa-star"></i> 4.8</span>
+                            <span><i class="fas fa-mountain"></i> Easy</span>
+                            <span class="price">$1,950</span>
+                        </div>
+                        <a href="tour-details-naadam-photo" class="btn">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-col footer-info">
+                        <div class="footer-logo">
+                            <img src="/img/khurlogo.png" alt="Khur Travel Mongolia Logo">
+                        </div>
+                        <address>
+                            Room 14, Building 69 Sukhbaatar<br>
+                            District, 14200, Ulaanbaatar, Mongolia
+                        </address>
+                        <p class="footer-contact">
+                            <span><i class="fas fa-phone"></i> 976-70106695</span>
+                            <span><i class="fas fa-mobile-alt"></i> 976-99119777</span>
+                            <span><i class="fas fa-envelope"></i> info@tourmongolia.com</span>
+                        </p>
+                        <div class="footer-social">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Travel Destinations</h4>
+                        <ul>
+                            <li><a href="destinations.html#northern">Northern Mongolia</a></li>
+                            <li><a href="destinations.html#central">Central Mongolia</a></li>
+                            <li><a href="destinations.html#eastern">Eastern Mongolia</a></li>
+                            <li><a href="destinations.html#southern">Southern Mongolia</a></li>
+                            <li><a href="destinations.html#western">Western Mongolia</a></li>
+                            <li><a href="destinations">Top Travel Destinations</a></li>
+                            <li><a href="photo-spots">Best Photography Spots</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Mongolia Tours</h4>
+                        <ul>
+                            <li><a href="tours.html?type=adventure">Adventure Tours</a></li>
+                            <li><a href="tours.html?type=photography">Photography Tours</a></li>
+                            <li><a href="tours.html?type=culture">Culture Tours</a></li>
+                            <li><a href="tours.html?type=discovery">Discovery Tours</a></li>
+                            <li><a href="tours.html?type=hiking">Hiking & Trekking</a></li>
+                            <li><a href="tours.html?type=riding">Horse & Camel Riding</a></li>
+                            <li><a href="tours.html?type=naadam">Naadam Festival</a></li>
+                            <li><a href="tours.html?type=event">Event Tours</a></li>
+                            <li><a href="tours.html?type=best">Best Sellers</a></li>
+                            <li><a href="tours.html?type=fixed">Fixed Date Tours</a></li>
+                            <li><a href="tours.html?type=discount">Discounted Tours</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Travel Resources</h4>
+                        <div class="footer-double-col">
+                            <div>
+                                <h5>Travel Guide</h5>
+                                <ul>
+                                    <li><a href="trip-planning">Trip Planning</a></li>
+                                    <li><a href="travel-tips">Travel Tips</a></li>
+                                    <li><a href="things-to-do">Things To Do</a></li>
+                                    <li><a href="best-of-mongolia">Best of Mongolia</a></li>
+                                    <li><a href="attractions">Attractions</a></li>
+                                    <li><a href="custom-trip">Custom Trips</a></li>
+                                    <li><a href="blog">Travel Blog</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5>About Mongolia</h5>
+                                <ul>
+                                    <li><a href="about-mongolia.html#geography">Geography</a></li>
+                                    <li><a href="about-mongolia.html#history">History</a></li>
+                                    <li><a href="about-mongolia.html#nomads">Nomadic Life</a></li>
+                                    <li><a href="about-mongolia.html#culture">Culture & Heritage</a></li>
+                                    <li><a href="festivals">Festivals & Events</a></li>
+                                    <li><a href="nature">Nature & Wildlife</a></li>
+                                    <li><a href="cuisine">Cuisine</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-wrapper">
+                    <div class="copyright">
+                        <p>&copy; 2007-2023 KHUR TRAVEL CO.LTD. All rights reserved.</p>
+                    </div>
+                    <div class="payment-methods">
+                        <span>Secure Payments:</span>
+                        <img src="/images/payment-icons.png" alt="Payment Methods">
+                    </div>
+                    <nav class="footer-nav">
+                        <a href="index">Home</a>
+                        <a href="tours">Tours</a>
+                        <a href="blog">Blog</a>
+                        <a href="terms-conditions">Terms</a>
+                        <a href="privacy-policy">Privacy</a>
+                        <a href="payment">Payment</a>
+                        <a href="contact-us">Contact</a>
+                        <a href="sitemap">Sitemap</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scroll-top" class="scroll-top" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <script src="/js/main.js"></script>
+<script src="/js/url-handler.js"></script><script src="js/image-path-corrector.js"></script></body>
+</html> 

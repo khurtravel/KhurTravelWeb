@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitemap - Khur Travel</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Additional styles specific to this page */
+        .sitemap-header {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/sitemap-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .sitemap-header h1 {
+            font-size: 48px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .sitemap-section {
+            padding: 80px 0;
+        }
+        
+        .sitemap-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .sitemap-category {
+            margin-bottom: 40px;
+        }
+        
+        .sitemap-category h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            color: #1a2b3c;
+            border-bottom: 2px solid #c93;
+        }
+        
+        .sitemap-links ul {
+            list-style: none;
+        }
+        
+        .sitemap-links ul li {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .sitemap-links ul li:before {
+            content: '\f105';
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: #c93;
+        }
+        
+        .sitemap-links ul li a {
+            color: #333;
+            transition: color 0.3s;
+        }
+        
+        .sitemap-links ul li a:hover {
+            color: #c93;
+        }
+        
+        .sitemap-links ul ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        
+        .sitemap-links ul ul li {
+            margin-bottom: 8px;
+        }
+        
+        .sitemap-links ul ul li:before {
+            content: '\f101';
+        }
+    </style>
+</head>
+<body>
+    <!-- Header section -->
+    <header>
+        <div class="top-bar">
+            <div class="container">
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <div class="contact-info">
+                    <a href="tel:+97699119777"><i class="fas fa-phone"></i> 976-99119777</a>
+                </div>
+                <div class="top-nav">
+                    <a href="about-us">ABOUT US</a>
+                    <a href="contact-us">CONTACT US</a>
+                    <a href="enquire" class="enquire-btn">ENQUIRE NOW</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-header">
+            <div class="container">
+                <div class="logo">
+                    <a href="index">
+                        <img src="/img/khurlogo.png" alt="Khur Travel Mongolia Logo">
+                    </a>
+                </div>
+                <div class="search-bar">
+                    <form action="#" method="get">
+                        <input type="text" placeholder="Search tours">
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <nav class="main-nav">
+            <div class="container">
+                <ul>
+                    <li><a href="index">HOME</a></li>
+                    <li><a href="destinations">DESTINATIONS</a></li>
+                    <li><a href="tours">TOURS</a></li>
+                    <li><a href="about-mongolia">ABOUT MONGOLIA</a></li>
+                    <li><a href="blog">TRAVEL GUIDES</a></li>
+                    <li><a href="about-us">ABOUT US</a></li>
+                    <li><a href="contact-us">CONTACT</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sitemap Header -->
+    <div class="sitemap-header">
+        <div class="container">
+            <h1>Sitemap</h1>
+        </div>
+    </div>
+
+    <!-- Sitemap Section -->
+    <section class="sitemap-section">
+        <div class="container">
+            <div class="sitemap-grid">
+                <!-- Travel Destination Category -->
+                <div class="sitemap-category">
+                    <h2>Travel Destination</h2>
+                    <div class="sitemap-links">
+                        <ul>
+                            <li><a href="travel-destination">Mongolia Top Destinations</a></li>
+                            <li>
+                                <a href="#">Mongolia Travel Map</a>
+                            </li>
+                            <li>
+                                <a href="#">Most Beautiful Landscape</a>
+                            </li>
+                            <li>
+                                <a href="#">Regions & Provinces</a>
+                            </li>
+                            <li>
+                                <a href="#">All Mongolia Destinations</a>
+                                <ul>
+                                    <li><a href="#">Ulaanbaatar Capital City</a></li>
+                                    <li><a href="#">Central Mongolia</a></li>
+                                    <li><a href="#">Eastern Mongolia</a></li>
+                                    <li><a href="#">Northern Mongolia</a></li>
+                                    <li><a href="#">Southern Mongolia</a></li>
+                                    <li><a href="#">Western Mongolia</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Mongolia Tours Category -->
+                <div class="sitemap-category">
+                    <h2>Mongolia Tours</h2>
+                    <div class="sitemap-links">
+                        <ul>
+                            <li><a href="mongolia-tours">Adventure Tours</a></li>
+                            <li><a href="#">Discovery Tours</a></li>
+                            <li><a href="#">Cultural Tours</a></li>
+                            <li><a href="#">Photography Tours</a></li>
+                            <li><a href="#">Family Tours</a></li>
+                            <li><a href="#">Event & Festival</a></li>
+                            <li><a href="#">Hiking & Trekking</a></li>
+                            <li><a href="#">Riding Tours</a></li>
+                            <li><a href="#">Short Tours</a></li>
+                            <li><a href="#">Trans-Siberian Tours</a></li>
+                            <li><a href="#">Special Interest</a></li>
+                            <li><a href="#">Winter Tours</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- About Mongolia Category -->
+                <div class="sitemap-category">
+                    <h2>About Mongolia</h2>
+                    <div class="sitemap-links">
+                        <ul>
+                            <li><a href="about-mongolia">Quick Facts Of The Country</a></li>
+                            <li><a href="#">Mongolian Geography</a></li>
+                            <li><a href="#">Mongolian History</a></li>
+                            <li><a href="#">Mongolian People and Nomads</a></li>
+                            <li><a href="#">Mongolian Culture and Heritage</a></li>
+                            <li><a href="#">Events and Public Holidays</a></li>
+                            <li><a href="#">Mongolian Nature and Landscape</a></li>
+                            <li><a href="#">Mongolian Foods and Drinks</a></li>
+                            <li><a href="#">Mongolian Travel and Tourism</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Blog & Travel Guide Category -->
+                <div class="sitemap-category">
+                    <h2>Blog & Travel Guide</h2>
+                    <div class="sitemap-links">
+                        <ul>
+                            <li><a href="blog">Mongolia Travel Blog</a></li>
+                            <li><a href="#">Mongolia Photo Blog</a></li>
+                            <li><a href="travel-guide">Mongolia Trip Planning</a></li>
+                            <li><a href="#">When you are in Mongolia</a></li>
+                            <li><a href="#">Things To Do</a></li>
+                            <li><a href="#">Bests of Mongolia</a></li>
+                            <li><a href="#">Mongolia Travel Attractions</a></li>
+                            <li><a href="#">Create my trip</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Top Tours Category -->
+                <div class="sitemap-category">
+                    <h2>Top Tours</h2>
+                    <div class="sitemap-links">
+                        <ul>
+                            <li><a href="#">Top 5 adventure tours mongolia</a></li>
+                            <li><a href="#">Top 5 cultural tours Mongolia</a></li>
+                            <li><a href="#">Top 5 discovery tours mongolia</a></li>
+                            <li><a href="#">Top 5 Festival & Event Tours Mongolia</a></li>
+                            <li><a href="#">Top 5 photography tours</a></li>
+                            <li><a href="#">Top 5 special tours mongolia</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- About Us & Contact Category -->
+                <div class="sitemap-category">
+                    <h2>About Us & Contact</h2>
+                    <div class="sitemap-links">
+                        <ul>
+                            <li><a href="about-us">About Us</a></li>
+                            <li><a href="#">Why Khur Travel</a></li>
+                            <li><a href="#">Khur Travel Team</a></li>
+                            <li><a href="#">Khur Project</a></li>
+                            <li><a href="#">Partnership & Media Mentions</a></li>
+                            <li><a href="#">Our Customer's Feedback</a></li>
+                            <li><a href="terms-conditions">Terms and Conditions</a></li>
+                            <li><a href="payment">Online Payment</a></li>
+                            <li><a href="contact-us">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-col footer-info">
+                        <div class="footer-logo">
+                            <img src="/img/khurlogo.png" alt="Khur Travel Mongolia Logo">
+                        </div>
+                        <address>
+                            Room 14, Building 69 Sukhbaatar<br>
+                            District, 14200, Ulaanbaatar, Mongolia
+                        </address>
+                        <p class="footer-contact">
+                            <span><i class="fas fa-phone"></i> 976-70106695</span>
+                            <span><i class="fas fa-mobile-alt"></i> 976-99119777</span>
+                            <span><i class="fas fa-envelope"></i> info@tourmongolia.com</span>
+                        </p>
+                        <div class="footer-social">
+                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Travel Destinations</h4>
+                        <ul>
+                            <li><a href="destinations.html#northern">Northern Mongolia</a></li>
+                            <li><a href="destinations.html#central">Central Mongolia</a></li>
+                            <li><a href="destinations.html#eastern">Eastern Mongolia</a></li>
+                            <li><a href="destinations.html#southern">Southern Mongolia</a></li>
+                            <li><a href="destinations.html#western">Western Mongolia</a></li>
+                            <li><a href="destinations">Top Travel Destinations</a></li>
+                            <li><a href="photo-spots">Best Photography Spots</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Mongolia Tours</h4>
+                        <ul>
+                            <li><a href="tours.html?type=adventure">Adventure Tours</a></li>
+                            <li><a href="tours.html?type=photography">Photography Tours</a></li>
+                            <li><a href="tours.html?type=culture">Culture Tours</a></li>
+                            <li><a href="tours.html?type=discovery">Discovery Tours</a></li>
+                            <li><a href="tours.html?type=hiking">Hiking & Trekking</a></li>
+                            <li><a href="tours.html?type=riding">Horse & Camel Riding</a></li>
+                            <li><a href="tours.html?type=naadam">Naadam Festival</a></li>
+                            <li><a href="tours.html?type=event">Event Tours</a></li>
+                            <li><a href="tours.html?type=best">Best Sellers</a></li>
+                            <li><a href="tours.html?type=fixed">Fixed Date Tours</a></li>
+                            <li><a href="tours.html?type=discount">Discounted Tours</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-col">
+                        <h4>Travel Resources</h4>
+                        <div class="footer-double-col">
+                            <div>
+                                <h5>Travel Guide</h5>
+                                <ul>
+                                    <li><a href="trip-planning">Trip Planning</a></li>
+                                    <li><a href="travel-tips">Travel Tips</a></li>
+                                    <li><a href="things-to-do">Things To Do</a></li>
+                                    <li><a href="best-of-mongolia">Best of Mongolia</a></li>
+                                    <li><a href="attractions">Attractions</a></li>
+                                    <li><a href="custom-trip">Custom Trips</a></li>
+                                    <li><a href="blog">Travel Blog</a></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h5>About Mongolia</h5>
+                                <ul>
+                                    <li><a href="about-mongolia.html#geography">Geography</a></li>
+                                    <li><a href="about-mongolia.html#history">History</a></li>
+                                    <li><a href="about-mongolia.html#nomads">Nomadic Life</a></li>
+                                    <li><a href="about-mongolia.html#culture">Culture & Heritage</a></li>
+                                    <li><a href="festivals">Festivals & Events</a></li>
+                                    <li><a href="nature">Nature & Wildlife</a></li>
+                                    <li><a href="cuisine">Cuisine</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="footer-bottom-wrapper">
+                    <div class="copyright">
+                        <p>&copy; 2007-2023 KHUR TRAVEL CO.LTD. All rights reserved.</p>
+                    </div>
+                    <div class="payment-methods">
+                        <span>Secure Payments:</span>
+                        <img src="/images/payment-icons.png" alt="Payment Methods">
+                    </div>
+                    <nav class="footer-nav">
+                        <a href="index">Home</a>
+                        <a href="tours">Tours</a>
+                        <a href="blog">Blog</a>
+                        <a href="terms-conditions">Terms</a>
+                        <a href="privacy-policy">Privacy</a>
+                        <a href="payment">Payment</a>
+                        <a href="contact-us">Contact</a>
+                        <a href="sitemap">Sitemap</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="scroll-top" class="scroll-top" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <script src="/js/main.js"></script>
+<script src="/js/url-handler.js"></script><script src="js/image-path-corrector.js"></script></body>
+</html> 

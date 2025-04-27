@@ -1,0 +1,24 @@
+{
+  "name": "clean-url-transformation",
+  "version": "1.0.0",
+  "description": "Transform static website to use clean, directory-style URLs",
+  "main": "index.js",
+  "scripts": {
+    "transform": "node scripts/transform-to-clean-urls.js",
+    "revert": "node scripts/revert-clean-urls.js",
+    "test": "npx serve",
+    "backup": "mkdir -p backup && rsync -av --exclude='node_modules' --exclude='backup' --exclude='.git' ./ backup/",
+    "disable-redirects": "node scripts/disable-base-for-local.js",
+    "local-test": "npm run disable-redirects && npm run test"
+  },
+  "keywords": [
+    "clean-urls",
+    "static-site",
+    "seo"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.1"
+  }
+} 

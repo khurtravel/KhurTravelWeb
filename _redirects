@@ -1,0 +1,37 @@
+# Netlify redirects for clean URLs
+
+/about-mongolia.html /about-mongolia 301
+/about-us.html /about-us 301
+/attractions.html /attractions 301
+/blog.html /blog 301
+/central-tours.html /central-tours 301
+/contact-us.html /contact-us 301
+/custom-trip.html /custom-trip 301
+/destinations.html /destinations 301
+/enquire.html /enquire 301
+/example-page.html /example-page 301
+/secure-content-example.html /examples/secure-content-example 301
+/gobi-tours.html /gobi-tours 301
+/naadam-tours.html /naadam-tours 301
+/northern-tours.html /northern-tours 301
+/payment.html /payment 301
+/privacy-policy.html /privacy-policy 301
+/search-results.html /search-results 301
+/sitemap.html /sitemap 301
+/tailor-made.html /tailor-made 301
+/terms-conditions.html /terms-conditions 301
+/things-to-do.html /things-to-do 301
+/tour-details-altai-eagle.html /tour-details-altai-eagle 301
+/tour-details-khovsgol.html /tour-details-khovsgol 301
+/tour-details-northern-horse.html /tour-details-northern-horse 301
+/tour-details-tavan-bogd.html /tour-details-tavan-bogd 301
+/tour-details-tsaatan.html /tour-details-tsaatan 301
+/tour-details-western-exploration.html /tour-details-western-exploration 301
+/tour-details-western-mongolia.html /tour-details-western-mongolia 301
+/tour-details-western-nomadic.html /tour-details-western-nomadic 301
+/tour-details.html /tour-details 301
+/tours.html /tours 301
+/western-tours.html /western-tours 301
+
+# Handle 404
+/* /404.html 404

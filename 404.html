@@ -4,344 +4,160 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Not Found - Khur Travel Mongolia</title>
-    <meta name="description" content="The page you're looking for couldn't be found. Discover Mongolia tours and travel options at Khur Travel.">
-    <link rel="stylesheet" href="css/style.css">
+    <meta name="description" content="Sorry, the page you are looking for could not be found.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/img/khurlogo.png" type="image/png">
     <style>
-        .error-container {
-            padding: 100px 0;
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        .header {
+            background-color: #1a2b3c;
+            color: white;
+            padding: 15px 20px;
             text-align: center;
-            background-color: #f8f9fa;
+        }
+        
+        .header a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+        }
+        
+        .header .phone {
+            margin: 10px 0;
+            display: block;
+        }
+        
+        .error-container {
+            text-align: center;
+            padding: 50px 20px;
+            max-width: 800px;
+            margin: 0 auto;
         }
         
         .error-code {
             font-size: 120px;
             font-weight: 700;
-            color: #c93;
+            color: #e67e22;
             margin-bottom: 20px;
+            line-height: 1;
         }
         
         .error-message {
-            font-size: 32px;
+            font-size: 36px;
             font-weight: 600;
-            color: #1a2b3c;
             margin-bottom: 30px;
+            color: #333;
         }
         
         .error-description {
             font-size: 18px;
-            max-width: 600px;
-            margin: 0 auto 40px;
-            color: #555;
+            color: #666;
+            margin-bottom: 40px;
             line-height: 1.6;
         }
         
-        .error-search {
-            max-width: 500px;
-            margin: 0 auto 40px;
-        }
-        
-        .error-search input {
-            padding: 15px;
-            border: 1px solid #ddd;
-            border-radius: 3px 0 0 3px;
-            width: 70%;
-            font-size: 16px;
-        }
-        
-        .error-search button {
-            padding: 15px 20px;
-            background-color: #c93;
-            color: white;
-            border: none;
-            border-radius: 0 3px 3px 0;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
-        }
-        
-        .error-search button:hover {
-            background-color: #b82;
-        }
-        
         .error-links {
-            margin-bottom: 40px;
-        }
-        
-        .error-links h3 {
-            font-size: 20px;
-            margin-bottom: 20px;
-            color: #1a2b3c;
-        }
-        
-        .error-links ul {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            gap: 15px;
+            gap: 20px;
+            margin-bottom: 50px;
         }
         
-        .error-links a {
+        .btn-primary {
             display: inline-block;
+            background-color: #e67e22;
+            color: white;
             padding: 10px 20px;
-            background-color: white;
-            border: 1px solid #ddd;
-            border-radius: 3px;
+            border-radius: 4px;
             text-decoration: none;
-            color: #1a2b3c;
-            transition: all 0.3s;
-        }
-        
-        .error-links a:hover {
-            background-color: #c93;
-            color: white;
-            border-color: #c93;
-        }
-        
-        .home-button {
-            display: inline-block;
-            padding: 15px 30px;
-            background-color: #c93;
-            color: white;
-            text-decoration: none;
-            border-radius: 3px;
             font-weight: 600;
             transition: background-color 0.3s;
-            margin-top: 20px;
         }
         
-        .home-button:hover {
-            background-color: #b82;
+        .btn-primary:hover {
+            background-color: #d35400;
         }
         
-        .error-image {
-            max-width: 300px;
-            margin: 0 auto 40px;
+        .footer {
+            background-color: #1a2b3c;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
         }
         
-        .error-image img {
-            width: 100%;
-            height: auto;
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 80px;
+            }
+            
+            .error-message {
+                font-size: 24px;
+            }
+            
+            .error-links {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
 <body>
-    <a href="#main-content" class="skip-to-content">Skip to content</a>
-    
-    <header>
-        <div class="top-bar">
-            <div class="container">
-                <div class="social-icons">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                </div>
-                <div class="contact-info">
-                    <a href="tel:+97699775008"><i class="fas fa-phone"></i> 976-99775008</a>
-                </div>
-                <div class="top-nav">
-                    <a href="about-us.html">ABOUT US</a>
-                    <a href="contact-us.html">CONTACT US</a>
-                    <a href="enquire.html" class="enquire-btn">ENQUIRE NOW</a>
-                </div>
-            </div>
+    <div class="header">
+        <div>
+            <a href="/">HOME</a>
+            <a href="/destinations">DESTINATIONS</a>
+            <a href="/tours">TOURS</a>
+            <a href="/about-mongolia">ABOUT MONGOLIA</a>
+            <a href="/about-us">ABOUT US</a>
+            <a href="/contact-us">CONTACT</a>
         </div>
-        
-        <div class="main-header">
-            <div class="container">
-                <div class="logo">
-                    <a href="index.html">
-                        <img src="img/khurlogo.png" alt="Khur Travel Mongolia Logo">
-                    </a>
-                </div>
-                <div class="search-bar">
-                    <form action="search-results.html" method="get" role="search">
-                        <label for="search" class="visually-hidden">Search tours</label>
-                        <input type="text" id="search" name="query" placeholder="Search tours" aria-label="Search tours">
-                        <button type="submit" aria-label="Submit search"><i class="fas fa-search"></i></button>
-                    </form>
-                </div>
-            </div>
+        <div class="phone">
+            <a href="tel:+97699119777"><i class="fas fa-phone"></i> 976-99119777</a>
         </div>
-        
-        <nav class="main-nav" aria-label="Main Navigation">
-            <div class="container">
-                <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-menu">
-                    <span class="hamburger-icon"></span>
-                </button>
-                <ul id="main-menu">
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="destinations.html">DESTINATIONS</a></li>
-                    <li><a href="tours.html">TOURS</a></li>
-                    <li><a href="about-mongolia.html">ABOUT MONGOLIA</a></li>
-                    <li><a href="blog.html">TRAVEL GUIDES</a></li>
-                    <li><a href="about-us.html">ABOUT US</a></li>
-                    <li><a href="contact-us.html">CONTACT</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+    </div>
 
-    <main id="main-content">
+    <main>
         <div class="error-container">
-            <div class="container">
-                <div class="error-image">
-                    <img src="images/C0066T01 (3).JPG" alt="Mongolia Landscape">
-                </div>
-                <div class="error-code">404</div>
-                <h1 class="error-message">Page Not Found</h1>
-                <p class="error-description">The page you're looking for might have been removed, had its name changed, or is temporarily unavailable. Don't worry - there's plenty more of Mongolia to explore!</p>
-                
-                <div class="error-search">
-                    <form action="search-results.html" method="get">
-                        <input type="text" name="query" placeholder="Search for tours, destinations, etc." aria-label="Search">
-                        <button type="submit"><i class="fas fa-search"></i> Search</button>
-                    </form>
-                </div>
-                
-                <div class="error-links">
-                    <h3>You might want to explore:</h3>
-                    <ul>
-                        <li><a href="tours.html">All Tours</a></li>
-                        <li><a href="destinations.html">Destinations</a></li>
-                        <li><a href="about-mongolia.html">About Mongolia</a></li>
-                        <li><a href="blog.html">Travel Guides</a></li>
-                        <li><a href="contact-us.html">Contact Us</a></li>
-                    </ul>
-                </div>
-                
-                <a href="index.html" class="home-button">Return to Homepage</a>
+            <div class="error-code">404</div>
+            <h1 class="error-message">Page Not Found</h1>
+            <p class="error-description">
+                The page you are looking for might have been removed, had its name changed, 
+                or is temporarily unavailable. Don't worry, we'll help you find your way back!
+            </p>
+            
+            <div style="font-size: 100px; color: #e67e22; margin: 40px 0;">
+                <i class="fas fa-map-marked-alt"></i>
+            </div>
+            
+            <div class="error-links">
+                <a href="/" class="btn-primary"><i class="fas fa-home"></i> Back to Home</a>
+                <a href="/tours" class="btn-primary"><i class="fas fa-map-marked-alt"></i> Explore Tours</a>
+                <a href="/destinations" class="btn-primary"><i class="fas fa-mountain"></i> Discover Destinations</a>
+                <a href="/contact-us" class="btn-primary"><i class="fas fa-envelope"></i> Contact Us</a>
             </div>
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-top">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-col footer-info">
-                        <div class="footer-logo">
-                            <img src="img/khurlogo.png" alt="Khur Travel Mongolia Logo">
-                        </div>
-                        <address>
-                            Room 14, Building 69 Sukhbaatar<br>
-                            District, 14200, Ulaanbaatar, Mongolia
-                        </address>
-                        <p class="footer-contact">
-                            <span><i class="fas fa-phone"></i> 976-70106695</span>
-                            <span><i class="fas fa-mobile-alt"></i> 976-99775008</span>
-                            <span><i class="fas fa-envelope"></i> info@tourmongolia.com</span>
-                        </p>
-                        <div class="footer-social">
-                            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                            <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
-                            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                        </div>
-                    </div>
-                    
-                    <div class="footer-col">
-                        <h4>Travel Destinations</h4>
-                        <ul>
-                            <li><a href="destinations.html#northern">Northern Mongolia</a></li>
-                            <li><a href="destinations.html#central">Central Mongolia</a></li>
-                            <li><a href="destinations.html#eastern">Eastern Mongolia</a></li>
-                            <li><a href="destinations.html#southern">Southern Mongolia</a></li>
-                            <li><a href="destinations.html#western">Western Mongolia</a></li>
-                            <li><a href="destinations.html">Top Travel Destinations</a></li>
-                            <li><a href="photo-spots.html">Best Photography Spots</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-col">
-                        <h4>Mongolia Tours</h4>
-                        <ul>
-                            <li><a href="tours.html?type=adventure">Adventure Tours</a></li>
-                            <li><a href="tours.html?type=photography">Photography Tours</a></li>
-                            <li><a href="tours.html?type=culture">Culture Tours</a></li>
-                            <li><a href="tours.html?type=discovery">Discovery Tours</a></li>
-                            <li><a href="tours.html?type=hiking">Hiking & Trekking</a></li>
-                            <li><a href="tours.html?type=riding">Horse & Camel Riding</a></li>
-                            <li><a href="tours.html?type=naadam">Naadam Festival</a></li>
-                            <li><a href="tours.html?type=event">Event Tours</a></li>
-                            <li><a href="tours.html?type=best">Best Sellers</a></li>
-                            <li><a href="tours.html?type=fixed">Fixed Date Tours</a></li>
-                            <li><a href="tours.html?type=discount">Discounted Tours</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-col">
-                        <h4>Travel Resources</h4>
-                        <div class="footer-double-col">
-                            <div>
-                                <h5>Travel Guide</h5>
-                                <ul>
-                                    <li><a href="trip-planning.html">Trip Planning</a></li>
-                                    <li><a href="travel-tips.html">Travel Tips</a></li>
-                                    <li><a href="things-to-do.html">Things To Do</a></li>
-                                    <li><a href="best-of-mongolia.html">Best of Mongolia</a></li>
-                                    <li><a href="attractions.html">Attractions</a></li>
-                                    <li><a href="custom-trip.html">Custom Trips</a></li>
-                                    <li><a href="blog.html">Travel Blog</a></li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h5>About Mongolia</h5>
-                                <ul>
-                                    <li><a href="about-mongolia.html#geography">Geography</a></li>
-                                    <li><a href="about-mongolia.html#history">History</a></li>
-                                    <li><a href="about-mongolia.html#nomads">Nomadic Life</a></li>
-                                    <li><a href="about-mongolia.html#culture">Culture & Heritage</a></li>
-                                    <li><a href="festivals.html">Festivals & Events</a></li>
-                                    <li><a href="nature.html">Nature & Wildlife</a></li>
-                                    <li><a href="cuisine.html">Cuisine</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="footer-bottom">
-            <div class="container">
-                <div class="footer-bottom-wrapper">
-                    <div class="copyright">
-                        <p>&copy; 2007-2023 KHUR TRAVEL CO.LTD. All rights reserved.</p>
-                    </div>
-                    <div class="payment-methods">
-                        <span>Secure Payments:</span>
-                        <img src="images/payment-icons.png" alt="Payment Methods">
-                    </div>
-                    <nav class="footer-nav">
-                        <a href="index.html">Home</a>
-                        <a href="tours.html">Tours</a>
-                        <a href="blog.html">Blog</a>
-                        <a href="terms-conditions.html">Terms</a>
-                        <a href="privacy-policy.html">Privacy</a>
-                        <a href="payment.html">Payment</a>
-                        <a href="contact-us.html">Contact</a>
-                        <a href="sitemap.html">Sitemap</a>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <button id="scroll-top" class="scroll-top" aria-label="Scroll to top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-    <script src="js/main.js"></script>
+    <div class="footer">
+        &copy; 2007-2023 KHUR TRAVEL CO.LTD. All rights reserved.
+    </div>
 </body>
 </html> 
