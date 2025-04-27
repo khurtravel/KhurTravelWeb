@@ -144,4 +144,16 @@ find ./img -type f 2>/dev/null | while read file; do
     fi
 done
 
+# Fix case sensitivity issues in image paths
+find . -name "*.html" -type f -exec sed -i '' 's/\.JPG/\.jpg/g' {} \;
+
+# Create missing directories
+mkdir -p images/tours
+mkdir -p images/western-mongolia
+mkdir -p images/northern-mongolia
+mkdir -p images/destination-images
+
+# Normalize paths - make sure all paths are consistent
+find . -name "*.html" -type f -exec sed -i '' 's|src="/images/|src="images/|g' {} \;
+
 echo "All image paths have been fixed to work with khurmongoliatravel.com!" 

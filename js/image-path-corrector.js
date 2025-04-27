@@ -1,154 +1,121 @@
 /**
- * Image Path Corrector
- * 
- * This script addresses two issues:
- * 1. Fixes relative image paths to be absolute
- * 2. Ensures images are loaded via HTTPS when the site is on HTTPS
- * 
- * It targets img elements and background images in CSS
+ * Enhanced Image Path Corrector for Khur Travel Mongolia
+ * Ensures all images load correctly regardless of URL structure
  */
-document.addEventListener('DOMContentLoaded', function() {
-    // Get the base URL
-    const baseUrl = window.location.protocol + '//' + window.location.host;
-    const isHttps = window.location.protocol === 'https:';
-    
-    // Fix image src attributes
-    fixImageSources();
-    
-    // Fix background images in inline styles
-    fixBackgroundImages();
-    
-    // Monitor DOM changes to fix images loaded dynamically
-    setupMutationObserver();
-    
-    /**
-     * Fix all image sources in the document
-     */
-    function fixImageSources() {
-        const images = document.querySelectorAll('img');
+
+(function() {
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log("Image path corrector started");
         
-        images.forEach(img => {
-            const src = img.getAttribute('src');
-            if (!src) return;
-            
-            // Skip already fixed paths or external resources
-            if (src.startsWith('http://') || src.startsWith('https://') || src.startsWith('data:')) {
-                // Convert HTTP to HTTPS if needed
-                if (isHttps && src.startsWith('http://')) {
-                    img.src = src.replace('http://', 'https://');
-                }
-                return;
-            }
-            
-            // Fix relative paths to absolute
-            if (src.startsWith('/')) {
-                // Already absolute path from root
-                img.src = baseUrl + src;
-            } else {
-                // Relative path
-                const currentPath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
-                img.src = baseUrl + currentPath + src;
-            }
-        });
-    }
-    
-    /**
-     * Fix background images in inline styles
-     */
-    function fixBackgroundImages() {
-        const elementsWithBgImage = document.querySelectorAll('[style*="background-image"]');
+        // Create helper function to check if image exists
+        function imageExists(url, callback) {
+            const img = new Image();
+            img.onload = function() { callback(true); };
+            img.onerror = function() { callback(false); };
+            img.src = url;
+        }
         
-        elementsWithBgImage.forEach(element => {
-            const style = element.getAttribute('style');
-            if (!style) return;
+        // Helper to fix case sensitivity issues
+        function createPathVariations(path) {
+            if (!path) return [];
             
-            // Extract the background-image URL
-            const bgImageMatch = style.match(/background-image:\s*url\(['"]?([^'")]+)['"]?\)/i);
-            if (!bgImageMatch || !bgImageMatch[1]) return;
+            const filename = path.split('/').pop();
+            const directory = path.substring(0, path.length - filename.length);
             
-            let url = bgImageMatch[1];
+            // Generate variations with different case patterns
+            return [
+                path,
+                directory + filename.toLowerCase(),
+                directory + filename.toUpperCase(),
+                // Remove leading slash variations
+                path.replace(/^\//, ''),
+                directory.replace(/^\//, '') + filename.toLowerCase(),
+                directory.replace(/^\//, '') + filename.toUpperCase(),
+                // Try in different folders
+                '/images/' + filename.toLowerCase(),
+                '/images/' + filename.toUpperCase(),
+                'images/' + filename.toLowerCase(),
+                'images/' + filename.toUpperCase(),
+                // Check with JPG extension variations
+                path.replace(/\.jpg$/i, '.JPG'),
+                path.replace(/\.jpg$/i, '.jpg'),
+                path.replace(/\.jpeg$/i, '.JPEG'),
+                path.replace(/\.jpeg$/i, '.jpeg'),
+                // Variations with different folders
+                '/img/' + filename.toLowerCase(),
+                'img/' + filename.toLowerCase()
+            ];
+        }
+        
+        // Fix all images (including background images)
+        function fixAllImages() {
+            console.log("Fixing all images");
             
-            // Skip data URLs or already fixed paths
-            if (url.startsWith('data:') || (url.startsWith('https://') && isHttps)) {
-                return;
-            }
+            // Fix <img> elements
+            document.querySelectorAll('img').forEach(function(img) {
+                const currentSrc = img.getAttribute('src');
             
-            // Fix HTTP to HTTPS if needed
-            if (isHttps && url.startsWith('http://')) {
-                const newUrl = url.replace('http://', 'https://');
-                element.style.backgroundImage = `url(${newUrl})`;
-                return;
-            }
-            
-            // Fix relative paths
-            if (!url.startsWith('http://') && !url.startsWith('https://')) {
-                if (url.startsWith('/')) {
-                    // Absolute path from root
-                    url = baseUrl + url;
-                } else {
-                    // Relative path
-                    const currentPath = window.location.pathname.substring(0, window.location.pathname.lastIndexOf('/') + 1);
-                    url = baseUrl + currentPath + url;
+                // Skip already loaded images
+                if (img.complete && img.naturalWidth > 0) {
+                    console.log("Image already loaded:", currentSrc);
+                    return;
                 }
-                element.style.backgroundImage = `url(${url})`;
-            }
-        });
-    }
-    
-    /**
-     * Set up a mutation observer to fix dynamically loaded images
-     */
-    function setupMutationObserver() {
-        // Create an observer instance
-        const observer = new MutationObserver(function(mutations) {
-            let needsImageFix = false;
-            let needsBgFix = false;
-            
-            // Check if any mutations affected images or styles
-            mutations.forEach(function(mutation) {
-                if (mutation.type === 'childList') {
-                    mutation.addedNodes.forEach(function(node) {
-                        if (node.nodeType === 1) { // Element node
-                            if (node.tagName === 'IMG') {
-                                needsImageFix = true;
-                            } else if (node.querySelector('img')) {
-                                needsImageFix = true;
-                            }
-                            
-                            if (node.hasAttribute('style') && node.getAttribute('style').includes('background-image')) {
-                                needsBgFix = true;
-                            } else if (node.querySelector('[style*="background-image"]')) {
-                                needsBgFix = true;
-                            }
+                
+                // Skip external images
+                if (currentSrc && currentSrc.startsWith('http') && !currentSrc.includes('khurmongoliatravel.com')) {
+                    return;
+                }
+                
+                console.log("Attempting to fix image:", currentSrc);
+                
+                // Try different path variations
+                const pathVariations = createPathVariations(currentSrc);
+                let pathIndex = 0;
+                
+                function tryNextPath() {
+                    if (pathIndex >= pathVariations.length) {
+                        console.log("Failed to load image after trying all variations:", currentSrc);
+                        return;
+                    }
+                    
+                    let nextPath = pathVariations[pathIndex];
+                pathIndex++;
+                    
+                    imageExists(nextPath, function(exists) {
+                        if (exists) {
+                            console.log("Found working path:", nextPath, "for", currentSrc);
+                            img.src = nextPath;
+                        } else {
+                            tryNextPath();
                         }
                     });
-                } else if (mutation.type === 'attributes') {
-                    if (mutation.attributeName === 'src' && mutation.target.tagName === 'IMG') {
-                        needsImageFix = true;
-                    } else if (mutation.attributeName === 'style' && 
-                               mutation.target.getAttribute('style') && 
-                               mutation.target.getAttribute('style').includes('background-image')) {
-                        needsBgFix = true;
-                    }
                 }
+                
+                tryNextPath();
             });
             
-            // Only run fixes if needed
-            if (needsImageFix) {
-                fixImageSources();
+            // Process hero slider for index page
+            if (document.querySelector('.hero-slider')) {
+                console.log("Found hero slider, fixing slide images");
+                
+                document.querySelectorAll('.hero-slider .slide img').forEach(function(img) {
+                    const currentSrc = img.getAttribute('src');
+                    console.log("Checking hero slide image:", currentSrc);
+                    
+                    // Force reload with lowercase extension
+                    if (currentSrc && currentSrc.match(/\.(JPG|JPEG)$/i)) {
+                        const newSrc = currentSrc.replace(/\.(JPG|JPEG)$/i, '.jpg');
+                        console.log("Updating hero image from", currentSrc, "to", newSrc);
+                        img.src = newSrc;
+                    }
+                });
             }
-            
-            if (needsBgFix) {
-                fixBackgroundImages();
-            }
-        });
+        }
         
-        // Configure and start the observer
-        observer.observe(document.body, {
-            childList: true,
-            subtree: true,
-            attributes: true,
-            attributeFilter: ['src', 'style']
-        });
-    }
-});
+        // Run the fix
+        fixAllImages();
+        
+        // Also run after a short delay (for dynamic content)
+        setTimeout(fixAllImages, 1000);
+    });
+})();

@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Custom Mongolia Trips - Build Your Perfect Journey</title>
     <meta name="description" content="Create your dream Mongolia trip with Khur Travel. Tailor-made itineraries designed around your preferences, interests, and schedule.">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/image-fallbacks.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +15,7 @@
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <style>
         .custom-header {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/C0066T01 (2).JPG');
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/C0066T01 (2).jpg');
             background-size: cover;
             background-position: center;
             height: 400px;
@@ -233,7 +235,7 @@
         
         .cta-section {
             padding: 80px 0;
-            background: linear-gradient(rgba(26,43,60,0.9), rgba(26,43,60,0.9)), url('images/C0014T01.JPG');
+            background: linear-gradient(rgba(26,43,60,0.9), rgba(26,43,60,0.9)), url('images/C0014T01.jpg');
             background-size: cover;
             background-position: center;
             color: white;
@@ -301,6 +303,7 @@
             }
         }
     </style>
+<script src="js/responsive.js"></script>
 </head>
 <body>
     <a href="#main-content" class="skip-to-content">Skip to content</a>
@@ -421,7 +424,7 @@
                 <div class="examples-grid">
                     <div class="example-card">
                         <div class="example-img">
-                            <img src="images/C0086T01.JPG" alt="Photography Expedition">
+                            <img src="images/hero-slide2.jpg" alt="Photography Expedition">
                         </div>
                         <div class="example-content">
                             <h3>Photographer's Mongolia</h3>
@@ -438,7 +441,7 @@
                     
                     <div class="example-card">
                         <div class="example-img">
-                            <img src="images/C0020T01 (2).JPG" alt="Family Adventure">
+                            <img src="images/c0020t01.jpg" alt="Family Adventure">
                         </div>
                         <div class="example-content">
                             <h3>Family Nomadic Adventure</h3>
@@ -455,7 +458,7 @@
                     
                     <div class="example-card">
                         <div class="example-img">
-                            <img src="images/C0066T01 (3).JPG" alt="Eagle Hunting Adventure">
+                            <img src="images/c0066t01.jpg" alt="Eagle Hunting Adventure">
                         </div>
                         <div class="example-content">
                             <h3>Western Mongolia Expedition</h3>
@@ -472,7 +475,7 @@
                     
                     <div class="example-card">
                         <div class="example-img">
-                            <img src="images/C0096T01 (2).JPG" alt="Wilderness Trekking">
+                            <img src="images/c0096t01.jpg" alt="Wilderness Trekking">
                         </div>
                         <div class="example-content">
                             <h3>Mongolia Wilderness Trek</h3>
@@ -596,10 +599,6 @@
                     <div class="copyright">
                         <p>&copy; 2007-2023 KHUR TRAVEL CO.LTD. All rights reserved.</p>
                     </div>
-                    <div class="payment-methods">
-                        <span>Secure Payments:</span>
-                        <img src="images/payment-icons.png" alt="Payment Methods">
-                    </div>
                     <nav class="footer-nav">
                         <a href="index.html">Home</a>
                         <a href="tours.html">Tours</a>
@@ -619,5 +618,6 @@
         <i class="fas fa-arrow-up"></i>
     </button>
     <script src="js/main.js"></script>
-</body>
+    <script src="js/header-consistency.js"></script>
+<script src="js/image-path-corrector.js"></script></body>
 </html> 

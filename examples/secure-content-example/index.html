@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Khur Mongolia - Secure Content Example</title>
     
     <!-- Load utilities first in the head -->
@@ -73,6 +73,7 @@
             font-family: monospace;
         }
     </style>
+<script src="js/responsive.js"></script>
 </head>
 <body>
     <div class="container">
@@ -94,7 +95,7 @@
                 <!-- Images with incorrect paths that will be fixed -->
                 <img src="http://example.com/images/sample1.jpg" alt="Example 1">
                 <img src="images/sample2.jpg" alt="Example 2">
-                <img src="/images/sample3.jpg" alt="Example 3">
+                <img src="images/sample3.jpg" alt="Example 3">
             </div>
             
             <p>After the page loads, these images will be corrected to use:</p>
@@ -192,5 +193,6 @@
             logToConsole('Dynamic content added - protocols should be automatically fixed');
         });
     </script>
+<script src="js/image-path-corrector.js"></script><script src="js/header-consistency.js"></script>
 </body>
 </html> 

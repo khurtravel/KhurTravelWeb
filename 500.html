@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>500 - Server Error | Khur</title>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/image-fallbacks.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
     <style>
         .error-container {
@@ -71,12 +73,13 @@
             margin: 20px auto;
         }
     </style>
+<script src="js/responsive.js"></script>
 </head>
 <body>
     <header>
         <div class="container">
             <div class="logo">
-                <a href="/"><img src="/images/logo.png" alt="Khur Logo"></a>
+                <a href="/"><img src="img/khurlogo.png" alt="Khur Logo"></a>
             </div>
             <nav>
                 <ul>
@@ -97,7 +100,7 @@
             <p class="error-description">We're experiencing some technical difficulties at the moment. Our team has been notified and is working to fix the issue.</p>
             
             <div class="error-illustration">
-                <img src="/images/500-error.svg" alt="Server Error Illustration" onerror="this.style.display='none'">
+                <img src="images/500-error.svg" alt="Server Error Illustration" onerror="this.style.display='none'">
             </div>
             
             <div class="error-actions">
@@ -141,10 +144,10 @@
                 <div class="footer-section">
                     <h3>Connect</h3>
                     <div class="social-icons">
-                        <a href="#"><img src="/images/icons/facebook.svg" alt="Facebook"></a>
-                        <a href="#"><img src="/images/icons/instagram.svg" alt="Instagram"></a>
-                        <a href="#"><img src="/images/icons/twitter.svg" alt="Twitter"></a>
-                        <a href="#"><img src="/images/icons/youtube.svg" alt="YouTube"></a>
+                        <a href="#"><img src="images/icons/facebook.svg" alt="Facebook"></a>
+                        <a href="#"><img src="images/icons/instagram.svg" alt="Instagram"></a>
+                        <a href="#"><img src="images/icons/twitter.svg" alt="Twitter"></a>
+                        <a href="#"><img src="images/icons/youtube.svg" alt="YouTube"></a>
                     </div>
                 </div>
             </div>
@@ -166,5 +169,6 @@
             }
         })();
     </script>
+<script src="js/image-path-corrector.js"></script><script src="js/header-consistency.js"></script>
 </body>
 </html> 

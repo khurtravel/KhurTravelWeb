@@ -129,10 +129,6 @@ for file in "${HTML_FILES[@]}"; do
                     <div class="copyright">\
                         <p>&copy; 2007-2023 KHUR TRAVEL CO.LTD. All rights reserved.</p>\
                     </div>\
-                    <div class="payment-methods">\
-                        <span>Secure Payments:</span>\
-                        <img src="images/payment-icons.png" alt="Payment Methods">\
-                    </div>\
                     <nav class="footer-nav">\
                         <a href="index.html">Home</a>\
                         <a href="tours.html">Tours</a>\

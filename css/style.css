@@ -46,12 +46,12 @@ img {
     padding: 0 15px;
 }
 
-/* Header Styles */
+/* ======== RESPONSIVE HEADER SYSTEM - START ======== */
+
+/* Base header styles - applied to all devices first */
 .top-bar {
     background-color: #1a2b3c;
-    padding: 10px 0;
-    color: #fff;
-    font-size: 14px;
+    padding: 8px 0;
 }
 
 .top-bar .container {
@@ -60,131 +60,612 @@ img {
     align-items: center;
 }
 
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
 .social-icons a {
-    margin-right: 15px;
-    color: #fff;
-    transition: color 0.3s;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
 }
 
 .social-icons a:hover {
-    color: #e3c880;
+    color: var(--color-primary);
+    transform: translateY(-2px);
 }
 
-.contact-info i {
-    margin-right: 5px;
+.contact-info a {
+    color: white;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.top-nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 .top-nav a {
-    margin-left: 15px;
-    text-transform: uppercase;
-    font-weight: 600;
-    font-size: 13px;
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
     transition: color 0.3s;
 }
 
 .top-nav a:hover {
-    color: #e3c880;
+    color: var(--color-primary);
 }
 
 .enquire-btn {
-    background-color: #c93;
-    color: #fff;
-    padding: 5px 15px;
-    border-radius: 3px;
-    font-weight: bold;
+    background-color: var(--color-primary);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-weight: 500;
 }
 
 .enquire-btn:hover {
-    background-color: #e3c880;
-    color: #1a2b3c;
+    background-color: var(--color-primary-dark);
 }
 
+/* Main header styles */
 .main-header {
+    background-color: white;
     padding: 15px 0;
-    background-color: #fff;
 }
 
 .main-header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+}
+
+.logo {
+    margin: 0;
 }
 
 .logo img {
     max-height: 60px;
+    width: auto;
+    display: block;
+}
+
+/* Search bar styles */
+.search-bar {
+    flex: 0 0 auto;
 }
 
 .search-bar form {
     display: flex;
-    border: 1px solid #ddd;
-    border-radius: 50px;
-    overflow: hidden;
+    align-items: center;
 }
 
 .search-bar input {
-    border: none;
-    padding: 10px 15px;
-    width: 200px;
+    height: 42px;
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+    font-size: 14px;
+    width: 250px;
+    transition: width 0.3s;
+}
+
+.search-bar input:focus {
     outline: none;
+    border-color: var(--color-primary);
+    width: 280px;
 }
 
 .search-bar button {
-    background-color: #1a2b3c;
+    height: 42px;
+    width: 42px;
+    background-color: var(--color-primary);
     color: white;
     border: none;
-    padding: 10px 15px;
+    border-radius: 0 4px 4px 0;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
 }
 
+.search-bar button:hover {
+    background-color: var(--color-primary-dark);
+}
+
+/* Main navigation styles */
 .main-nav {
-    background-color: #1a2b3c;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    background-color: white;
+    border-bottom: 1px solid #eee;
+}
+
+.main-nav .container {
+    position: relative;
 }
 
 .main-nav ul {
     display: flex;
-    justify-content: center;
-    padding: 0;
+    gap: 5px;
     margin: 0;
+    padding: 0;
+    list-style: none;
 }
 
 .main-nav li {
-    list-style: none;
     position: relative;
 }
 
 .main-nav a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 500;
-    padding: 20px;
     display: block;
-    transition: all 0.3s ease;
+    padding: 15px;
+    color: #1a2b3c;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: color 0.3s;
     position: relative;
 }
 
 .main-nav a:hover {
-    color: #cc9933;
+    color: var(--color-primary);
 }
 
 .main-nav a:after {
     content: '';
     position: absolute;
-    bottom: 10px;
+    bottom: 0;
     left: 50%;
+    transform: translateX(-50%);
     width: 0;
     height: 2px;
-    background: #cc9933;
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
+    background-color: var(--color-primary);
+    transition: width 0.3s;
 }
 
-.main-nav a:hover:after {
-    width: 30px;
+.main-nav a:hover:after, 
+.main-nav a[aria-current="page"]:after {
+    width: 100%;
 }
+
+/* Mobile navigation toggle */
+.mobile-menu-toggle, 
+.search-toggle {
+    display: none;
+    background: none;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    color: #1a2b3c;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.mobile-menu-toggle:hover,
+.search-toggle:hover {
+    color: var(--color-primary);
+}
+
+/* Hide duplicated elements */
+.mobile-nav-toggle {
+    display: none !important;
+}
+
+/* Hide mobile elements on desktop */
+.phone-mobile {
+    display: none;
+}
+
+/* Menu open body state */
+body.menu-open {
+    overflow: hidden;
+}
+
+/* RESPONSIVE BREAKPOINTS */
+
+/* Large desktop (1200px and up) */
+@media screen and (min-width: 1200px) {
+    .search-bar input {
+        width: 280px;
+    }
+    
+    .search-bar input:focus {
+        width: 320px;
+    }
+    
+    .main-nav a {
+        padding: 18px;
+    }
+}
+
+/* Desktop (992px to 1199px) */
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    .search-bar input {
+        width: 220px;
+    }
+    
+    .search-bar input:focus {
+        width: 250px;
+    }
+    
+    .main-nav a {
+        padding: 15px 12px;
+        font-size: 13px;
+    }
+}
+
+/* Tablet (768px to 991px) */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .top-bar .container {
+        flex-wrap: wrap;
+    }
+    
+    .contact-info {
+        order: 3;
+        width: 100%;
+        text-align: center;
+        margin-top: 8px;
+    }
+    
+    .search-bar input {
+        width: 180px;
+    }
+    
+    .search-bar input:focus {
+        width: 200px;
+    }
+    
+    .main-nav a {
+        padding: 12px 8px;
+        font-size: 12px;
+    }
+    
+    .logo img {
+        max-height: 50px;
+    }
+}
+
+/* Mobile (up to 767px) */
+@media screen and (max-width: 767px) {
+    /* Top bar modifications */
+    .top-bar {
+        padding: 8px 0;
+    }
+    
+    .top-bar .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding: 8px 0;
+        text-align: center;
+    }
+    
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin: 0;
+    }
+    
+    .social-icons a {
+        color: white;
+        font-size: 16px;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .contact-info {
+        display: none;
+    }
+    
+    .top-nav {
+        display: none;
+    }
+    
+    /* Main header modifications */
+    .main-header {
+        padding: 12px 0;
+    }
+    
+    .main-header .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        padding: 0 15px;
+    }
+    
+    .logo {
+        margin: 0;
+        text-align: center;
+        max-width: 180px;
+    }
+    
+    .logo img {
+        max-width: 100%;
+        max-height: 45px;
+        display: block;
+        margin: 0 auto;
+    }
+    
+    /* Navigation modifications */
+    .mobile-menu-toggle,
+    .search-toggle {
+        display: flex;
+    }
+    
+    .mobile-header-buttons {
+        position: absolute;
+        width: 100%;
+        top: 0;
+        left: 0;
+        height: 100%;
+        pointer-events: none;
+    }
+    
+    .mobile-header-buttons > * {
+        pointer-events: auto;
+    }
+    
+    .mobile-menu-toggle {
+        position: absolute;
+        left: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 8px;
+        z-index: 100;
+    }
+    
+    .search-toggle {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        padding: 8px;
+        z-index: 100;
+    }
+    
+    /* Search bar modifications */
+    .search-bar {
+        display: none;
+        width: 100%;
+        margin-top: 15px;
+        order: 3;
+    }
+    
+    body.search-active .search-bar {
+        display: block;
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: white;
+        padding: 10px 15px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        border-top: 1px solid #eee;
+        animation: fadeInDown 0.3s;
+    }
+    
+    body.search-active .search-bar input {
+        width: 100%;
+        height: 40px;
+        padding: 10px 15px;
+        border: 1px solid #ddd;
+        border-right: none;
+        border-radius: 4px 0 0 4px;
+        font-size: 14px;
+        box-sizing: border-box;
+    }
+    
+    body.search-active .search-bar button {
+        width: 40px;
+        height: 40px;
+        background: var(--color-primary);
+        border: none;
+        color: white;
+        border-radius: 0 4px 4px 0;
+    }
+    
+    .search-toggle[aria-expanded="true"] {
+        color: var(--color-primary);
+    }
+    
+    /* Main nav modifications */
+    .main-nav {
+        background-color: white;
+        border-bottom: 1px solid #eee;
+    }
+    
+    .main-nav .container {
+        padding: 0;
+        position: relative;
+        justify-content: space-between;
+    }
+    
+    .main-nav ul {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background-color: white;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        z-index: 1000;
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        display: flex;
+        opacity: 0;
+        visibility: hidden;
+    }
+    
+    .main-nav ul.show {
+        max-height: 500px;
+        opacity: 1;
+        visibility: visible;
+        padding: 10px 0;
+        z-index: 1020;
+    }
+    
+    .main-nav li {
+        width: 100%;
+        margin: 0;
+        text-align: center;
+    }
+    
+    .main-nav a {
+        display: block;
+        padding: 12px 15px;
+        margin: 0;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .main-nav a:after {
+        display: none;
+    }
+    
+    /* Submenu styling */
+    .main-nav ul li ul.show {
+        display: block;
+        max-height: 1000px;
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .main-nav ul li ul {
+        position: static;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease-out;
+        box-shadow: none;
+        background-color: rgba(0,0,0,0.02);
+        margin: 0;
+        padding: 0;
+    }
+    
+    .main-nav ul li ul li a {
+        padding-left: 25px;
+    }
+    
+    /* Sticky header behavior */
+    body.sticky-nav .main-header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1010;
+        background: white;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    body.sticky-nav .main-nav {
+        margin-top: 80px;
+    }
+    
+    /* Phone mobile button */
+    .phone-mobile {
+        display: flex;
+        position: fixed;
+        right: 15px;
+        bottom: 70px;
+        width: 45px;
+        height: 45px;
+        background: var(--color-primary);
+        color: white;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        z-index: 99;
+        font-size: 20px;
+    }
+}
+
+/* Dropdown toggle for submenu */
+.dropdown-toggle {
+    background: none;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5px;
+    font-size: 12px;
+    color: var(--color-text);
+}
+
+.dropdown-toggle i {
+    transition: transform 0.3s;
+}
+
+.dropdown-toggle[aria-expanded="true"] i.fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+/* Hamburger icon */
+.hamburger-icon {
+    display: block;
+    position: relative;
+    width: 22px;
+    height: 2px;
+    background-color: #1a2b3c;
+    border-radius: 2px;
+    transition: background-color 0.3s;
+}
+
+.hamburger-icon:before,
+.hamburger-icon:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #1a2b3c;
+    border-radius: 2px;
+    transition: transform 0.3s;
+}
+
+.hamburger-icon:before {
+    top: -7px;
+}
+
+.hamburger-icon:after {
+    bottom: -7px;
+}
+
+.hamburger-icon.active {
+    background-color: transparent;
+}
+
+.hamburger-icon.active:before {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger-icon.active:after {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ======== RESPONSIVE HEADER SYSTEM - END ======== */
 
 /* Hero Slider */
 .hero-slider {
@@ -631,13 +1112,6 @@ footer {
     gap: 20px;
 }
 
-.footer-double-col h5 {
-    color: #fff;
-    font-size: 16px;
-    margin-bottom: 15px;
-    position: relative;
-}
-
 .footer-bottom-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -890,21 +1364,19 @@ footer {
 }
 
 .social-bottom a {
-    width: 36px;
-    height: 36px;
+    width: 40px;
+    height: 40px;
     background-color: rgba(255,255,255,0.1);
     color: white;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
-    font-size: 14px;
+    transition: background-color 0.3s;
 }
 
 .social-bottom a:hover {
     background-color: #c93;
-    transform: translateY(-3px);
 }
 
 /* Responsive Styles */
@@ -945,7 +1417,9 @@ footer {
     }
 
     .logo {
-        margin-bottom: 15px;
+        margin: 0;
+        text-align: center;
+        max-width: 180px;
     }
 
     .search-bar {
@@ -1802,159 +2276,103 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus {
 }
 
 /* Mobile Menu Styles */
-.mobile-menu-toggle {
+.mobile-menu-toggle, 
+.search-toggle {
     display: none;
     background: none;
     border: none;
-    cursor: pointer;
     padding: 10px;
+    cursor: pointer;
+    position: relative;
     z-index: 1001;
+    align-items: center;
+    justify-content: center;
 }
 
 .hamburger-icon {
     display: block;
-    width: 25px;
-    height: 3px;
-    background: #fff;
     position: relative;
-    transition: all 0.3s ease;
+    width: 22px;
+    height: 2px;
+    background-color: #1a2b3c;
+    border-radius: 2px;
+    transition: background-color 0.3s;
 }
 
 .hamburger-icon:before,
 .hamburger-icon:after {
     content: '';
     position: absolute;
+    left: 0;
     width: 100%;
-    height: 100%;
-    background: #fff;
-    transition: all 0.3s ease;
+    height: 2px;
+    background-color: #1a2b3c;
+    border-radius: 2px;
+    transition: transform 0.3s;
 }
 
 .hamburger-icon:before {
-    top: -8px;
+    top: -7px;
 }
 
 .hamburger-icon:after {
-    bottom: -8px;
+    bottom: -7px;
 }
 
-.mobile-menu-toggle[aria-expanded="true"] .hamburger-icon {
-    background: transparent;
+.hamburger-icon.active {
+    background-color: transparent;
 }
 
-.mobile-menu-toggle[aria-expanded="true"] .hamburger-icon:before {
-    transform: rotate(45deg);
-    top: 0;
+.hamburger-icon.active:before {
+    transform: translateY(7px) rotate(45deg);
 }
 
-.mobile-menu-toggle[aria-expanded="true"] .hamburger-icon:after {
-    transform: rotate(-45deg);
-    bottom: 0;
+.hamburger-icon.active:after {
+    transform: translateY(-7px) rotate(-45deg);
 }
 
-/* Accessibility Classes */
-.visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
+/* Additional styles for mobile header elements */
+.mobile-menu-toggle, 
+.search-toggle {
+    background: none;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #1a2b3c;
+    font-size: 18px;
+    transition: color 0.3s;
 }
 
-/* Responsive Improvements */
-@media screen and (max-width: 992px) {
-    /* This section intentionally left empty - no styles needed for this breakpoint */
+.mobile-menu-toggle:hover,
+.search-toggle:hover {
+    color: var(--color-primary);
 }
 
+.search-toggle i {
+    font-size: 18px;
+}
+
+/* Fix sticky header behavior on mobile */
 @media screen and (max-width: 768px) {
-    .mobile-menu-toggle {
-        display: block;
-        position: absolute;
-        right: 20px;
-        top: 12px;
-    }
-    
-    .main-nav ul {
-        flex-direction: column;
+    body.sticky-nav .main-header {
         position: fixed;
         top: 0;
-        right: -300px;
-        width: 280px;
-        height: 100vh;
-        background: #1a2b3c;
-        padding: 80px 0 30px;
-        transition: right 0.3s ease;
-        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-        z-index: 1000;
-        overflow-y: auto;
+        width: 100%;
+        z-index: 1010;
+        background: white;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
     
+    body.sticky-nav .main-nav {
+        margin-top: 80px;
+    }
+    
+    /* Ensure menu is displayed above other content */
     .main-nav ul.show {
-        right: 0;
-    }
-    
-    .main-nav li {
-        width: 100%;
-    }
-    
-    .main-nav a {
-        padding: 15px 30px;
-        width: 100%;
-        border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-    
-    .top-bar .container {
-        flex-direction: column;
-        align-items: center;
-        padding: 10px 0;
-    }
-    
-    .social-icons, .contact-info, .top-nav {
-        margin-bottom: 10px;
-    }
-    
-    .main-header .container {
-        flex-direction: column;
-        padding: 20px 0;
-    }
-    
-    .logo {
-        margin-bottom: 20px;
-    }
-    
-    .search-bar {
-        width: 90%;
-    }
-    
-    .search-bar form {
-        width: 100%;
-    }
-    
-    .hero-slider {
-        height: 400px;
-    }
-    
-    .slide-content h1 {
-        font-size: 32px;
-    }
-    
-    .slide-content p {
-        font-size: 16px;
-    }
-    
-    .planning-items, .reasons-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .blog-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .btn, .btn-primary {
-        padding: 10px 20px;
+        z-index: 1020;
     }
 }
 
@@ -2264,4 +2682,991 @@ input, select, textarea, button {
 
 .footer-col ul li a {
     font-family: var(--font-body);
+}
+
+/* RESPONSIVE STYLES - DO NOT MODIFY ORIGINAL DESIGN */
+
+/* Base responsive adjustments */
+:root {
+  --container-width: 1140px;
+  --container-padding: 15px;
+}
+
+/* Container responsiveness */
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+  box-sizing: border-box;
+}
+
+/* Make all images fluid by default */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* RESPONSIVE BREAKPOINTS */
+
+/* Large devices (desktops, up to 1200px) */
+@media screen and (max-width: 1200px) {
+  .container {
+    max-width: 960px;
+  }
+  
+  /* Adjust card grid layouts */
+  .tour-grid, 
+  .destination-grid, 
+  .events-grid,
+  .gallery-grid,
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+  }
+  
+  /* Adjust content spacing */
+  .section-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  /* Adjust hero slider content */
+  .slide-content h1 {
+    font-size: 2.2rem;
+  }
+  
+  .slide-content p {
+    font-size: 1rem;
+  }
+}
+
+/* Medium devices (tablets, up to 992px) */
+@media screen and (max-width: 992px) {
+  .container {
+    max-width: 720px;
+  }
+  
+  /* Adjust grid layouts */
+  .tour-grid, 
+  .destination-grid, 
+  .events-grid,
+  .gallery-grid,
+  .cards-grid,
+  .planning-items, 
+  .reasons-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  /* Improve footer responsiveness */
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  
+  .footer-double-col {
+    grid-column: span 1;
+  }
+  
+  /* Fix newsletter layout */
+  .newsletter-form {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .newsletter-form input {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  
+  .newsletter-form .btn,
+  .newsletter-form .btn-primary {
+    width: 100%;
+  }
+  
+  /* Adjust hero content */
+  .slide-content {
+    width: 80%;
+  }
+  
+  /* Adjust section headers */
+  .section-header h2 {
+    font-size: 1.6rem;
+  }
+}
+
+/* Small devices (mobile, up to 768px) */
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 540px;
+  }
+  
+  /* Reset and clean up the top bar */
+  .top-bar {
+    padding: 8px 0;
+    background-color: #1a2b3c;
+  }
+  
+  .top-bar .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 8px 0;
+    text-align: center;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 0;
+  }
+  
+  .contact-info {
+    display: none;
+  }
+  
+  .top-nav {
+    display: none;
+  }
+  
+  /* Improved header styling */
+  .main-header {
+    padding: 12px 0;
+  }
+  
+  .main-header .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 0 15px;
+  }
+  
+  .logo {
+    margin: 0;
+    text-align: center;
+    max-width: 180px;
+  }
+  
+  .logo img {
+    max-width: 100%;
+    max-height: 45px;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Search bar improvements */
+  .search-bar {
+    display: none;
+    width: 100%;
+    margin-top: 15px;
+    order: 3;
+  }
+  
+  .search-active .search-bar {
+    display: block;
+    position: fixed;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: white;
+    padding: 10px 15px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    border-top: 1px solid #eee;
+    animation: fadeInDown 0.3s;
+  }
+  
+  .search-bar form {
+    display: flex;
+    width: 100%;
+  }
+  
+  .search-bar input {
+    flex: 1;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+    font-size: 14px;
+  }
+  
+  .search-bar button {
+    width: 45px;
+    border: 1px solid #ddd;
+    border-left: none;
+    background-color: white;
+    border-radius: 0 4px 4px 0;
+    color: #1a2b3c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Navigation improvements */
+  .main-nav {
+    background-color: white;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .main-nav .container {
+    padding: 0;
+    position: relative;
+    justify-content: space-between;
+  }
+  
+  .mobile-menu-toggle {
+    display: block;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 8px;
+    z-index: 100;
+  }
+  
+  .search-toggle {
+    display: block;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 8px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #1a2b3c;
+    cursor: pointer;
+    z-index: 100;
+  }
+  
+  .mobile-header-buttons {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    pointer-events: none;
+  }
+  
+  .mobile-header-buttons > * {
+    pointer-events: auto;
+  }
+}
+
+/* Hide the duplicate mobile navigation toggle */
+.mobile-nav-toggle {
+  display: none !important;
+}
+
+/* Extra small devices (phones, up to 576px) */
+@media screen and (max-width: 576px) {
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  /* Fixing small header issues */
+  .main-nav a {
+    font-size: 14px;
+    padding: 10px;
+  }
+  
+  /* Further adjust hero content */
+  .slide-content h1 {
+    font-size: 1.5rem;
+  }
+  
+  .slide-content p {
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+  }
+  
+  /* Make buttons more compact */
+  .btn {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+  
+  .btn-large {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+  }
+  
+  .btn-small {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+  }
+  
+  /* Fix card sizing */
+  .destination-card,
+  .tour-card,
+  .event-card,
+  .blog-card,
+  .reason,
+  .plan-item,
+  .cta-box {
+    margin-bottom: 15px;
+  }
+  
+  /* Fix form elements */
+  input, select, textarea {
+    padding: 10px;
+    font-size: 14px;
+  }
+  
+  /* Better image display in cards */
+  .tour-img img,
+  .destination-card img,
+  .card-image img {
+    height: 200px;
+  }
+  
+  /* Fix footer layout */
+  .footer-col {
+    padding: 0;
+    margin-bottom: 20px;
+  }
+  
+  .footer-bottom .container {
+    flex-direction: column;
+  }
+  
+  .copyright, .payment-methods, .social-bottom {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+  }
+}
+
+/* Fix for device orientation */
+@media screen and (orientation: landscape) and (max-height: 500px) {
+  .hero-slider {
+    min-height: 250px;
+  }
+  
+  .slide img {
+    height: 250px;
+  }
+  
+  .slide-content {
+    padding: 0 15px;
+  }
+  
+  .slide-content h1 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+  }
+  
+  .slide-content p {
+    margin-bottom: 8px;
+  }
+  
+  /* Adjust mobile navigation for landscape */
+  .main-nav ul.show {
+    max-height: 200px;
+    overflow-y: auto;
+  }
+}
+
+/* Fix for print styles */
+@media print {
+  .main-nav,
+  .top-bar,
+  .hero-slider,
+  .footer-links,
+  .footer-bottom,
+  .scroll-top,
+  .mobile-menu-toggle,
+  .slider-controls,
+  .btn, .btn-primary, .btn-small, .btn-large {
+    display: none !important;
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+  }
+  
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+    color: #000;
+    background: #fff;
+  }
+  
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+  
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+}
+
+/* Responsive image and media container improvements */
+.img-fluid,
+.fluid-img,
+img.responsive {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive tables */
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media screen and (max-width: 768px) {
+  table {
+    width: 100%;
+    overflow-x: auto;
+    display: block;
+  }
+  
+  /* Convert tables to cards on mobile */
+  table.responsive-table {
+    border: 0;
+    display: block;
+    width: 100%;
+  }
+  
+  table.responsive-table thead {
+    display: none;
+  }
+  
+  table.responsive-table tr {
+    margin-bottom: 20px;
+    display: block;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  
+  table.responsive-table td {
+    display: block;
+    text-align: right;
+    font-size: 14px;
+    padding: 10px 10px 10px 50%;
+    position: relative;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+  
+  table.responsive-table td:last-child {
+    border-bottom: 0;
+  }
+  
+  table.responsive-table td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    width: 45%;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: bold;
+  }
+}
+
+/* Aspect ratio containers for media */
+.ratio-container {
+  position: relative;
+  height: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+.ratio-container.ratio-16-9 {
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+}
+
+.ratio-container.ratio-4-3 {
+  padding-bottom: 75%; /* 4:3 aspect ratio */
+}
+
+.ratio-container.ratio-1-1 {
+  padding-bottom: 100%; /* 1:1 aspect ratio */
+}
+
+.ratio-container img,
+.ratio-container iframe,
+.ratio-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Fix for inputs and form elements */
+@media screen and (max-width: 576px) {
+  input[type="text"], 
+  input[type="email"], 
+  input[type="password"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="number"],
+  input[type="date"],
+  textarea,
+  select {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px !important; /* Prevent iOS zoom on focus */
+  }
+  
+  /* Better tap targets for links and buttons */
+  a, button, .btn, input[type="submit"] {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Menu open body state */
+body.menu-open {
+  overflow: hidden;
+}
+
+/* Dropdown toggle for submenu */
+.dropdown-toggle {
+  background: none;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5px;
+  font-size: 12px;
+  color: var(--color-text);
+}
+
+.dropdown-toggle i {
+  transition: transform 0.3s;
+}
+
+.dropdown-toggle[aria-expanded="true"] i.fa-chevron-down {
+  transform: rotate(180deg);
+}
+
+/* Enhanced media queries for mobile menu */
+@media screen and (max-width: 768px) {
+  .main-nav ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  .main-nav ul.show {
+    max-height: 500px;
+    opacity: 1;
+    visibility: visible;
+    padding: 10px 0;
+  }
+  
+  .main-nav li {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+  
+  .main-nav a {
+    display: block;
+    padding: 12px 15px;
+    margin: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+  
+  .main-nav a:after {
+    display: none;
+  }
+  
+  .main-nav ul li ul.show {
+    display: block;
+    max-height: 1000px;
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .main-nav ul li ul {
+    position: static;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease-out;
+    box-shadow: none;
+    background-color: rgba(0,0,0,0.02);
+    margin: 0;
+    padding: 0;
+  }
+  
+  .main-nav ul li ul li a {
+    padding-left: 25px;
+  }
+}
+
+/* Mobile search bar styling */
+@media screen and (max-width: 768px) {
+  /* Hide desktop search bar in header */
+  .main-header .search-bar {
+    display: none;
+  }
+  
+  /* Search bar states */
+  body.search-active .search-bar {
+    display: block;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 15px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    animation: fadeInDown 0.3s;
+  }
+  
+  /* Style the search fields specifically for mobile */
+  body.search-active .search-bar input {
+    width: 100%;
+    height: 40px;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+  
+  body.search-active .search-bar button {
+    width: 40px;
+    height: 40px;
+    background: var(--color-primary);
+    border: none;
+    color: white;
+    border-radius: 0 4px 4px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Search toggle active state */
+  .search-toggle[aria-expanded="true"] {
+    color: var(--color-primary);
+  }
+}
+
+/* Social icons in top bar - mobile specific */
+@media screen and (max-width: 768px) {
+  .social-icons a {
+    color: white;
+    font-size: 16px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    color: var(--color-primary);
+    transform: translateY(-2px);
+  }
+  
+  /* Tighten spacing in mobile header */
+  .main-header {
+    padding: 12px 0;
+  }
+  
+  .logo img {
+    max-height: 45px;
+  }
+  
+  /* Adjust phone placement for mobile */
+  .phone-mobile {
+    display: flex;
+  }
+}
+
+/* Hide mobile elements on desktop */
+.phone-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .phone-mobile {
+    display: flex;
+  }
+}
+
+/* Responsive Footer Styling */
+@media screen and (max-width: 992px) {
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  
+  .footer-double-col {
+    grid-column: span 1;
+  }
+  
+  .footer-bottom-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .copyright, .payment-methods, .footer-nav {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .footer-links {
+    padding: 30px 0;
+  }
+  
+  .footer-nav a {
+    padding: 5px 0;
+    margin: 5px 0;
+    text-align: center;
+  }
+  
+  .footer-nav {
+    flex-direction: column;
+  }
+  
+  .footer-col {
+    padding: 0;
+    margin-bottom: 20px;
+  }
+  
+  .footer-bottom .container {
+    flex-direction: column;
+  }
+  
+  .copyright, .payment-methods, .social-bottom {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+  }
+}
+
+/* Fix for the footer-double-col h5 styling that was removed */
+.footer-double-col h5 {
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 15px;
+  position: relative;
+}
+
+/* Fixes for visually hidden elements */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Accessibility focus styles */
+a:focus, button:focus, input:focus, select:focus, textarea:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Skip to content link */
+.skip-to-content {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background: var(--color-primary);
+  color: white;
+  padding: 10px;
+  z-index: 10000;
+  transition: top 0.3s;
+}
+
+.skip-to-content:focus {
+  top: 0;
+}
+
+/* Additional responsive fixes for the search bar */
+@media screen and (min-width: 768px) {
+  /* On desktop, show the search bar in the header */
+  .main-header .search-bar {
+    display: block !important;
+  }
+  
+  /* Hide the search toggle button */
+  .search-toggle {
+    display: none !important;
+  }
+  
+  /* Adjustments for header on tablets (768px to 991px) */
+  @media screen and (max-width: 991px) {
+    .main-header .container {
+      flex-wrap: wrap;
+    }
+    
+    .search-bar {
+      order: 3;
+      margin-top: 10px;
+      width: 100%;
+    }
+    
+    .search-bar form {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    
+    .search-bar input {
+      width: calc(100% - 40px);
+    }
+  }
+}
+
+/* Fix for tablet navigation spacing */
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .main-nav ul {
+    justify-content: center;
+  }
+}
+
+/* Make sure fixed elements don't cause issues on small screens */
+@media screen and (max-width: 767px) {
+  body.search-active {
+    padding-top: 40px;
+  }
+  
+  body.sticky-nav.search-active {
+    padding-top: 80px;
+  }
+}
+
+/* Improve mobile navigation toggle visibility rules */
+.mobile-menu-toggle, 
+.search-toggle,
+.mobile-nav-toggle {
+  display: none; /* Default: hide on all screens */
+}
+
+/* Hide mobile elements on desktop */
+.phone-mobile {
+  display: none;
+}
+
+/* Mobile (up to 767px) */
+@media screen and (max-width: 767px) {
+  /* Show mobile navigation elements */
+  .mobile-menu-toggle,
+  .search-toggle {
+    display: flex; /* Show only on mobile */
+  }
+  
+  /* Hide desktop-only elements */
+  .main-nav ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  /* When menu is toggled (shown) */
+  .main-nav ul.show {
+    max-height: 500px;
+    opacity: 1;
+    visibility: visible;
+    padding: 10px 0;
+    z-index: 1020;
+  }
+  
+  /* Proper phone button display on mobile */
+  .phone-mobile {
+    display: flex;
+  }
+}
+
+/* Tablet and above (768px and up) */
+@media screen and (min-width: 768px) {
+  /* Ensure main navigation is always visible on larger screens */
+  .main-nav ul {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: relative;
+    max-height: none;
+    overflow: visible;
+    box-shadow: none;
+    padding: 0;
+  }
+  
+  /* Explicitly hide ALL mobile toggles on larger screens */
+  .mobile-menu-toggle,
+  .search-toggle,
+  .mobile-nav-toggle {
+    display: none !important;
+  }
+  
+  /* Always show search bar on desktop */
+  .search-bar {
+    display: block !important;
+  }
+}
+
+/* Fix .mobile-nav-toggle duplicate hiding */
+.mobile-nav-toggle {
+  display: none !important; /* Ensure this is hidden everywhere */
+}
+
+/* Add this to make sure the dropdown toggle is always visible when needed */
+.dropdown-toggle {
+  display: inline-flex;
 }

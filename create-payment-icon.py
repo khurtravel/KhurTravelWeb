@@ -1,0 +1,47 @@
+#!/usr/bin/env python3
+
+# Simple script to create a payment-icons.png file
+# No external dependencies needed since we use base64
+
+import base64
+import os
+
+# This is a very simple pre-encoded PNG image for payment icons
+# It's a 300x50 image with "Payment Methods" text and some colored rectangles
+PNG_BASE64 = """
+iVBORw0KGgoAAAANSUhEUgAAASwAAAAyCAYAAADm1uYqAAABhGlDQ1BJQ0MgcHJvZmlsZQAAKJF9
+kT1Iw0AcxV9TxSIVBzuIOGSoThZERRy1CkWoEGqFVh1MbvqhNGlIUlwcBdeCgx+LVQcXZ10dXAVB
+8APE0clJ0UVK/F9SaBHjwXE/3t173L0DhEaFaVbPOKDptplOJsRsbkUMvSKMIGKIIDOzjFnJKMHj
+63dPrqK6Fvd5/p37qXqLOcCAn0k8wwzbJF4nnt60dM77xFFWklXic+Jxky5I/Mh1xeM3zgWXBZ4Z
+NTOpeeIosVjsYLmDWclQiaeIY4qqUb4/67LCeYuzWqmz9j35C8N5bWWZ6zQjSGIRS5AgQkEVJZRh
+I0a7ToqFFJ3HPfyDrl8il0KuEhg5FlCBBtn1g//B726twuRELymcALpfHOdjBAjvAo2a43wfO07j
+BAg+A1d6219tAjOfpNfaWvQI6N8GLq7bmrIHXO4AA0+GbMquFKQp5PPA+xl9UxbovwV61728NXdx
++gBkaFbLN8DBITBapOx1j3d3dvb275lW/34aqHJyxLKn1gAAAAZiS0dEAP8A/wD/oL2nkwAAAAlw
+SFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB+gGBQkHOcg/VYUAAAAZdEVYdENvbW1lbnQAQ3JlYXRl
+ZCB3aXRoIEdJTVBXgQ4XAAAEGUlEQVR42u2dQWhVVRjHf8+xNBJpsRA3Wpgak1KJmyaxhaEbV4Li
+NsFF4jZXbtq1ExcuXbVz4VIkJRdKFNMuWiUURQ9MzXfPWby5vTnce+fe9+685/z+8M28c9+95/vO
+991z5py5ICIiIiIiIiIi0om5A7doBfgU+AR4TJN1AZgHzgG/AS+a3pA1BvwA9Aac1tqsUz8MfAI8
+B3YT1nTG+saBU8AdoF+zZmUceAasa4qsbABf1GyvA/cT1pSfR0RERERERESk45uDOQ3XMeyKtGKB
++yrwzc779+vWhkGm/xYW1b1MXC+Bb4HXOuqNsQDsMCGtsLR2nWlS9wSwCVwcZOl1nB9m2q/C3Gml
+c1QjPMzQ7gTwxrAuyxgG2f05n4B+pU6K9CqsN4HjO+9n4/Oq27EFvGtW24bLwCdDGl9XgacDtDeR
+oe8r/v7SCeuzBnVngctDHtezxnVR/D1pP1e97G5Wj5xwuUrW3Rw/jjPNCefrBg9ojXbvFxrrvCi1
+eeGe4LBnJDTHRUREREREREREDvvmYM4X7TIzCRwF5uL9c+CvBBscB36PhfZzwE9e7jYxFsPhTNjv
+APBnZEa9Nn3R+ChwFXgYNjzIGE1PxLl7DRzjZWSI/bD3NvBbizYnwsYrwKOKemNh77W29ZsecKxV
+tAc8Ae4WYJPZ8O9WWPUw83RgXWOxLzOx1tZvUa8X8/xz2H9QlsJnj5v4d0B7I8D7sTaWu8+TWDM+
+zLT+lmO9Ldd6m6+zbcWa49Vk3bWpv63F+uifCffcUXgxEREREREREZEubg7GF9OvJdpwKnYbF3e+
+n2u46Tie2HcmHe1dwNuJNizF0PwYZMZzMQS/BvxSs5Y0H/ZcB77KXO9M1L2a0c5luLdpwy3gbqY2
+L4d939Wt4zTY5OzEfM1GTDfH9Vq02eRacb66zNVivU2Ev7cL0NONhP2eHq4rSXvFXoFtbcfmwtUK
+m/UT3q/V+ehs7Of1sZcHtJl7vS2lz5sKezxL8NmLTOvmfKa28/h3Q2GJiIiIiIiIiHR1c7ChDcaA
+z4BnCe28Ddxq0MZx4GfgdYY25hr+vZy0rzR5q4E9xhvUvx02m8rU5lhCOyeBS7E2mD0D7xbsw7Oo
++wfwqGKzMmUNcJJ9NkpHgWvAt8D3Gdo4A3wJXIw5WMy0ljQdfruRYO/DhLQf1phux5rWC+BBTV/l
+Wm+rgnddYf0X1tg+j3lPnf9qrGVJWCIiIiIiIiLSpcO7G3aXrgLP99mmHxObYFU8iRfhHu4z/U2m
+NqcitTkL/NTQltc62nNQ9sT6zb/JdE3e3xPHRXGv5WZqPeLGfAn3XzH7V3uVsMbq59XvCcchgxDW
+/wFzGfNj84abTAAAAABJRU5ErkJggg==
+"""
+
+# Decode and save as PNG
+png_data = base64.b64decode(PNG_BASE64.strip())
+with open('images/payment-icons.png', 'wb') as f:
+    f.write(png_data)
+
+print("Payment icons image created at images/payment-icons.png") 

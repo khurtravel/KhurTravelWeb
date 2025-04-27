@@ -3,10 +3,12 @@
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Tour Details - Khur Travel Mongolia</title>
     <meta name="description" content="View details about this exciting Mongolia tour. Discover itineraries, pricing, and everything you need to know.">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/image-fallbacks.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -228,6 +230,7 @@
             }
         }
     </style>
+<script src="js/responsive.js"></script>
 </head>
 <body>
     <a href="#main-content" class="skip-to-content">Skip to content</a>
@@ -257,7 +260,7 @@
             <div class="container">
                 <div class="logo">
                     <a href="index">
-                        <img src="/img/khurlogo.png" alt="Khur Travel Mongolia Logo">
+                        <img src="img/khurlogo.png" alt="Khur Travel Mongolia Logo">
                     </a>
                 </div>
                 <div class="search-bar">
@@ -370,7 +373,7 @@
                 <div class="tour-grid" style="margin-top: 40px;">
                     <div class="tour-card">
                         <div class="tour-img">
-                            <img src="/images/C0086T01.jpg" alt="Gobi Desert Tour">
+                            <img src="images/hero-slide2.jpg" alt="Gobi Desert Tour">
                             <div class="tour-duration">5 Days</div>
                         </div>
                         <div class="tour-content">
@@ -387,7 +390,7 @@
                     
                     <div class="tour-card">
                         <div class="tour-img">
-                            <img src="/images/C0096T01 (2).jpg" alt="Lake Khövsgöl Tour">
+                            <img src="images/c0096t01.jpg" alt="Lake Khövsgöl Tour">
                             <div class="tour-duration">6 Days</div>
                         </div>
                         <div class="tour-content">
@@ -404,7 +407,7 @@
                     
                     <div class="tour-card">
                         <div class="tour-img">
-                            <img src="/images/C0066T01 (3).jpg" alt="Western Mongolia Tour">
+                            <img src="images/c0066t01.jpg" alt="Western Mongolia Tour">
                             <div class="tour-duration">9 Days</div>
                         </div>
                         <div class="tour-content">
@@ -430,7 +433,7 @@
                 <div class="footer-content">
                     <div class="footer-col footer-info">
                         <div class="footer-logo">
-                            <img src="/img/khurlogo.png" alt="Khur Travel Mongolia Logo">
+                            <img src="img/khurlogo.png" alt="Khur Travel Mongolia Logo">
                         </div>
                         <address>
                             Room 14, Building 69 Sukhbaatar<br>
@@ -519,10 +522,6 @@
                     <div class="copyright">
                         <p>&copy; 2007-2023 KHUR TRAVEL CO.LTD. All rights reserved.</p>
                     </div>
-                    <div class="payment-methods">
-                        <span>Secure Payments:</span>
-                        <img src="/images/payment-icons.png" alt="Payment Methods">
-                    </div>
                     <nav class="footer-nav">
                         <a href="index">Home</a>
                         <a href="tours">Tours</a>
@@ -542,7 +541,8 @@
         <i class="fas fa-arrow-up"></i>
     </button>
     
-    <script src="/js/main.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/header-consistency.js"></script>
     <script>
         // Simple tour details loader based on URL parameter
         document.addEventListener('DOMContentLoaded', function() {
@@ -630,5 +630,5 @@
             document.title = `${tourData[tourId].title} - Khur Travel Mongolia`;
         });
     </script>
-<script src="/js/url-handler.js"></script><script src="js/image-path-corrector.js"></script></body>
+<script src="js/url-handler.js"></script><script src="js/image-path-corrector.js"></script></body>
 </html> 

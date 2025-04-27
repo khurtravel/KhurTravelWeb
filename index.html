@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Discover the beauty of Mongolia with Khur Travel - your gateway to authentic Mongolian adventures, tours, and cultural experiences.">
     <title>Khur Travel - Authentic Mongolia Tours & Adventures</title>
-    <meta name="description" content="Experience authentic Mongolia with Khur Travel's carefully curated tours. Explore the vast steppes, nomadic culture, and breathtaking landscapes.">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/image-fallbacks.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +21,8 @@
     <meta property="og:site_name" content="Khur Travel Mongolia">
     <!-- Ensure base URL for GitHub Pages - COMMENTED OUT FOR LOCAL TESTING -->
     <!-- BASE TAG COMMENTED OUT FOR LOCAL TESTING: <base href="https://khurmongoliatravel.com/"> --><!-- Force HTTPS - COMMENTED OUT FOR LOCAL TESTING -->
-    <!-- HTTPS SCRIPT COMMENTED OUT FOR LOCAL TESTING: <script src="/js/enforce-https.js"></script> --><style>
+    <!-- HTTPS SCRIPT COMMENTED OUT FOR LOCAL TESTING: <script src="js/enforce-https.js"></script> -->
+    <style>
         /* Fix for hero slider */
         .hero-slider .slide {
             opacity: 0;
@@ -31,22 +33,55 @@
             opacity: 1;
         }
         
-        /* Fix for mobile menu */
+        /* Fix for mobile menu - UPDATED FOR IMPROVED RESPONSIVENESS */
         @media (max-width: 768px) {
             .main-nav ul {
-                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+                z-index: 1000;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.3s ease-out;
+                padding: 0;
             }
             
             .main-nav ul.show {
+                display: flex;
+                flex-direction: column;
+                max-height: 500px;
+                padding: 10px 0;
+            }
+            
+            .main-nav li {
+                width: 100%;
+                margin: 0;
+                text-align: center;
+            }
+            
+            .main-nav a {
                 display: block;
+                padding: 12px 15px;
+                margin: 0;
+                border-bottom: 1px solid rgba(0,0,0,0.05);
+            }
+            
+            /* Prevent body scrolling when menu is open */
+            body.menu-open {
+                overflow: hidden;
             }
         }
     </style>
+    <script src="js/image-fallback.js"></script>
 </head>
 <body>
     <a href="#main-content" class="skip-to-content">Skip to content</a>
     
     <header>
+        <!-- Top Navigation Bar -->
         <div class="top-bar">
             <div class="container">
                 <div class="social-icons">
@@ -67,15 +102,24 @@
             </div>
         </div>
         
+        <!-- Main Header with Logo and Search -->
         <div class="main-header">
             <div class="container">
+                <div class="mobile-header-buttons">
+                    <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-menu">
+                        <span class="hamburger-icon"></span>
+                    </button>
+                    <button class="search-toggle" aria-label="Toggle search" aria-expanded="false" aria-controls="search-form">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
                 <div class="logo">
                     <a href="index">
-                        <img src="/img/khurlogo.png" alt="Khur Travel Mongolia Logo">
+                        <img src="img/khurlogo.png" alt="Khur Travel Mongolia Logo">
                     </a>
                 </div>
                 <div class="search-bar">
-                    <form action="/search-results" method="get" role="search">
+                    <form action="/search-results" method="get" role="search" id="search-form">
                         <label for="search" class="visually-hidden">Search tours</label>
                         <input type="text" id="search" name="query" placeholder="Search tours" aria-label="Search tours">
                         <button type="submit" aria-label="Submit search"><i class="fas fa-search"></i></button>
@@ -84,11 +128,9 @@
             </div>
         </div>
         
+        <!-- Main Navigation -->
         <nav class="main-nav" aria-label="Main Navigation">
             <div class="container">
-                <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="main-menu">
-                    <span class="hamburger-icon"></span>
-                </button>
                 <ul id="main-menu">
                     <li><a href="index" aria-current="page">HOME</a></li>
                     <li><a href="destinations">DESTINATIONS</a></li>
@@ -112,7 +154,7 @@
                         <a href="tours" class="btn">FIND A TOUR</a>
                     </div>
                     <div class="overlay"></div>
-                    <img src="/images/C0014T01.jpg" alt="Mongolia Landscape">
+                    <img src="images/hero-slide1.jpg" alt="Mongolia Landscape">
                 </div>
                 <div class="slide">
                     <div class="slide-content">
@@ -121,7 +163,7 @@
                         <a href="tours" class="btn">EXPLORE TOURS</a>
                     </div>
                     <div class="overlay"></div>
-                    <img src="/images/C0086T01.jpg" alt="Gobi Desert">
+                    <img src="images/hero-slide2.jpg" alt="Gobi Desert">
                 </div>
                 <div class="slide">
                     <div class="slide-content">
@@ -130,7 +172,7 @@
                         <a href="tours" class="btn">DISCOVER MORE</a>
                     </div>
                     <div class="overlay"></div>
-                    <img src="/images/C0022T01 (2).jpg" alt="Nomadic Life">
+                    <img src="images/hero-slide3.jpg" alt="Nomadic Life">
                 </div>
             </div>
         </section>
@@ -158,7 +200,7 @@
                 <div class="tour-grid">
                     <div class="tour-card">
                         <div class="tour-img">
-                            <img src="/images/C0086T01.jpg" alt="Gobi Desert Tour">
+                            <img src="images/hero-slide2.jpg" alt="Gobi Desert Tour">
                             <div class="tour-duration">5 Days</div>
                         </div>
                         <div class="tour-content">
@@ -175,7 +217,7 @@
                     
                     <div class="tour-card">
                         <div class="tour-img">
-                            <img src="/images/C0020T01 (2).jpg" alt="Nomadic Life Tour">
+                            <img src="images/c0020t01.jpg" alt="Nomadic Life Tour">
                             <div class="tour-duration">7 Days</div>
                         </div>
                         <div class="tour-content">
@@ -192,7 +234,7 @@
                     
                     <div class="tour-card">
                         <div class="tour-img">
-                            <img src="/images/C0069T01 (2).jpg" alt="Horse Riding Tour">
+                            <img src="images/c0069t01.jpg" alt="Horse Riding Tour">
                             <div class="tour-duration">8 Days</div>
                         </div>
                         <div class="tour-content">
@@ -209,7 +251,7 @@
                     
                     <div class="tour-card">
                         <div class="tour-img">
-                            <img src="/images/C0096T01 (2).jpg" alt="Lake Khövsgöl Tour">
+                            <img src="images/c0096t01.jpg" alt="Lake Khövsgöl Tour">
                             <div class="tour-duration">6 Days</div>
                         </div>
                         <div class="tour-content">
@@ -242,7 +284,7 @@
                 <div class="cards-grid">
                     <div class="destination-card">
                         <div class="card-image">
-                            <img src="/images/C0066T01 (3).jpg" alt="Western Mongolia">
+                            <img src="images/c0066t01.jpg" alt="Western Mongolia">
                         </div>
                         <div class="card-content">
                             <h3>Western Mongolia</h3>
@@ -253,7 +295,7 @@
                     
                     <div class="destination-card">
                         <div class="card-image">
-                            <img src="/images/C0020T01 (2).jpg" alt="Central Mongolia">
+                            <img src="images/c0020t01.jpg" alt="Central Mongolia">
                         </div>
                         <div class="card-content">
                             <h3>Central Mongolia</h3>
@@ -264,7 +306,7 @@
                     
                     <div class="destination-card">
                         <div class="card-image">
-                            <img src="/images/C0096T01 (2).jpg" alt="Northern Mongolia">
+                            <img src="images/c0096t01.jpg" alt="Northern Mongolia">
                         </div>
                         <div class="card-content">
                             <h3>Northern Mongolia</h3>
@@ -275,7 +317,7 @@
                     
                     <div class="destination-card">
                         <div class="card-image">
-                            <img src="/images/C0096T01 (2).jpg" alt="Southern Mongolia">
+                            <img src="images/c0096t01.jpg" alt="Southern Mongolia">
                         </div>
                         <div class="card-content">
                             <h3>Southern Mongolia</h3>
@@ -286,7 +328,7 @@
                     
                     <div class="destination-card">
                         <div class="card-image">
-                            <img src="/images/C0066T01 (3).jpg" alt="Eastern Mongolia">
+                            <img src="images/c0066t01.jpg" alt="Eastern Mongolia">
                         </div>
                         <div class="card-content">
                             <h3>Eastern Mongolia</h3>
@@ -297,7 +339,7 @@
                     
                     <div class="destination-card">
                         <div class="card-image">
-                            <img src="/images/C0066T01 (3).jpg" alt="Ulaanbaatar">
+                            <img src="images/c0066t01.jpg" alt="Ulaanbaatar">
                         </div>
                         <div class="card-content">
                             <h3>Ulaanbaatar</h3>
@@ -333,7 +375,7 @@
                             </div>
                             <p>"Our Gobi Desert tour was absolutely incredible! The guides were knowledgeable, accommodations comfortable, and the landscapes took our breath away. Staying with a nomadic family was the highlight of our trip."</p>
                             <div class="testimonial-author">
-                                <img src="/images/testimonial-1.jpg" alt="Sarah M.">
+                                <img src="images/testimonial-1.jpg" alt="Sarah M.">
                                 <div>
                                     <strong>Sarah M.</strong>
                                     <span>United States</span>
@@ -353,7 +395,7 @@
                             </div>
                             <p>"The horseback riding adventure through Central Mongolia was everything we hoped for and more. Our guide was exceptional, the food delicious, and sleeping in gers under the stars was magical. Khur Travel made our dream trip a reality!"</p>
                             <div class="testimonial-author">
-                                <img src="/images/testimonial-2.jpg" alt="James and Lisa T.">
+                                <img src="images/testimonial-2.jpg" alt="James and Lisa T.">
                                 <div>
                                     <strong>James and Lisa T.</strong>
                                     <span>Australia</span>
@@ -373,7 +415,7 @@
                             </div>
                             <p>"As a photographer, the Lake Khövsgöl tour exceeded all my expectations. The landscapes were diverse and stunning, our guide knew all the best spots, and the team went above and beyond to ensure we had an amazing experience."</p>
                             <div class="testimonial-author">
-                                <img src="/images/testimonial-3.jpg" alt="David K.">
+                                <img src="images/testimonial-3.jpg" alt="David K.">
                                 <div>
                                     <strong>David K.</strong>
                                     <span>Germany</span>
@@ -450,7 +492,7 @@
                 <div class="footer-content">
                     <div class="footer-col footer-info">
                         <div class="footer-logo">
-                            <img src="/img/khurlogo.png" alt="Khur Travel Mongolia Logo">
+                            <img src="img/khurlogo.png" alt="Khur Travel Mongolia Logo">
                         </div>
                         <address>
                             Room 14, Building 69 Sukhbaatar<br>
@@ -539,10 +581,6 @@
                     <div class="copyright">
                         <p>&copy; 2007-2023 KHUR TRAVEL CO.LTD. All rights reserved.</p>
                     </div>
-                    <div class="payment-methods">
-                        <span>Secure Payments:</span>
-                        <img src="/images/payment-icons.png" alt="Payment Methods">
-                    </div>
                     <nav class="footer-nav">
                         <a href="/">Home</a>
                         <a href="/tours">Tours</a>
@@ -562,14 +600,19 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <script src="/js/animations.js"></script>
-    <script src="/js/main.js"></script>
-    <script src="/js/image-preloader.js"></script>
+    <a href="tel:+97699119777" class="phone-mobile" aria-label="Call us">
+        <i class="fas fa-phone"></i>
+    </a>
+
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/header-consistency.js"></script>
+    <script src="js/image-preloader.js"></script>
     <!-- Add Content Security Policy to enforce HTTPS -->
     <script>
         if (window.location.protocol === 'http:' && !window.location.hostname.includes('localhost') && !window.location.hostname.includes('127.0.0.1')) {
             window.location.href = window.location.href.replace('http:', 'https:');
         }
     </script>
-<script src="/js/url-handler.js"></script><script src="js/image-path-corrector.js"></script></body>
+<script src="js/url-handler.js"></script><script src="js/image-path-corrector.js"></script><script src="js/image-fallback.js"></script></body>
 </html>

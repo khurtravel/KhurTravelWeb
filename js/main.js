@@ -189,12 +189,106 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(style);
 
-    // Initialize any additional functionality here
-    initializeTestimonialSlider();
+    // Remove or hide any duplicate mobile navigation toggles
+    const duplicateToggles = document.querySelectorAll('.mobile-nav-toggle');
+    duplicateToggles.forEach(toggle => {
+        toggle.style.display = 'none';
+    });
+    
+    // Ensure mobile menu toggle is properly initialized
+    const initializeMobileMenu = function() {
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const searchToggle = document.querySelector('.search-toggle');
+        const mainMenu = document.getElementById('main-menu');
+        
+        // If elements don't exist, don't proceed
+        if (!mobileMenuToggle || !mainMenu) return;
+        
+        // Set initial ARIA states
+        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+        if (searchToggle) {
+            searchToggle.setAttribute('aria-expanded', 'false');
+        }
+        
+        // Apply consistent event listeners
+        mobileMenuToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Close search bar if open
+            if (document.body.classList.contains('search-active')) {
+                document.body.classList.remove('search-active');
+                if (searchToggle) {
+                    searchToggle.setAttribute('aria-expanded', 'false');
+                }
+            }
+            
+            const expanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !expanded);
+            mainMenu.classList.toggle('show');
+            
+            // Prevent body scrolling when menu is open
+            document.body.classList.toggle('menu-open');
+            
+            // Toggle the hamburger icon
+            const hamburgerIcon = this.querySelector('.hamburger-icon');
+            if (hamburgerIcon) {
+                hamburgerIcon.classList.toggle('active');
+            }
+        });
+        
+        // Handle window resize to ensure proper menu state
+        const handleResize = function() {
+            const windowWidth = window.innerWidth;
+            
+            // On larger screens, ensure menu is properly reset
+            if (windowWidth >= 768) {
+                if (mainMenu.classList.contains('show')) {
+                    mainMenu.classList.remove('show');
+                }
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                document.body.classList.remove('menu-open');
+                
+                // Reset hamburger icon
+                const hamburgerIcon = mobileMenuToggle.querySelector('.hamburger-icon');
+                if (hamburgerIcon) {
+                    hamburgerIcon.classList.remove('active');
+                }
+                
+                // Ensure search is properly reset too
+                document.body.classList.remove('search-active');
+                if (searchToggle) {
+                    searchToggle.setAttribute('aria-expanded', 'false');
+                }
+            }
+        };
+        
+        // Listen for resize with debouncing
+        let resizeTimer;
+        window.addEventListener('resize', function() {
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(handleResize, 100);
+        });
+        
+        // Initial check
+        handleResize();
+    };
+    
+    // Initialize menu on page load
+    initializeMobileMenu();
+    
+    // Ensure this function runs after any dynamic content loads
+    if (typeof window.addEventListener === 'function') {
+        window.addEventListener('load', initializeMobileMenu);
+    }
+
+    // Initialize all other site functionality
     initializeNavigation();
+    initializeTestimonialSlider();
     initializeScrollToTop();
     initializeNewsletterForm();
-
+    optimizeResponsiveImages();
+    
     // Execute new enhancements
     initializeAOS();
     enhanceMobileNavigation();
@@ -202,8 +296,6 @@ document.addEventListener('DOMContentLoaded', function() {
     enhanceFormValidation();
     optimizePerformance();
     initializeSearch();
-    
-    // Initialize animations
     initializeAnimations();
     
     // Add body class for CSS targeting
@@ -492,27 +584,177 @@ function initializeAOS() {
 // Enhanced Mobile Navigation
 function enhanceMobileNavigation() {
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+    const searchToggle = document.querySelector('.search-toggle');
     if (!mobileMenuToggle) return;
     
     const mainMenu = document.getElementById('main-menu');
     
-    mobileMenuToggle.addEventListener('click', function() {
+    // Add role="button" and aria-label attributes to improve accessibility
+    if (mobileMenuToggle) {
+        mobileMenuToggle.setAttribute('role', 'button');
+        mobileMenuToggle.setAttribute('aria-label', 'Toggle navigation menu');
+    }
+    
+    if (searchToggle) {
+        searchToggle.setAttribute('role', 'button');
+        searchToggle.setAttribute('aria-label', 'Toggle search');
+    }
+    
+    mobileMenuToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        // Close search bar if open
+        if (document.body.classList.contains('search-active')) {
+            document.body.classList.remove('search-active');
+            if (searchToggle) {
+                searchToggle.setAttribute('aria-expanded', 'false');
+            }
+        }
+        
         const expanded = this.getAttribute('aria-expanded') === 'true';
         this.setAttribute('aria-expanded', !expanded);
         mainMenu.classList.toggle('show');
         
         // Prevent body scrolling when menu is open
         document.body.classList.toggle('menu-open');
+        
+        // Toggle the hamburger icon
+        const hamburgerIcon = this.querySelector('.hamburger-icon');
+        if (hamburgerIcon) {
+            hamburgerIcon.classList.toggle('active');
+        }
     });
+    
+    // Search toggle for mobile
+    if (searchToggle) {
+        searchToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Close menu if open
+            if (mainMenu.classList.contains('show')) {
+                mainMenu.classList.remove('show');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                document.body.classList.remove('menu-open');
+                
+                const hamburgerIcon = mobileMenuToggle.querySelector('.hamburger-icon');
+                if (hamburgerIcon) {
+                    hamburgerIcon.classList.remove('active');
+                }
+            }
+            
+            // Toggle search bar
+            document.body.classList.toggle('search-active');
+            const expanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !expanded);
+            
+            // Focus the search input when opened
+            if (!expanded) {
+                setTimeout(() => {
+                    const searchInput = document.getElementById('search');
+                    if (searchInput) {
+                        searchInput.focus();
+                    }
+                }, 100);
+            }
+        });
+    }
     
     // Close menu when clicking outside
     document.addEventListener('click', function(event) {
-        if (mainMenu.classList.contains('show') && 
+        if (mainMenu && mainMenu.classList.contains('show') && 
             !mainMenu.contains(event.target) && 
             !mobileMenuToggle.contains(event.target)) {
             mainMenu.classList.remove('show');
             mobileMenuToggle.setAttribute('aria-expanded', 'false');
             document.body.classList.remove('menu-open');
+            
+            // Reset hamburger icon
+            const hamburgerIcon = mobileMenuToggle.querySelector('.hamburger-icon');
+            if (hamburgerIcon) {
+                hamburgerIcon.classList.remove('active');
+            }
+        }
+        
+        // Close search when clicking outside
+        if (document.body.classList.contains('search-active') &&
+            !event.target.closest('.search-bar') &&
+            !event.target.closest('.search-toggle')) {
+            document.body.classList.remove('search-active');
+            if (searchToggle) {
+                searchToggle.setAttribute('aria-expanded', 'false');
+            }
+        }
+    });
+    
+    // Handle resize events for responsive behavior
+    function handleResize() {
+        const windowWidth = window.innerWidth;
+        
+        // Desktop breakpoint - ensure mobile elements are reset
+        if (windowWidth >= 768) {
+            // Close mobile menu
+            if (mainMenu.classList.contains('show')) {
+                mainMenu.classList.remove('show');
+                mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                document.body.classList.remove('menu-open');
+                
+                // Reset hamburger icon
+                const hamburgerIcon = mobileMenuToggle.querySelector('.hamburger-icon');
+                if (hamburgerIcon) {
+                    hamburgerIcon.classList.remove('active');
+                }
+            }
+            
+            // Close search bar
+            if (document.body.classList.contains('search-active')) {
+                document.body.classList.remove('search-active');
+                if (searchToggle) {
+                    searchToggle.setAttribute('aria-expanded', 'false');
+                }
+            }
+        }
+    }
+    
+    // Listen for resize events with debouncing
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(handleResize, 100);
+    });
+    
+    // Initial check
+    handleResize();
+    
+    // Add click event handlers for menu items with submenus
+    const menuItemsWithChildren = mainMenu.querySelectorAll('.menu-item-has-children');
+    
+    menuItemsWithChildren.forEach(item => {
+        const link = item.querySelector('a');
+        const submenu = item.querySelector('ul');
+        
+        if (link && submenu) {
+            // Create dropdown toggle button
+            const dropdownToggle = document.createElement('button');
+            dropdownToggle.className = 'dropdown-toggle';
+            dropdownToggle.setAttribute('aria-expanded', 'false');
+            dropdownToggle.setAttribute('aria-label', 'Toggle submenu');
+            dropdownToggle.innerHTML = '<i class="fas fa-chevron-down"></i>';
+            
+            link.parentNode.insertBefore(dropdownToggle, link.nextSibling);
+            
+            dropdownToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation();
+                
+                const expanded = this.getAttribute('aria-expanded') === 'true';
+                this.setAttribute('aria-expanded', !expanded);
+                
+                submenu.classList.toggle('show');
+                this.querySelector('i').classList.toggle('fa-chevron-up');
+                this.querySelector('i').classList.toggle('fa-chevron-down');
+            });
         }
     });
 }
@@ -685,4 +927,95 @@ function initializeAnimations() {
     } else {
         console.warn('KhurAnimations not found. Make sure animations.js is loaded before main.js');
     }
+}
+
+// New Function to optimize responsive images
+function optimizeResponsiveImages() {
+    // Find all images on the page
+    const images = document.querySelectorAll('img:not(.logo img):not(.footer-logo img)');
+    
+    // Add responsive classes and attributes
+    images.forEach(img => {
+        // Skip images that already have specific sizing requirements
+        if (img.hasAttribute('width') && img.hasAttribute('height')) {
+            return;
+        }
+        
+        // Add loading="lazy" for better performance
+        if (!img.hasAttribute('loading')) {
+            img.setAttribute('loading', 'lazy');
+        }
+        
+        // Add responsive class
+        img.classList.add('img-fluid');
+        
+        // For images in cards, ensure proper sizing
+        if (img.closest('.tour-card') || 
+            img.closest('.destination-card') || 
+            img.closest('.blog-card') || 
+            img.closest('.event-card')) {
+            
+            // Set object-fit for card images to maintain aspect ratio
+            img.style.objectFit = 'cover';
+            img.style.width = '100%';
+            
+            // Add specific height if not already specified
+            if (!img.style.height) {
+                // Use a different height based on viewport
+                if (window.innerWidth <= 576) {
+                    img.style.height = '200px';
+                } else if (window.innerWidth <= 992) {
+                    img.style.height = '220px';
+                } else {
+                    img.style.height = '240px';
+                }
+            }
+        }
+        
+        // Hero slider images
+        if (img.closest('.hero-slider')) {
+            img.style.width = '100%';
+            img.style.objectFit = 'cover';
+        }
+    });
+    
+    // Create responsive wrappers for tables
+    const tables = document.querySelectorAll('table:not(.responsive-table):not(.table-responsive)');
+    tables.forEach(table => {
+        const wrapper = document.createElement('div');
+        wrapper.className = 'table-responsive';
+        table.parentNode.insertBefore(wrapper, table);
+        wrapper.appendChild(table);
+        table.classList.add('responsive-table');
+        
+        // Add data-label attributes to each table cell for mobile view
+        if (table.querySelector('thead')) {
+            const headerCells = table.querySelectorAll('thead th');
+            const headerTexts = Array.from(headerCells).map(th => th.textContent.trim());
+            
+            table.querySelectorAll('tbody tr').forEach(row => {
+                const cells = row.querySelectorAll('td');
+                cells.forEach((cell, index) => {
+                    if (index < headerTexts.length) {
+                        cell.setAttribute('data-label', headerTexts[index]);
+                    }
+                });
+            });
+        }
+    });
+    
+    // Update on window resize
+    window.addEventListener('resize', function() {
+        // Update card image heights on resize
+        const cardImages = document.querySelectorAll('.tour-card img, .destination-card img, .blog-card img, .event-card img');
+        cardImages.forEach(img => {
+            if (window.innerWidth <= 576) {
+                img.style.height = '200px';
+            } else if (window.innerWidth <= 992) {
+                img.style.height = '220px';
+            } else {
+                img.style.height = '240px';
+            }
+        });
+    });
 }

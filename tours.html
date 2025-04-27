@@ -2,9 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Mongolia Tours - Khur Travel</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/image-fallbacks.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +14,7 @@
     <style>
         /* Additional styles specific to this page */
         .tours-header {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/C0014T01.JPG');
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/C0014T01.jpg');
             background-size: cover;
             background-position: center;
             height: 300px;
@@ -108,6 +110,7 @@
             background-color: #b82;
         }
     </style>
+<script src="js/responsive.js"></script>
 </head>
 <body>
     <!-- Header section -->
@@ -188,7 +191,7 @@
             
             <div class="category-grid">
                 <div class="category-card">
-                    <img src="images/C0066T01 (3).JPG" alt="Western Mongolia Tours">
+                    <img src="images/c0066t01.jpg" alt="Western Mongolia Tours">
                     <div class="category-content">
                         <h3>Western Mongolia Tours</h3>
                         <p>Explore the majestic Altai Mountains, crystal-clear lakes, and experience the unique culture of Kazakh eagle hunters in Western Mongolia.</p>
@@ -197,7 +200,7 @@
                 </div>
                 
                 <div class="category-card">
-                    <img src="images/C0020T01 (2).JPG" alt="Central Mongolia Tours">
+                    <img src="images/c0020t01.jpg" alt="Central Mongolia Tours">
                     <div class="category-content">
                         <h3>Central Mongolia Tours</h3>
                         <p>Discover the cultural heart of Mongolia, with historic sites, ancient monasteries, and traditional nomadic experiences.</p>
@@ -206,7 +209,7 @@
                 </div>
                 
                 <div class="category-card">
-                    <img src="images/C0086T01.JPG" alt="Gobi Desert Tours">
+                    <img src="images/hero-slide2.jpg" alt="Gobi Desert Tours">
                     <div class="category-content">
                         <h3>Gobi Desert Tours</h3>
                         <p>Journey through the legendary Gobi Desert with its remarkable sand dunes, ice canyons, and dinosaur fossil sites.</p>
@@ -215,7 +218,7 @@
                 </div>
                 
                 <div class="category-card">
-                    <img src="images/C0096T01 (2).JPG" alt="Northern Mongolia Tours">
+                    <img src="images/c0096t01.jpg" alt="Northern Mongolia Tours">
                     <div class="category-content">
                         <h3>Northern Mongolia Tours</h3>
                         <p>Explore pristine Lake Khövsgöl, dense forests, and encounter the fascinating Tsaatan reindeer herders.</p>
@@ -224,7 +227,7 @@
                 </div>
                 
                 <div class="category-card">
-                    <img src="images/DSC00008 (2).JPG" alt="Naadam Festival Tours">
+                    <img src="images/dsc00008.jpg" alt="Naadam Festival Tours">
                     <div class="category-content">
                         <h3>Naadam Festival Tours</h3>
                         <p>Experience Mongolia's most important festival featuring the "three manly games" - wrestling, horse racing, and archery.</p>
@@ -233,7 +236,7 @@
                 </div>
                 
                 <div class="category-card">
-                    <img src="images/C0022T01 (2).JPG" alt="Custom Mongolia Tours">
+                    <img src="images/hero-slide3.jpg" alt="Custom Mongolia Tours">
                     <div class="category-content">
                         <h3>Custom Mongolia Tours</h3>
                         <p>Create your own personalized Mongolia journey based on your interests, timeline, and travel style.</p>
@@ -243,6 +246,77 @@
             </div>
         </div>
     </section>
+
+    <!-- Tour Grid -->
+    <div class="tour-grid">
+        <div class="tour-card">
+            <div class="tour-img">
+                <img src="images/hero-slide1.jpg" alt="Gobi Desert Tour">
+                <div class="tour-duration">5 Days</div>
+            </div>
+            <div class="tour-content">
+                <h3>GOBI DESERT EXPLORER</h3>
+                <p>Discover the mysteries of the Gobi Desert</p>
+                <div class="tour-meta">
+                    <span><i class="fas fa-star"></i> 4.9</span>
+                    <span><i class="fas fa-mountain"></i> Moderate</span>
+                    <span class="price">$690</span>
+                </div>
+                <a href="tour-details" class="btn">View Details</a>
+            </div>
+        </div>
+        
+        <div class="tour-card">
+            <div class="tour-img">
+                <img src="images/hero-slide2.jpg" alt="Nomadic Life Tour">
+                <div class="tour-duration">7 Days</div>
+            </div>
+            <div class="tour-content">
+                <h3>NOMADIC LIFE EXPERIENCE</h3>
+                <p>Live with local nomads and learn their way of life</p>
+                <div class="tour-meta">
+                    <span><i class="fas fa-star"></i> 4.8</span>
+                    <span><i class="fas fa-mountain"></i> Easy</span>
+                    <span class="price">$850</span>
+                </div>
+                <a href="tour-details" class="btn">View Details</a>
+            </div>
+        </div>
+        
+        <div class="tour-card">
+            <div class="tour-img">
+                <img src="images/hero-slide3.jpg" alt="Horse Riding Tour">
+                <div class="tour-duration">8 Days</div>
+            </div>
+            <div class="tour-content">
+                <h3>HORSEBACK RIDING ADVENTURE</h3>
+                <p>Explore the steppes on horseback like true Mongolians</p>
+                <div class="tour-meta">
+                    <span><i class="fas fa-star"></i> 4.7</span>
+                    <span><i class="fas fa-mountain"></i> Moderate</span>
+                    <span class="price">$920</span>
+                </div>
+                <a href="tour-details" class="btn">View Details</a>
+            </div>
+        </div>
+        
+        <div class="tour-card">
+            <div class="tour-img">
+                <img src="images/hero-slide1.jpg" alt="Lake Khövsgöl Tour">
+                <div class="tour-duration">6 Days</div>
+            </div>
+            <div class="tour-content">
+                <h3>LAKE KHÖVSGÖL JOURNEY</h3>
+                <p>Visit the stunning blue pearl of Mongolia</p>
+                <div class="tour-meta">
+                    <span><i class="fas fa-star"></i> 4.9</span>
+                    <span><i class="fas fa-mountain"></i> Easy</span>
+                    <span class="price">$780</span>
+                </div>
+                <a href="tour-details" class="btn">View Details</a>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="site-footer">
@@ -340,10 +414,6 @@
                     <div class="copyright">
                         <p>&copy; 2007-2023 KHUR TRAVEL CO.LTD. All rights reserved.</p>
                     </div>
-                    <div class="payment-methods">
-                        <span>Secure Payments:</span>
-                        <img src="images/payment-icons.png" alt="Payment Methods">
-                    </div>
                     <nav class="footer-nav">
                         <a href="index.html">Home</a>
                         <a href="tours.html">Tours</a>
@@ -363,5 +433,6 @@
         <i class="fas fa-arrow-up"></i>
     </button>
     <script src="js/main.js"></script>
-</body>
+    <script src="js/header-consistency.js"></script>
+<script src="js/image-path-corrector.js"></script><script src="js/image-fallback.js"></script></body>
 </html> 

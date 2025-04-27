@@ -1,0 +1,55 @@
+/* Image Fallbacks CSS
+ * Provides default image backgrounds for all hero sections and slides
+ */
+
+/* Hero section background fallback */
+.hero-slider {
+    background-color: #243142;
+}
+
+/* Hero slides fallbacks */
+.slide {
+    background-color: #3a4b5c;
+}
+
+/* Force slide images to display properly */
+.slide img {
+    display: block !important;
+    opacity: 1 !important;
+    min-height: 200px;
+    background-color: #1d2a3a;
+}
+
+/* Testimonials fallbacks */
+.testimonial-card img {
+    min-height: 60px;
+    min-width: 60px;
+    background-color: #4c6380;
+    border-radius: 50%;
+}
+
+/* Tour image fallbacks */
+.tour-img img {
+    min-height: 180px;
+    background-color: #243142;
+}
+
+/* Destination card fallbacks */
+.card-image img {
+    min-height: 200px;
+    background-color: #1a2a3b;
+}
+
+/* Logo fallback */
+.navbar-logo img, .footer-logo img {
+    min-height: 40px;
+    min-width: 120px;
+    background-color: #243142;
+}
+
+/* Hide broken payment icons with graceful fallback */
+.payment-methods img[alt="Payment Methods"] {
+    width: 200px;
+    height: 30px;
+    background-color: #f9f9f9;
+} 
